@@ -1,0 +1,12 @@
+.colornav{
+    background-color: rgb(248, 237, 235);
+}
+.tamañoimagen{
+   width: 50px;
+   height: auto; 
+}
+.separacionbotones{
+    margin: 100px;
+
+    text-align: center;
+}

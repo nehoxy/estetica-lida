@@ -1,12 +1,18 @@
-.colornav{
+.navbar{
     background-color: rgb(248, 237, 235);
+    display:table;
+  
+   
+    width: 100%;
+   
 }
 .tamañoimagen{
    width: 50px;
    height: auto; 
 }
 .separacionbotones{
-    margin:100px
+    margin-left:50px;
+    margin-right: 50px;
 }
 
 button{
@@ -14,7 +20,13 @@ button{
 }
 
 .alinear{
-    text-align: center;
+    /* text-align: center;
     display: inline-block;
     width: 100%;
+    position: top; */
+    display: table-cell;
+
+    vertical-align: middle;
+    text-align: center;
+
 }

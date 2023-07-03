@@ -1,0 +1,56 @@
+
+/*
+#footer{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height:10vw;
+    background-color: #F8EDEB;
+}
+*/
+.logo-ig{
+    width: 3vw;
+    height: 3vw;
+}
+.logo-tw{
+    width: 2.5vw;
+    height: 2.5vw;
+}
+.logo-fb{
+    width: 3vw;
+    height: 3vw;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vw;
+    background-color: #F8EDEB;
+}
+.logo{
+    width: 5vw;
+    height: 5vw;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #footer{
+        position: absolute;
+        bottom: 0;
+        width:100%;
+        height:30vw;
+        background-color: #F8EDEB;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -14,6 +14,7 @@ import { CardsEstaticasComponent } from './components/cards-estaticas/cards-esta
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[HomeComponent]
 })
 export class HomeModule { }

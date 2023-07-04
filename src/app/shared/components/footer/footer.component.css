@@ -1,4 +1,6 @@
-
+p{
+    margin: 0;
+}
 /*
 #footer{
     position: absolute;
@@ -30,6 +32,19 @@
 .logo{
     width: 5vw;
     height: 5vw;
+}
+.logo-wpp{
+    width: 1vw;
+    height: 1vw;
+}
+.logo-correo{
+    width: 0.8vw;
+    height: 0.8vw;
+    margin-right: 0.2vw;
+}
+.logo-ubicacion{
+    width: 1vw;
+    height: 1vw;
 }
 
 /* Extra small devices (phones, 600px and down) */

@@ -1,1 +1,30 @@
-<p>navbar works!</p>
+<div class="navbar" >
+    <mat-toolbar class="alinear">
+        <button  mat-button>
+           Inicio
+       </button>
+       <mat-menu #appMenu="matMenu">
+           <button mat-menu-item>Cremas</button>
+           <button mat-menu-item>Serum</button>
+         </mat-menu>
+         
+         <button  mat-button [matMenuTriggerFor]="appMenu">
+           Productos
+       </button>
+       <button mat-button>
+           Servicios
+       </button>
+       <span class="example-spacer"></span>
+       <img class="tamañoimagen separacionbotones" src="../assets/imgNavbar/logo7.png" alt="">
+       <button mat-button>
+           Log In
+       </button>
+       <button mat-button>
+           Registrarse
+       </button>
+       <button mat-button>
+           <mat-icon>shopping_cart</mat-icon>
+           0
+       </button>
+     </mat-toolbar>
+</div>

@@ -13,7 +13,11 @@ import { CardsEstaticasComponent } from './components/cards-estaticas/cards-esta
     CardsEstaticasComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+   
+  ],
+  exports: [
+    CardsEstaticasComponent
   ]
 })
 export class HomeModule { }

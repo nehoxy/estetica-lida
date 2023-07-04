@@ -146,7 +146,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
+
    ]
 })
 export class SharedModule { }

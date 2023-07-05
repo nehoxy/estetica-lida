@@ -1,0 +1,16 @@
+.bg{
+    background-color: #FCD5CE;
+}
+.cardlogin{
+    width: 30vw;
+    height:40vw;
+    border-radius: 1.5vw;
+    margin:auto;
+    
+}
+.logolida{
+    width: 5vw;
+    height: 5vw;
+    text-align: center;
+    margin-top: 2vw;
+}

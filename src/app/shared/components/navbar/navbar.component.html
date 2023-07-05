@@ -1,6 +1,6 @@
 <div class="navbar" >
     <mat-toolbar class="alinear colorNav">
-        <button  mat-button>
+        <button  mat-button routerLink="/">
            Inicio
        </button>
        <mat-menu #appMenu="matMenu">
@@ -8,7 +8,7 @@
            <button mat-menu-item>Serum</button>
          </mat-menu>
          
-         <button  mat-button [matMenuTriggerFor]="appMenu">
+         <button  mat-button routerLink="/productos" >
            Productos
        </button>
        <button mat-button>
@@ -16,10 +16,10 @@
        </button>
        <span class="example-spacer"></span>
        <img class="tamañoimagen separacionbotones" src="../assets/imgNavbar/logo7.png" alt="">
-       <button mat-button>
+       <button mat-button routerLink="auth/login">
            Log In
        </button>
-       <button mat-button>
+       <button mat-button routerLink="auth/register" >
            Registrarse
        </button>
        <button mat-button>

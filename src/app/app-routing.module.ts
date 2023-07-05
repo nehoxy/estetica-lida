@@ -4,7 +4,7 @@ import { zip } from 'rxjs';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'auth',
     loadChildren:()=>import('./modules/auth/auth.module').then(m => m.AuthModule)
 
   }

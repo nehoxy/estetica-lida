@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { zip } from 'rxjs';
+
 
 const routes: Routes = [
   {

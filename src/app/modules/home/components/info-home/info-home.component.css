@@ -1,4 +1,11 @@
 .imageLeft{
-    width:30vw;
-    height:20vw;
+    width:40vw;
+    height:30vw;
+    margin-left: 5vw;
+    margin-top: 4vw;
+}
+
+.textRight{
+    margin-left: 5vw;
+    margin-top: 4vw; 
 }

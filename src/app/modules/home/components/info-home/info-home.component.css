@@ -9,6 +9,10 @@
     margin-left: 5vw;
     margin-top: 4vw; 
 }
+.textRight{
+    margin-left: 5vw;
+    margin-top: 0; 
+}
 
 @media only screen and (max-width: 600px) {
     .imageLeft{

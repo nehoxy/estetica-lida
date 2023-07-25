@@ -42,3 +42,60 @@
     width: 6vw;
     height: 6vw;
 }
+
+@media only screen and (max-width: 600px) {
+    .cards-estaticas{
+        background-color: black;
+        width: 42vw;
+        height: 54vw;
+        border-radius: 1.2vw;
+        opacity: 1;
+        transition: 0.3s;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+    .cards-estaticas{
+        background-color: black;
+        width: 42vw;
+        height: 54vw;
+        border-radius: 1.2vw;
+        opacity: 1;
+        transition: 0.3s;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        
+    }
+} 
+
+
+@media only screen and (min-width: 768px) {
+    .cards-estaticas{
+        background-color: black;
+        width: 42vw;
+        height: 54vw;
+        border-radius: 1.2vw;
+        opacity: 1;
+        transition: 0.3s;
+        
+    }
+} 
+
+@media only screen and (min-width: 1200px) {
+    .cards-estaticas{
+        background-color: black;
+        width: 14vw;
+        height: 18vw;
+        border-radius: 1.2vw;
+        opacity: 1;
+        transition: 0.3s;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+    }
+}

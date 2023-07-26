@@ -131,6 +131,29 @@
         transition: 0.3s;
         
     }
+    .imagen-1{
+        margin-top: 2.5vw;
+        width: 18vw;
+        height: 18vw;
+    }
+    
+    .imagen-2{
+        margin-top: 2.5vw;
+        width: 18vw;
+        height: 18vw;
+    }
+    
+    .imagen-3{
+        margin-top: 2vw;
+        width: 18vw;
+        height: 18.5vw;
+    }
+    
+    .imagen-4{
+        margin-top: 2.5vw;
+        width: 18vw;
+        height: 18vw;
+    }
 } 
 
 @media only screen and (min-width: 1200px) {
@@ -144,5 +167,28 @@
         margin: 0 auto; /* Added */
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
+    }
+    .imagen-1{
+        margin-top: 2.5vw;
+        width: 6vw;
+        height: 6vw;
+    }
+    
+    .imagen-2{
+        margin-top: 2.5vw;
+        width: 6vw;
+        height: 6vw;
+    }
+    
+    .imagen-3{
+        margin-top: 2vw;
+        width: 6vw;
+        height: 6vw;
+    }
+    
+    .imagen-4{
+        margin-top: 2.5vw;
+        width: 6vw;
+        height: 6vw;
     }
 }

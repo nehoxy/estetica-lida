@@ -1,0 +1,36 @@
+.contenedor{
+    min-height: 100vh;
+    background-color: #FCD5CE;
+}
+
+.bg{
+    background-color: #FCD5CE;
+}
+.cardregister{
+    width: 30vw;
+    height:50vw;
+    border-radius: 5vw;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.card-body{
+    width:30vw;
+    height: 50vw;
+    background-color: white;
+    display:flex;
+    justify-content: center;
+}
+.logolida{
+    width: 5vw;
+    height: 5vw;
+    margin-top: 4vw;
+    margin: auto;
+    padding: 0px;
+}
+.btn{
+    background-color: #C8ECCB;
+    border-radius:2vw;
+}

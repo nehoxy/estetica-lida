@@ -1,30 +1,42 @@
-<div class="navbar" >
-    <mat-toolbar class="alinear colorNav">
-        <button  mat-button routerLink="/">
-           Inicio
-       </button>
-       <mat-menu #appMenu="matMenu">
-           <button mat-menu-item>Cremas</button>
-           <button mat-menu-item>Serum</button>
-         </mat-menu>
-         
-         <button  mat-button routerLink="/productos" >
-           Productos
-       </button>
-       <button mat-button>
-           Servicios
-       </button>
-       <span class="example-spacer"></span>
-       <img class="tamañoimagen separacionbotones" src="../assets/imgNavbar/logo7.png" alt="">
-       <button mat-button routerLink="auth/login">
-           Log In
-       </button>
-       <button mat-button routerLink="auth/register" >
-           Registrarse
-       </button>
-       <button mat-button>
-           <mat-icon>shopping_cart</mat-icon>
-           0
-       </button>
-     </mat-toolbar>
-</div>
+
+<nav class="navbar navbar-expand-lg colorNav">
+        <div class="container-fluid centrarnav">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active align-middle" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <li class="nav-item dropdown">
+                    <a class="nav-link  separacionbotones" routerLink="/productos" aria-expanded="false">
+                      Productos
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu">
+                      <li><a class="dropdown-item" href="#">cremas</a></li>
+                      <li><a class="dropdown-item" href="#">jabon</a></li>
+                      <li><a class="dropdown-item" href="#">mascarillas</a></li>
+                    </ul>
+                  </li>
+              
+              <li class="nav-item">
+                <a class="nav-link separacionbotones" >Servicios</a>
+              </li>
+              <a class="navbar-brand separacionbotones" href="#"><img class="tamañoimagen" src="../../../../assets/imgNavbar/logo7.png" alt=""></a>
+              <li class="nav-item separacionbotones">
+                <a class="nav-link" routerLink="auth/login">log In</a>
+              </li>
+              <li class="nav-item separacionbotones">
+                <a class="nav-link " routerLink="auth/register">Register</a>
+              </li>
+              <li class="nav-item separacionbotones">
+                <a class="nav-link"><mat-icon>shopping_cart</mat-icon>0</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>

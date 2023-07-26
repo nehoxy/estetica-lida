@@ -1,35 +1,43 @@
-.navbar{
+
+p{
+    margin:0;
+    padding: 0;
+}
+
+.navbar {
     background-color: rgb(248, 237, 235);
-    display:table;
-  
-   
-    width: 100%;
-   
+
 }
-.colorNav{
+
+
+.colorNav {
     background-color: rgb(248, 237, 235);
+
 }
-.tamañoimagen{
-   width: 50px;
-   height: auto; 
-}
-.separacionbotones{
-    margin-left:50px;
-    margin-right: 50px;
+.nav-link{
+    padding-top: 1.5vw;
 }
 
-button{
-    margin: 10px;
+.tamañoimagen {
+    width: 4vw;
+    height: auto;
 }
 
-.alinear{
-    /* text-align: center;
-    display: inline-block;
-    width: 100%;
-    position: top; */
-    display: table-cell;
+.separacionbotones {
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
 
-    vertical-align: middle;
-    text-align: center;
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    /* remove the gap so it doesn't close */
+    background-color: rgb(248, 237, 235);
 
+}
+
+@media screen and (max-width: 1000px) {
+    .tamañoimagen {
+        display: none;
+    }
 }

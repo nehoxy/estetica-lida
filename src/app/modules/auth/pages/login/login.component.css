@@ -6,23 +6,17 @@
 .bg{
     background-color: #FCD5CE;
 }
-.cardlogin{
+.cardslogin{
     width: 30vw;
     height:40vw;
     border-radius: 5vw;
     margin:auto;
     display: flex;
     justify-content: center;
-    
-    
-}
-.card-body{
-    width:30vw;
-    height: 40vw;
     background-color: white;
-    display:flex;
-    justify-content: center;
+    
 }
+
 .logolida{
     width: 5vw;
     height: 5vw;
@@ -34,3 +28,35 @@
     background-color: #C8ECCB;
     border-radius:2vw;
 }
+@media only screen and (max-width: 600px) {
+    .cardslogin{
+        background-color: white;
+        width: 100%;
+        height: 54vw;
+        border-radius: 5vw;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .cardslogin{
+        background-color: white;
+        width: 100%;
+        height: 54vw;
+        border-radius: 5vw;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .cardslogin{
+        background-color: white;
+        width: 100%;
+        height: 40vw;
+        border-radius: 5vw;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .cardslogin{
+        background-color: white;
+        width: 30vw;
+        height: 40vw;
+    }
+}
+

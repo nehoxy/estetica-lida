@@ -8,6 +8,10 @@ body {
   margin-bottom: 60px;
 }
 
+h6{
+    font-family: Poppins;
+}
+
 
 p{
     margin: 0;
@@ -68,16 +72,30 @@ p{
         height:30vw;
         background-color: #F8EDEB;
     }
+    .logo-ig{
+        width: 8vw;
+        height: 8vw;
+    }
+    .logo-tw{
+        width: 7vw;
+        height: 7vw;
+    }
+    .logo-fb{
+        width: 8vw;
+        height: 8vw;
+    }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 600px) {
+    
+} 
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 768px) {
+   
+} 
+
+@media only screen and (min-width: 1200px) {
+   
+}

@@ -7,6 +7,9 @@
     transition: 0.3s;
     
 }
+h4{
+    font-family: Poppins;
+}
 
 .decoracion {
     border-bottom: 1px solid black;

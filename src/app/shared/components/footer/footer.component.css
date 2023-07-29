@@ -153,38 +153,38 @@ p{
 @media only screen and (min-width: 768px) {
     /* redes social */
     .logo-ig{
-        width: 8vw;
-        height: 8vw;
+        width: 6vw;
+        height: 6vw;
     }
 
     .logo-tw{
-        width: 7vw;
-        height: 7vw;
+        width: 5vw;
+        height: 5vw;
     }
 
     .logo-fb{
-        width: 8vw;
-        height: 8vw;
+        width: 6vw;
+        height: 6vw;
     }
 
 
     .logo{
-        width: 13vw;
-        height: 13vw;
+        width: 11vw;
+        height: 11vw;
     }
 
     .logo-wpp{
-        width: 3.4vw;
-        height: 3.4vw;
+        width: 1.4vw;
+        height: 1.4vw;
     }
     .logo-correo{
-        width: 3.2vw;
-        height: 3vw;
+        width: 1.2vw;
+        height: 1vw;
         margin-right: 0.2vw;
     }
     .logo-ubicacion{
-        width: 3.4vw;
-        height: 3.4vw;
+        width: 1.4vw;
+        height: 1.4vw;
     }
 } 
 

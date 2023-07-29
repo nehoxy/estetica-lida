@@ -10,6 +10,12 @@
 h4{
     font-family: Poppins;
 }
+h6{
+    font-family: Poppins;
+}
+p{
+    font-family: Lora;
+}
 
 .decoracion {
     border-bottom: 1px solid black;

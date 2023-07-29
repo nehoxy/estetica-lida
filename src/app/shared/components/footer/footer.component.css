@@ -72,17 +72,41 @@ p{
         height:30vw;
         background-color: #F8EDEB;
     }
+
+    /* redes social */
     .logo-ig{
         width: 8vw;
         height: 8vw;
     }
+
     .logo-tw{
         width: 7vw;
         height: 7vw;
     }
+
     .logo-fb{
         width: 8vw;
         height: 8vw;
+    }
+
+
+    .logo{
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .logo-wpp{
+        width: 3.4vw;
+        height: 3.4vw;
+    }
+    .logo-correo{
+        width: 3.2vw;
+        height: 3vw;
+        margin-right: 0.2vw;
+    }
+    .logo-ubicacion{
+        width: 3.4vw;
+        height: 3.4vw;
     }
 }
 

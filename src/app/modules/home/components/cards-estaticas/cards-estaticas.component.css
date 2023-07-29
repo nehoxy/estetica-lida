@@ -118,8 +118,8 @@
 @media only screen and (min-width: 768px) {
     .cards-estaticas{
         background-color: black;
-        width: 42vw;
-        height: 54vw;
+        width: 46vw;
+        height: 58vw;
         border-radius: 1.2vw;
         opacity: 1;
         transition: 0.3s;

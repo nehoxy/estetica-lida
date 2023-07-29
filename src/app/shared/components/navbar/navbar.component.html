@@ -8,11 +8,11 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <a class="nav-link active align-middle separacionbotones" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link active align-middle separacionBotones" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
                 <li class="nav-item dropdown">
-                    <a class="nav-link  separacionbotones" routerLink="/productos" aria-expanded="false">
+                    <a class="nav-link  separacionBotones" routerLink="/productos" aria-expanded="false">
                       Productos
                     </a>
                     <ul class="dropdown-menu dropdown-menu">
@@ -23,17 +23,23 @@
                   </li>
               
               <li class="nav-item">
-                <a class="nav-link separacionbotones" >Servicios</a>
+                <a class="nav-link separacionBotonesEspecial" >Servicios</a>
               </li>
-              <a class="navbar-brand separacionbotones" href="#"><img class="tamañoimagen" src="../../../../assets/imgNavbar/logo7.png" alt=""></a>
-              <li class="nav-item separacionbotones">
+              <a class="navbar-brand separacionBotones imagenPadding" href="#"><img class="tamañoImagen" src="../../../../assets/imgNavbar/logo7.png" alt=""></a>
+              <li class="nav-item separacionBotones">
+                <a class="nav-link" routerLink="">Administrador</a>
+              </li>
+              <li class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="auth/login">Login</a>
               </li>
-              <li class="nav-item separacionbotones">
-                <a class="nav-link " routerLink="auth/register">Register</a>
+              <li class="nav-item separacionBotones">
+                <a class="nav-link pe-4" routerLink="auth/register">Register</a>
               </li>
-              <li class="nav-item align-middle separacionbotones">
-                <a class="nav-link align-middle"><mat-icon>shopping_cart</mat-icon>0</a>
+              <li class="nav-item align-middle p-0 ">
+                <a class="nav-link align-middle pe-0"><mat-icon>shopping_cart</mat-icon></a>
+              </li>
+              <li class="nav-item align-middle">
+                <a class="nav-link align-middle ps-0">0</a>
               </li>
               
             </ul>

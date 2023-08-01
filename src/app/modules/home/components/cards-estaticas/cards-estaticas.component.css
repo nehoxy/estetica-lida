@@ -7,13 +7,16 @@
     transition: 0.3s;
     
 }
-.cards-estaticas:hover {
-    width:15vw;
-    height: 19vw;
-    -webkit-box-shadow: 2px 10px 20px -10px rgba(0,0,0,0.43);
-    -moz-box-shadow: 2px 10px 20px -10px rgba(0,0,0,0.43);
-    box-shadow: 2px 10px 20px -10px rgba(0,0,0,0.43);
+h4{
+    font-family: Poppins;
 }
+h6{
+    font-family: Poppins;
+}
+p{
+    font-family: Lora;
+}
+
 .decoracion {
     border-bottom: 1px solid black;
     padding-bottom: 5px;
@@ -124,8 +127,8 @@
 @media only screen and (min-width: 768px) {
     .cards-estaticas{
         background-color: black;
-        width: 42vw;
-        height: 54vw;
+        width: 46vw;
+        height: 58vw;
         border-radius: 1.2vw;
         opacity: 1;
         transition: 0.3s;
@@ -167,6 +170,13 @@
         margin: 0 auto; /* Added */
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
+    }
+    .cards-estaticas:hover {
+        width:15vw;
+        height: 19vw;
+        -webkit-box-shadow: 2px 10px 20px -10px rgba(0,0,0,0.43);
+        -moz-box-shadow: 2px 10px 20px -10px rgba(0,0,0,0.43);
+        box-shadow: 2px 10px 20px -10px rgba(0,0,0,0.43);
     }
     .imagen-1{
         margin-top: 2.5vw;

@@ -8,6 +8,10 @@ body {
   margin-bottom: 60px;
 }
 
+h6{
+    font-family: Poppins;
+}
+
 
 p{
     margin: 0;
@@ -68,16 +72,150 @@ p{
         height:30vw;
         background-color: #F8EDEB;
     }
+
+    /* redes social */
+    .logo-ig{
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .logo-tw{
+        width: 7vw;
+        height: 7vw;
+    }
+
+    .logo-fb{
+        width: 8vw;
+        height: 8vw;
+    }
+
+
+    .logo{
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .logo-wpp{
+        width: 3.4vw;
+        height: 3.4vw;
+    }
+    .logo-correo{
+        width: 3.2vw;
+        height: 3vw;
+        margin-right: 0.2vw;
+    }
+    .logo-ubicacion{
+        width: 3.4vw;
+        height: 3.4vw;
+    }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 600px) {
+     /* redes social */
+     .logo-ig{
+        width: 8vw;
+        height: 8vw;
+    }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+    .logo-tw{
+        width: 7vw;
+        height: 7vw;
+    }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+    .logo-fb{
+        width: 8vw;
+        height: 8vw;
+    }
+
+
+    .logo{
+        width: 13vw;
+        height: 13vw;
+    }
+
+    .logo-wpp{
+        width: 3.4vw;
+        height: 3.4vw;
+    }
+    .logo-correo{
+        width: 3.2vw;
+        height: 3vw;
+        margin-right: 0.2vw;
+    }
+    .logo-ubicacion{
+        width: 3.4vw;
+        height: 3.4vw;
+    }
+} 
+
+
+@media only screen and (min-width: 768px) {
+    /* redes social */
+    .logo-ig{
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .logo-tw{
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .logo-fb{
+        width: 6vw;
+        height: 6vw;
+    }
+
+
+    .logo{
+        width: 11vw;
+        height: 11vw;
+    }
+
+    .logo-wpp{
+        width: 1.4vw;
+        height: 1.4vw;
+    }
+    .logo-correo{
+        width: 1.2vw;
+        height: 1vw;
+        margin-right: 0.2vw;
+    }
+    .logo-ubicacion{
+        width: 1.4vw;
+        height: 1.4vw;
+    }
+} 
+
+@media only screen and (min-width: 1200px) {
+    .logo-ig{
+        width: 3vw;
+        height: 3vw;
+    }
+    .logo-tw{
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+    .logo-fb{
+        width: 3vw;
+        height: 3vw;
+    }
+    .logo{
+        width: 5vw;
+        height: 5vw;
+    }
+    .logo-wpp{
+        width: 1vw;
+        height: 1vw;
+    }
+    .logo-correo{
+        width: 0.8vw;
+        height: 0.8vw;
+        margin-right: 0.2vw;
+    }
+    .logo-ubicacion{
+        width: 1vw;
+        height: 1vw;
+    }
+}

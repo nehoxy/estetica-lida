@@ -1,9 +1,25 @@
 .imagen-1{
     margin-top: 2.5vw;
-    width: 20vw;
-    height: 20vw;
+    width: 15vw;
+    height: 15vw;
 }
 
-.cards-estaticas{
+.cards-productos{
     border-radius: 1.2vw;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .cards-productos{
+        border-radius: 1.2vw;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        
+    }
+    .imagen-1{
+        margin-top: 2.5vw;
+        width: 18vw;
+        height: 18vw;
+    }
+} 

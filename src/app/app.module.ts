@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
+import { ProductosModule } from './modules/productos/productos.module';
+
 import { SharedModule } from './shared/shared.module';
 
 
@@ -21,7 +23,9 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     AuthModule,
     HomeModule,
-    SharedModule
+    SharedModule,
+    ProductosModule
+
   ],
 
   providers: [],

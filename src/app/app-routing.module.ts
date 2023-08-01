@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path:'productos',
     loadChildren:()=>import('./modules/productos/productos.module').then(m => m.ProductosModule)
+  },
+  {
+    path:'administrador',
+    loadChildren:()=>import('./modules/administrador/administrador.module').then(m => m.AdministradorModule)
   }
 ];
 

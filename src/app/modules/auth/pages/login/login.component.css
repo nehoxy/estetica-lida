@@ -6,23 +6,17 @@
 .bg{
     background-color: #FCD5CE;
 }
-.cardlogin{
+.cardslogin{
     width: 30vw;
     height:40vw;
     border-radius: 5vw;
     margin:auto;
     display: flex;
     justify-content: center;
-    
-    
-}
-.card-body{
-    width:30vw;
-    height: 40vw;
     background-color: white;
-    display:flex;
-    justify-content: center;
+    
 }
+
 .logolida{
     width: 5vw;
     height: 5vw;
@@ -34,3 +28,66 @@
     background-color: #C8ECCB;
     border-radius:2vw;
 }
+
+/*login responsive */
+@media only screen and (max-width: 600px) {
+    .cardslogin{
+        background-color: white;
+        width: 100%;
+        height: 54vw;
+        border-radius: 5vw;
+    }
+    .logolida{
+        width: 5vw;
+        height: 5vw;
+        margin-top: 4vw;
+        margin: auto;
+        padding: 0px;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .cardslogin{
+        background-color: white;
+        width: 100%;
+        height: 54vw;
+        border-radius: 5vw;
+    }
+    .logolida{
+        width: 5vw;
+        height: 5vw;
+        margin-top: 4vw;
+        margin: auto;
+        padding: 0px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .cardslogin{
+        background-color: white;
+        width: 100%;
+        height: 40vw;
+        border-radius: 5vw;
+    }
+    .logolida{
+        width: 6vw;
+        height: 6vw;
+        margin-top: 4vw;
+        margin: auto;
+        padding: 0px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .cardslogin{
+        background-color: white;
+        width: 30vw;
+        height: 40vw;
+    }
+    .logolida{
+        width: 12vw;
+        height: 12vw;
+        margin-top: 4vw;
+        margin: auto;
+        padding: 0px;
+    }
+}
+
+

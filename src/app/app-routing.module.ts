@@ -6,7 +6,6 @@ const routes: Routes = [
   {
     path:'auth',
     loadChildren:()=>import('./modules/auth/auth.module').then(m => m.AuthModule)
-
   },
   {
     path:'home',
@@ -20,6 +19,14 @@ const routes: Routes = [
     path:'servicios',
     loadChildren:()=>import('./modules/servicios/servicios.module').then(m => m.ServiciosModule)
   },
+  {
+    path:'perfil',
+    loadChildren:()=>import('./modules/perfil/perfil.module').then(m => m.PerfilModule)
+  },
+  {
+    path:'admin',
+    loadChildren:()=>import('./modules/administrador/administrador.module').then(m => m.AdministradorModule)
+  }
 
 ];
 

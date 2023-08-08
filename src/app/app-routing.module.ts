@@ -6,7 +6,6 @@ const routes: Routes = [
   {
     path:'auth',
     loadChildren:()=>import('./modules/auth/auth.module').then(m => m.AuthModule)
-
   },
   {
     path:'home',
@@ -17,6 +16,10 @@ const routes: Routes = [
     loadChildren:()=>import('./modules/productos/productos.module').then(m => m.ProductosModule)
   },
   {
+    path:'servicios',
+    loadChildren:()=>import('./modules/servicios/servicios.module').then(m => m.ServiciosModule)
+  },
+  {
     path:'perfil',
     loadChildren:()=>import('./modules/perfil/perfil.module').then(m => m.PerfilModule)
   },
@@ -24,6 +27,7 @@ const routes: Routes = [
     path:'admin',
     loadChildren:()=>import('./modules/administrador/administrador.module').then(m => m.AdministradorModule)
   }
+
 ];
 
 @NgModule({

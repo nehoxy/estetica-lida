@@ -1,8 +1,8 @@
 .separador {
     width: 100%;
-    height: 10vw;
+    height: 11vw;
     background-color: #C8ECCB;
-    padding-top: 2vw;
+    padding-top: 1.5vw;
 }
 .logos{
     width: 4vw;
@@ -10,4 +10,30 @@
 }
 .texto{
     font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    .separador{
+        height: 11vw;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    .separador{
+        height: 11vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .separador{
+        height: 15vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .separador{
+        height: 18vw;
+    }
 }

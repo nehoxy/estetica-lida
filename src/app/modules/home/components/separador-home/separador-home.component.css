@@ -14,14 +14,14 @@
 
 @media only screen and (max-width: 600px) {
     .separador{
-        height: 11vw;
+        height: 18vw;
     }
     
 }
 
 @media only screen and (min-width: 600px) {
     .separador{
-        height: 11vw;
+        height: 18vw;
     }
 }
 
@@ -31,9 +31,14 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1200px) {
 
     .separador{
-        height: 18vw;
+        height: 11vw;
+    }
+    .logos:hover{
+        width:4.5vw;
+        height: 4.5vw;
+        transition: 0.3s;
     }
 }

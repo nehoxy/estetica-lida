@@ -6,6 +6,7 @@ import { CardsEstaticasComponent } from './components/cards-estaticas/cards-esta
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InfoHomeComponent } from './components/info-home/info-home.component';
+import { SeparadorHomeComponent } from './components/separador-home/separador-home.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { InfoHomeComponent } from './components/info-home/info-home.component';
     HomeComponent,
     CardsEstaticasComponent,
     CarrouselComponent,
-    InfoHomeComponent
+    InfoHomeComponent,
+    SeparadorHomeComponent
   ],
   imports: [
     CommonModule,

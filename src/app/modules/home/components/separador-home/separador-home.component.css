@@ -1,4 +1,13 @@
 .separador {
     width: 100%;
+    height: 10vw;
     background-color: #C8ECCB;
+    padding-top: 2vw;
+}
+.logos{
+    width: 4vw;
+    height: 4vw;
+}
+.texto{
+    font-family: 'Poppins', sans-serif;
 }

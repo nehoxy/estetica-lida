@@ -72,13 +72,21 @@
 @media only screen and (max-width: 600px) {
     .contenedorPrincipal{
         padding-left: 0;
+        padding-right: 0;
     }
+    /* Primer contenedor */
+    .primerContenedor{
+        margin-bottom: 30vw;
+        margin-top: 20vw;
+    }
+
     .imageLeft{
         width:100%;
         height:auto;
         margin-left:0;
         border-radius: 10vw 10vw 0 0;
     }
+    
     .textRight{
         margin-left: 0;
         margin-top: 0; 
@@ -107,33 +115,107 @@
         margin-left:1vw;
         
     }
+    /* Segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        margin-left:0;
+        border-radius: 0 0 10vw 10vw;
+    }
+
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 10vw 10vw 0 0;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorPrueba2{
+        display: none;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    
 } 
+
 @media only screen and (min-width: 600px) {
+   .contenedorPrincipal{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Primer contenedor */
+    .primerContenedor{
+        margin-bottom: 30vw;
+        margin-top: 20vw;
+    }
+    
     .imageLeft{
         width:100%;
         height:auto;
         margin-left:0;
+        border-radius: 10vw 10vw 0 0;
     }
+    
     .textRight{
         margin-left: 0;
-        margin-top: 4vw; 
+        margin-top: 0; 
     }
-    .contenedorPrincipal{
-        position:relative;
-        padding-left: 0;
-    }
-
+    
     .contenedorText{
         background-color: #F8EDEB;
         display: block;
         width: 100%;
-        height: 87.6%;
+        height: 110%;
         margin-top: 0;
-        border-radius: 0 0 0 0;
+        border-radius: 0 0 10vw 10vw;
+        padding:0px 3vw 3vw 3vw;
+
         
     }
     .contenedorPrueba{
-        display:none;
+        display: none;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    /* Segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        margin-left:0;
+        border-radius: 0 0 10vw 10vw;
+    }
+
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 10vw 10vw 0 0;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorPrueba2{
+        display: none;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
         position:absolute;
@@ -147,21 +229,76 @@
 } 
 
 @media only screen and (min-width: 768px) {
+    .contenedorPrincipal{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Primer contenedor */
+    .primerContenedor{
+        margin-bottom: 30vw;
+        margin-top: 20vw;
+    }
+    
     .imageLeft{
         width:100%;
         height:auto;
         margin-left:0;
+        border-radius: 10vw 10vw 0 0;
     }
+    
     .textRight{
         margin-left: 0;
-        margin-top: 4vw; 
+        margin-top: 0; 
+    }
+    
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 0 0 10vw 10vw;
+        padding:0px 3vw 3vw 3vw;
+
+        
     }
     .contenedorPrueba{
-        display:none;
+        display: none;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
         position:absolute;
-        display:none;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    /* Segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        margin-left:0;
+        border-radius: 0 0 10vw 10vw;
+    }
+
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 10vw 10vw 0 0;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorPrueba2{
+        display: none;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
         width: 100%;
         height: 87%;
         margin-top:2.5vw;
@@ -220,12 +357,87 @@
         margin-left:1vw;
         
     }
+    .contenedorPrueba2{
+        border: 2px solid #BB8588;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
 
    
     
 }
 
 @media only screen and (min-width: 1200px) {
-   
+    .primerContenedor{
+        margin-top: 10vw;
+        margin-bottom: 10vw;
+    }
+    .imageLeft{
+        width:100%;
+        height:auto;
+       border-radius: 2vw 0 0 2vw;
+    }
+    
+    .imageRight{
+        width:100%;
+        height:auto;
+        border-radius: 0 2vw 2vw 0;
+    }
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 87.6%;
+        margin-top: 4vw;
+        border-radius: 0 8vw 8vw 0;
+        padding: 3.5vw 1.5vw 1.5vw 1.5vw;
+        
+    }
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 88.4%;
+        margin-top: 4vw;
+        border-radius: 8vw 0 0 8vw;
+        padding: 3.5vw 1.5vw 1.5vw 1.5vw;
+    }
+
+    .contenedorPrincipal{
+        position:relative;
+      
+    }
+    
+    .contenedorPrueba{
+        display: block;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    .contenedorPrueba2{
+        display: block;
+        border: 2px solid #BB8588;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    
     
 }

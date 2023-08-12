@@ -161,12 +161,33 @@
 
 
 @media only screen and (min-width: 992px) {
-    .imageLeft{
-        width:-moz-available;
-        height:auto;
-        margin-left:0;
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 87.6%;
+        margin-top: 4vw;
+        border-radius: 0 8vw 8vw 0;
+        padding: 0 1.5vw 1.5vw 1.5vw;
+        
     }
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 88.4%;
+        margin-top: 4vw;
+        border-radius: 8vw 0 0 8vw;
+        padding: 0 1.5vw 1.5vw 1.5vw;
+    }
+
+    .contenedorPrincipal{
+        position:relative;
+      
+    }
+    
     .contenedorPrueba{
+        display: block;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
         position:absolute;
@@ -177,10 +198,11 @@
         margin-left:1vw;
         
     }
-    .textRight{
-        margin-left: 3vw;
-        margin-top: 0; 
-        padding-right:5vw;
-        text-align: justify;
-    }
+
+   
+    
+}
+@media only screen and (min-width: 1200px) {
+   
+    
 }

@@ -4,10 +4,14 @@
     height:30vw;
     margin-left: 5vw;
     margin-top: 4vw;
-    /*
-    outline: 1px solid #FFB5A7;
-    outline-offset: -4px;
-    */
+  
+}
+.imageRight{
+    width:40vw;
+    height:30vw;
+    margin-top: 4vw;
+  
+
 }
 
 .contenedorText{
@@ -168,6 +172,17 @@
 
 
 @media only screen and (min-width: 992px) {
+    .imageLeft{
+        width:100%;
+        height:auto;
+       border-radius: 2vw 0 0 2vw;
+    }
+    
+    .imageRight{
+        width:100%;
+        height:auto;
+        border-radius: 0 2vw 2vw 0;
+    }
     .contenedorText{
         background-color: #F8EDEB;
         display: block;
@@ -209,6 +224,7 @@
    
     
 }
+
 @media only screen and (min-width: 1200px) {
    
     

@@ -1,4 +1,4 @@
-
+/* Imagen de la izquierda en el primer contenedor*/
 .imageLeft{
     width:40vw;
     height:30vw;
@@ -6,6 +6,8 @@
     margin-top: 4vw;
   
 }
+
+/* Imagen de la derecha en el primer contenedor*/
 .imageRight{
     width:40vw;
     height:30vw;
@@ -14,6 +16,7 @@
 
 }
 
+/* Contenedor del texto del primer contenedor*/
 .contenedorText{
     background-color: #F8EDEB;
     display: block;
@@ -23,6 +26,8 @@
     border-radius: 0 8vw 8vw 0;
     
 }
+
+/* Contenedor del texto del segundo contenedor*/
 .contenedorText2{
     background-color: #FCD5CE;
     display: block;
@@ -32,12 +37,15 @@
     border-radius: 8vw 0 0 8vw;
     
 }
+
+/* Contenedor principal de los dos contenedores */
 .contenedorPrincipal{
     position:relative;
   
 }
 
-.contenedorPrueba{
+/* Contenedor del borde del primer contenedor*/
+.contenedorBorde{
     border: 2px solid #FFB5A7;
     border-radius: 2.5vw;
     position:absolute;
@@ -48,7 +56,9 @@
     margin-left:1vw;
     
 }
-.contenedorPrueba2{
+
+/* Contenedor del borde del segundo contenedor*/
+.contenedorBorde2{
     border: 2px solid #BB8588;
     border-radius: 2.5vw;
     position:absolute;
@@ -74,7 +84,7 @@
         padding-left: 0;
         padding-right: 0;
     }
-    /* Primer contenedor */
+    /* Propiedades del primer contenedor */
     .primerContenedor{
         margin-bottom: 30vw;
         margin-top: 20vw;
@@ -103,7 +113,7 @@
 
         
     }
-    .contenedorPrueba{
+    .contenedorBorde{
         display: none;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -115,7 +125,8 @@
         margin-left:1vw;
         
     }
-    /* Segundo contenedor */
+
+    /* Propiedades del segundo contenedor */
     .imageRight{
         width:100%;
         height:auto;
@@ -134,7 +145,7 @@
 
         
     }
-    .contenedorPrueba2{
+    .contenedorBorde2{
         display: none;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -154,7 +165,7 @@
         padding-left: 0;
         padding-right: 0;
     }
-    /* Primer contenedor */
+    /* Propiedades del primer contenedor */
     .primerContenedor{
         margin-bottom: 30vw;
         margin-top: 20vw;
@@ -183,7 +194,7 @@
 
         
     }
-    .contenedorPrueba{
+    .contenedorBorde{
         display: none;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -195,7 +206,7 @@
         margin-left:1vw;
         
     }
-    /* Segundo contenedor */
+     /* Propiedades del segundo contenedor */
     .imageRight{
         width:100%;
         height:auto;
@@ -214,7 +225,7 @@
 
         
     }
-    .contenedorPrueba2{
+    .contenedorBorde2{
         display: none;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -233,7 +244,7 @@
         padding-left: 0;
         padding-right: 0;
     }
-    /* Primer contenedor */
+     /* Propiedades del primer contenedor */
     .primerContenedor{
         margin-bottom: 30vw;
         margin-top: 20vw;
@@ -262,7 +273,7 @@
 
         
     }
-    .contenedorPrueba{
+    .contenedorBorde{
         display: block;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -274,7 +285,7 @@
         margin-left:1vw;
         
     }
-    /* Segundo contenedor */
+     /* Propiedades del segundo contenedor */
     .imageRight{
         width:100%;
         height:auto;
@@ -293,7 +304,7 @@
 
         
     }
-    .contenedorPrueba2{
+    .contenedorBorde2{
         display: block;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -309,16 +320,12 @@
 
 
 @media only screen and (min-width: 992px) {
-    .imageLeft{
+    
+     /* Propiedades del primer contenedor */
+     .imageLeft{
         width:100%;
         height:auto;
        border-radius: 2vw 0 0 2vw;
-    }
-    
-    .imageRight{
-        width:100%;
-        height:auto;
-        border-radius: 0 2vw 2vw 0;
     }
     .contenedorText{
         background-color: #F8EDEB;
@@ -330,22 +337,12 @@
         padding: 0 1.5vw 1.5vw 1.5vw;
         
     }
-    .contenedorText2{
-        background-color: #FCD5CE;
-        display: block;
-        width: 100%;
-        height: 88.4%;
-        margin-top: 4vw;
-        border-radius: 8vw 0 0 8vw;
-        padding: 0 1.5vw 1.5vw 1.5vw;
-    }
 
     .contenedorPrincipal{
         position:relative;
-      
     }
-    
-    .contenedorPrueba{
+
+    .contenedorBorde{
         display: block;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -357,7 +354,22 @@
         margin-left:1vw;
         
     }
-    .contenedorPrueba2{
+    /* Propiedades del segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        border-radius: 0 2vw 2vw 0;
+    }
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 88.4%;
+        margin-top: 4vw;
+        border-radius: 8vw 0 0 8vw;
+        padding: 0 1.5vw 1.5vw 1.5vw;
+    }
+    .contenedorBorde2{
         border: 2px solid #BB8588;
         border-radius: 2.5vw;
         position:absolute;
@@ -374,6 +386,8 @@
 }
 
 @media only screen and (min-width: 1200px) {
+
+    /* Propiedades del primer contenedor */
     .primerContenedor{
         margin-top: 10vw;
         margin-bottom: 10vw;
@@ -383,12 +397,7 @@
         height:auto;
        border-radius: 2vw 0 0 2vw;
     }
-    
-    .imageRight{
-        width:100%;
-        height:auto;
-        border-radius: 0 2vw 2vw 0;
-    }
+
     .contenedorText{
         background-color: #F8EDEB;
         display: block;
@@ -399,22 +408,13 @@
         padding: 3.5vw 1.5vw 1.5vw 1.5vw;
         
     }
-    .contenedorText2{
-        background-color: #FCD5CE;
-        display: block;
-        width: 100%;
-        height: 88.4%;
-        margin-top: 4vw;
-        border-radius: 8vw 0 0 8vw;
-        padding: 3.5vw 1.5vw 1.5vw 1.5vw;
-    }
 
     .contenedorPrincipal{
         position:relative;
       
     }
     
-    .contenedorPrueba{
+    .contenedorBorde{
         display: block;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
@@ -426,7 +426,22 @@
         margin-left:1vw;
         
     }
-    .contenedorPrueba2{
+    /* Propiedades del segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        border-radius: 0 2vw 2vw 0;
+    }
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 88.4%;
+        margin-top: 4vw;
+        border-radius: 8vw 0 0 8vw;
+        padding: 3.5vw 1.5vw 1.5vw 1.5vw;
+    }
+    .contenedorBorde2{
         display: block;
         border: 2px solid #BB8588;
         border-radius: 2.5vw;

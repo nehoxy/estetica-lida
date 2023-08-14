@@ -255,7 +255,7 @@
         background-color: #F8EDEB;
         display: block;
         width: 100%;
-        height: 200%;
+        height: 150%;
         margin-top: 0;
         border-radius: 0 0 10vw 10vw;
         padding:0px 3vw 3vw 3vw;
@@ -263,7 +263,7 @@
         
     }
     .contenedorPrueba{
-        display: none;
+        display: block;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
         position:absolute;
@@ -294,7 +294,7 @@
         
     }
     .contenedorPrueba2{
-        display: none;
+        display: block;
         border: 2px solid #FFB5A7;
         border-radius: 2.5vw;
         position:absolute;

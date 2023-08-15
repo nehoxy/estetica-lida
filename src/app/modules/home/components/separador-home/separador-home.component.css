@@ -8,20 +8,36 @@
     width: 4vw;
     height: 4vw;
 }
+.logoTarjeta{
+    width: 3.5vw;
+    height: 3.5vw;
+}
 .texto{
     font-family: 'Poppins', sans-serif;
 }
 
 @media only screen and (max-width: 600px) {
     .separador{
-        height: 18vw;
+        height: 65vw !important;
+        padding: 4vw;
+    }
+    .logos{
+    width: 7vw;
+    height: 7vw;
+    }
+    .texto{
+        font-size: 3vw !important;
+    }
+    .logoTarjeta{
+        width: 6.5vw;
+        height: 6.5vw;
     }
     
 }
 
 @media only screen and (min-width: 600px) {
     .separador{
-        height: 18vw;
+        height: 15vw;
     }
 }
 
@@ -39,6 +55,11 @@
     .logos:hover{
         width:4.5vw;
         height: 4.5vw;
+        transition: 0.3s;
+    }
+    .logoTarjeta:hover{
+        width:4vw;
+        height: 4vw;
         transition: 0.3s;
     }
 }

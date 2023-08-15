@@ -247,7 +247,7 @@
      /* Propiedades del primer contenedor */
     .primerContenedor{
         margin-bottom: 30vw;
-        margin-top: 20vw;
+        margin-top: 1vw;
     }
     
     .imageLeft{
@@ -389,7 +389,7 @@
 
     /* Propiedades del primer contenedor */
     .primerContenedor{
-        margin-top: 10vw;
+        margin-top: 3vw;
         margin-bottom: 10vw;
     }
     .imageLeft{

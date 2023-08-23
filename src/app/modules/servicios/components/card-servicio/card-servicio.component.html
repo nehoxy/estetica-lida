@@ -1,18 +1,18 @@
 <div class="container" style="margin-top:50px;margin-bottom:50px;">
     <div class="row">
         <h1 class="titulo fs-3 mb-5">Manicuria</h1>
-        <div class="col-md-3 me-5">
+        <div class="col-md-3 me-5" *ngFor="let servicio of listaServicios">
             <div class="card-sl">
                 <div class="card-image">
-                    <img src="../../../../../assets/img-card-servicio/manicuria-rusa.jpg" />
+                    <img src="{{servicio.imagen}}" />
                 </div>
 
                 <div class="card-heading">
-                    Manicuria Rusa
+                    {{servicio.titulo}}
                 </div>
                 <div class="card-text-a">
-                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Saber más</a>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <a href="" [attr.data-toggle]="modal" [attr.data-target]="'#myModal'+servicio._id" >Saber más</a>
+                    <div class="modal fade" id="myModal{{servicio._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -20,7 +20,7 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                              ...
+                              servicio.descripcion
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -31,43 +31,7 @@
                     </div>
                 </div>
                 <div class="card-text">
-                    $2.000
-                </div>
-                <a href="#" class="card-button"> Sacar turno</a>
-            </div>
-        </div>
-        <div class="col-md-3 ">
-            <div class="card-sl">
-                <div class="card-image">
-                    <img src="../../../../../assets/img-card-servicio/esmaltado-semi-permanente.jpg" />
-                </div>
-
-                <div class="card-heading ">
-                    Esmaltado Semi
-                </div>
-                <div class="card-text-a">
-                    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Saber más</a>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                              ...
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                      
-                </div>
-                <div class="card-text">
-                    $3.000
+                    {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
                 </div>
                 <a href="#" class="card-button"> Sacar turno</a>
             </div>

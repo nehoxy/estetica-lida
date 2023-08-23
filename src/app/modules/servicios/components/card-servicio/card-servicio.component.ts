@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { ViewChild } from '@angular/core';
+import * as bootstrap from 'bootstrap'
+import * as $ from 'jquery'
+
 @Component({
   selector: 'app-card-servicio',
   templateUrl: './card-servicio.component.html',
@@ -7,7 +9,7 @@ import { ViewChild } from '@angular/core';
 })
 export class CardServicioComponent {
 
- listaServicios:any = [
+ listaServicios = [
   {
     id:1, 
     titulo:"Manicuria Rusa",

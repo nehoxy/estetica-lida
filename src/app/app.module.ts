@@ -10,7 +10,11 @@ import { ProductosModule } from './modules/productos/productos.module';
 
 import { SharedModule } from './shared/shared.module';
 
-
+//firebase
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat'; //firestore
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; //autentificacion
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'; //storage (imagenes)
 
 
 @NgModule({
@@ -24,7 +28,11 @@ import { SharedModule } from './shared/shared.module';
     AuthModule,
     HomeModule,
     SharedModule,
-    ProductosModule
+    ProductosModule,
+    //firebase
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireStorageModule
 
   ],
 

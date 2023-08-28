@@ -10,7 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconButton } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     ServiciosComponent,
@@ -24,8 +24,7 @@ import { MatIconButton } from '@angular/material/button';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
-    MatIconButton
+    MatButtonModule
   ],
   exports:[
     MatIconModule,

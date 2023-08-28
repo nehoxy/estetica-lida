@@ -1,25 +1,28 @@
-<div class="container m-4">
-    <div class="row">
-        <div class="col-lg-4">
-            <h2 class=" fs-2 mt-4 ms-3 mb-0">Servicios</h2>
+<div class="container-flex m-4 mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-4 col-12 col-sm-12  text-lg-start ms-5 ">
+            <h2 class=" fs-2 mt-4 ms-3 mb-0">Productos</h2>
         </div>
-        <!--
-        <div class="col-lg-4">
-            
-         
-            <input class="form-control me-2" type="search"   aria-label="Search">
-            
-        </div>-->
-        <form class="example-form col-lg-4">
-            <mat-icon-button>search</mat-icon-button>
-            <mat-form-field class="example-full-width">
-                
-              <input type="search" matInput >
-              
-            </mat-form-field>
-        </form>
-          
+        <div class="col-lg-4 col-12 col-sm-12 text-lg-center barra input-wrapper">
+            <input class="form-control busqueda me-2" type="search" placeholder="buscar" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="col-lg-2 col-6 col-sm-6 text-lg-end barra align-items-end tamaño-filtros">
+            <select class="form-select filtros" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Precio</option>
+                <option value="1">Mayor precio</option>
+                <option value="2">Menor precio</option>
+              </select>
+        </div>
+        <div class="col-lg-2 col-6 col-sm-6 text-lg-end barra tamaño-filtros">
+            <select class="form-select filtros " id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Categoria</option>
+                <option value="1">Belleza facial</option>
+                <option value="2">Estetica corporal</option>
+                <option value="3">Manicuria y pedicuria</option>
+              </select>
+        </div>
     </div>
 </div>
-
-<hr>

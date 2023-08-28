@@ -11,8 +11,8 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 })
 
 export class TablaVentasAdministradorComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<TablaVentas>(ELEMENT_DATA);
+  displayedColumns: string[] = ['position','cliente', 'pago', 'fecha', 'metodopago'];
+  dataSource = new MatTableDataSource<TablaVentas>(CLIENT_DATA);
 
   @ViewChild(MatPaginator) paginator:any = MatPaginator;
 
@@ -26,32 +26,33 @@ export class TablaVentasAdministradorComponent implements AfterViewInit {
 
 
   export interface TablaVentas {
-  name: string;
   position: number;
-  weight: number;
-  symbol: string;
+  cliente: string;
+  pago:string;
+  fecha: string;
+  metodopago: string;
   }
 
-  const ELEMENT_DATA: TablaVentas[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  {position: 11, name: 'Sodium', weight: 22.9897, symbol: 'Na'},
-  {position: 12, name: 'Magnesium', weight: 24.305, symbol: 'Mg'},
-  {position: 13, name: 'Aluminum', weight: 26.9815, symbol: 'Al'},
-  {position: 14, name: 'Silicon', weight: 28.0855, symbol: 'Si'},
-  {position: 15, name: 'Phosphorus', weight: 30.9738, symbol: 'P'},
-  {position: 16, name: 'Sulfur', weight: 32.065, symbol: 'S'},
-  {position: 17, name: 'Chlorine', weight: 35.453, symbol: 'Cl'},
-  {position: 18, name: 'Argon', weight: 39.948, symbol: 'Ar'},
-  {position: 19, name: 'Potassium', weight: 39.0983, symbol: 'K'},
-  {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
+  const CLIENT_DATA: TablaVentas[] = [
+  {position: 1, cliente: 'Hydrogen', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 2, cliente: 'Helium', pago: 'realizado', fecha: '1/1/1' , metodopago:'efectivo'},
+  {position: 3, cliente: 'Lithium', pago: 'realizado', fecha: '1/1/1' , metodopago:'efectivo'},
+  {position: 4, cliente: 'Beryllium', pago: 'realizado', fecha: '1/1/1' , metodopago:'efectivo'},
+  {position: 5, cliente: 'Boron', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo' },
+  {position: 6, cliente: 'Carbon', pago: 'realizado', fecha: '1/1/1' , metodopago:'efectivo'}, 
+  {position: 7, cliente: 'Nitrogen', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 8, cliente: 'Oxygen', pago: 'realizado', fecha: '1/1/1' , metodopago:'efectivo'},
+  {position: 9, cliente: 'Fluorine', pago: 'realizado', fecha: '1/1/1' , metodopago:'efectivo'},
+  {position: 10, cliente: 'Neon', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 11, cliente: 'Sodium', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 12, cliente: 'Magnesium', pago: 'realizado', fecha: '1/1/1' , metodopago:'efectivo'},
+  {position: 13, cliente: 'Aluminum', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 14, cliente: 'Silicon', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 15, cliente: 'Phosphorus', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 16, cliente: 'Sulfur', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 17, cliente: 'Chlorine', pago: 'realizado' , fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 18, cliente: 'Argon', pago: 'realizado' , fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 19, cliente: 'Potassium', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo'},
+  {position: 20, cliente: 'Calcium', pago: 'realizado', fecha: '1/1/1', metodopago:'efectivo' },
   ];
 

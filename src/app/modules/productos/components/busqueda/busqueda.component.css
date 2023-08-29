@@ -34,6 +34,10 @@ hr {
     width: 15vw;
 }
 
+.tamaño-barra{
+    width: 12vw;
+}
+
 .busqueda{
     border-radius: 5vw;
     background-color: #f8edeb;
@@ -61,20 +65,76 @@ hr {
 
 
 @media only screen and (max-width: 600px) {
-    
+    .barra{
+        padding-top: 2.4vw;
+        
+    }
+
+    .tamaño-filtros{
+        width: 30vw;
+    }
+
+    .tamaño-text{
+        width: 33vw;
+    }
+    .tamaño-barra{
+        width: 30vw;
+    }
+
 } 
 
 
 @media only screen and (min-width: 600px) {
-    
+    .barra{
+        padding-top: 2.4vw;
+        
+    }
+
+    .tamaño-filtros{
+        width: 30vw;
+    }
+
+    .tamaño-text{
+        width: 33vw;
+    }
+    .tamaño-barra{
+        width: 30vw;
+    }
 } 
 
 
-@media only screen and (min-width: 768px) {
-    
+@media only screen and (min-width: 768px) {  
+    .barra{
+        padding-top: 2vw;
+        
+    }
+
+    .tamaño-filtros{
+        width: 26vw;
+    }
+
+    .tamaño-text{
+        width: 29vw;
+    }
+    .tamaño-barra{
+        width: 26vw;
+    }
+
 } 
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) {    
+    .barra{
+        padding-top: 1.5vw;
+        
+    }
+
+    .tamaño-filtros{
+        width: 12vw;
+    }
+
+    .tamaño-text{
+        width: 15vw;
+    }
     
 }
 

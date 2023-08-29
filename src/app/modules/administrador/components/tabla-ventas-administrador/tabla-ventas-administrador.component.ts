@@ -11,7 +11,7 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 })
 
 export class TablaVentasAdministradorComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position','cliente', 'pago', 'fecha', 'metodopago','metodoenvio','envio','costoenvio','montoTotal'];
+  displayedColumns: string[] = ['position','cliente', 'pago', 'fecha', 'metodopago','metodoenvio','envio','costoenvio','montoTotal', 'archivar'];
   dataSource = new MatTableDataSource<TablaVentas>(CLIENT_DATA);
 
   @ViewChild(MatPaginator) paginator:any = MatPaginator;
@@ -20,9 +20,6 @@ export class TablaVentasAdministradorComponent implements AfterViewInit {
    this.dataSource.paginator = this.paginator;
   }
 }
-
-
-
 
 
   export interface TablaVentas {

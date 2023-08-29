@@ -7,7 +7,7 @@ import { CardProductoComponent } from './components/card-producto/card-producto.
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
-import { CarritoComponent } from './components/carrito/carrito.component';
+
 
 
 
@@ -17,7 +17,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     CardProductoComponent,
     PaginationComponent,
     ProductosComponent,
-    CarritoComponent,
+
   ],
   imports: [
     CommonModule,

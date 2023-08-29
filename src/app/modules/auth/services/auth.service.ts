@@ -8,8 +8,8 @@ export class AuthService {
 
   constructor(public auth:AngularFireAuth) { }
 
-  registrar(nombre:string,contrasena:string){
-    return this.auth.createUserWithEmailAndPassword(nombre,contrasena)
+  registrar(nombre:string,apellido:string,email:string,contrasena:string){
+    return this.auth.createUserWithEmailAndPassword(nombre,apellido,email,contrasena)
   }
 
   async getUid(){

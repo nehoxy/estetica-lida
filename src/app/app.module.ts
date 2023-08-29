@@ -14,7 +14,8 @@ import { SharedModule } from './shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire/compat'; //firestore
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'; //autentificacion
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'; //storage (imagenes)
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+
 
 
 @NgModule({

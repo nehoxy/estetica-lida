@@ -34,9 +34,10 @@ hr {
     width: 15vw;
 }
 
+/*
 .tamaño-barra{
     width: 12vw;
-}
+}*/
 
 .busqueda{
     border-radius: 5vw;
@@ -60,80 +61,95 @@ hr {
 
 .input-wrapper {
 	position: relative;
-	width: 25vw;
+    
 }
 
 
 @media only screen and (max-width: 600px) {
-    .barra{
-        padding-top: 2.4vw;
-        
-    }
-
     .tamaño-filtros{
-        width: 30vw;
+        width: 50vw;
+        margin-top: 1vw;
     }
-
-    .tamaño-text{
-        width: 33vw;
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 55%;
+        left: 88%;
+        transform: translateY(-50%);
     }
-    .tamaño-barra{
-        width: 30vw;
-    }
-
 } 
 
 
 @media only screen and (min-width: 600px) {
-    .barra{
-        padding-top: 2.4vw;
-        
-    }
-
     .tamaño-filtros{
-        width: 30vw;
+        width: 50vw;
     }
-
-    .tamaño-text{
-        width: 33vw;
-    }
-    .tamaño-barra{
-        width: 30vw;
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 55%;
+        left: 88%;
+        transform: translateY(-50%);
     }
 } 
 
 
 @media only screen and (min-width: 768px) {  
-    .barra{
-        padding-top: 2vw;
-        
-    }
-
     .tamaño-filtros{
-        width: 26vw;
+        width: 18vw;
+    }
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 55%;
+        left: 94%;
+        transform: translateY(-50%);
     }
 
-    .tamaño-text{
-        width: 29vw;
+} 
+@media only screen and (min-width: 1000px) {  
+    .tamaño-filtros{
+        width: 13vw;
     }
-    .tamaño-barra{
-        width: 26vw;
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 60%;
+        left: 87%;
+        transform: translateY(-50%);
     }
 
 } 
 
 @media only screen and (min-width: 1200px) {    
-    .barra{
-        padding-top: 1.5vw;
-        
+    .input-wrapper {
+        position: relative;
+        width: 25vw;
     }
-
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 69%; 
+        left: 85%;
+        transform: translateY(-50%);
+    }
     .tamaño-filtros{
         width: 12vw;
-    }
-
-    .tamaño-text{
-        width: 15vw;
     }
     
 }

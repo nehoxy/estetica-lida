@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Usuario } from 'src/app/models/usuario';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -23,7 +24,7 @@ export class RegisterComponent {
   //creamos nueva coleccion para usuarios
   coleccionUsuarios : Usuario[] = [];
 
-  constructor(public servicioAuth:AuthService, public servicioFirestore:FirestoreService){
+  constructor(public servicioAuth:AuthService, public servicioFirestore:FirestoreService, public _router:Router){
 
   }
 
@@ -48,7 +49,7 @@ export class RegisterComponent {
 
     //guarda el nuevo usuario
     this.guardarUser();
-
+    this._router.navigate(['home'])
   }
 
   async guardarUser(){

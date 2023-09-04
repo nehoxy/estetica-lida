@@ -13,7 +13,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="firstName">Nombre</label>
-                    <input  [(ngModel)]='usuarios.nombre' matInput required type="text" id="firstName" class="form-control form-control-lg" />
+                    <input  [(ngModel)]='usuarios.nombre' matInput name="firstName" required type="text" id="firstName" class="form-control form-control-lg" />
                     
                   </div>
 
@@ -22,7 +22,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="lastName">Apellido</label>
-                    <input  [(ngModel)]='usuarios.apellido' matInput required type="text" id="lastName" class="form-control form-control-lg" />
+                    <input  [(ngModel)]='usuarios.apellido' matInput name="surname" required type="text" id="lastName" class="form-control form-control-lg" />
                     
                   </div>
 
@@ -36,7 +36,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="emailAddress">Email</label>
-                    <input  [(ngModel)]='usuarios.email' matInput required type="email" id="emailAddress" class="form-control form-control-lg" />
+                    <input  [(ngModel)]='usuarios.email' matInput name="email" required type="email" id="emailAddress" class="form-control form-control-lg" />
                     
                   </div>
 
@@ -47,7 +47,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="emailAddress">Contraseña</label>
-                    <input  [(ngModel)]='usuarios.contrasena' matInput required type="password" id="password" class="form-control form-control-lg" />
+                    <input  [(ngModel)]='usuarios.contrasena' matInput name="pass" required type="password" id="password" class="form-control form-control-lg" />
                     
                   </div>
                   
@@ -57,8 +57,8 @@
               <div class="row">
                 <div class="mb-4 pb-2">
                   <div class="form-outline">
-                    <label class="form-label" for="emailAddress">Confirmar Contraseña</label>
-                    <input type="password" id="emailAddress" class="form-control form-control-lg" />
+                    <label class="form-label" for="">Confirmar Contraseña</label>
+                    <input type="password" name="pass2" class="form-control form-control-lg" />
                     
                   </div>
                 </div>

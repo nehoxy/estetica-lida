@@ -10,5 +10,8 @@
     border-radius: 5vw;
 }
 .color-tabla{
-    background-color: #9F9F9F;
+    background-color: #EFEFEF;
+}
+.option{
+    font-family: 'poppins';
 }

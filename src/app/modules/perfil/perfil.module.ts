@@ -5,13 +5,15 @@ import { PerfilRoutingModule } from './perfil-routing.module';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { PanelUserComponent } from './components/panel-user/panel-user.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
 
 
 
 @NgModule({
   declarations: [
     PerfilComponent,
-    PanelUserComponent
+    PanelUserComponent,
+    DatosPersonalesComponent
   ],
   imports: [
     CommonModule,

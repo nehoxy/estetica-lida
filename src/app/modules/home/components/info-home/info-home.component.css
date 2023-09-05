@@ -1,16 +1,77 @@
+/* Imagen de la izquierda en el primer contenedor*/
 .imageLeft{
     width:40vw;
     height:30vw;
     margin-left: 5vw;
     margin-top: 4vw;
+  
+}
+
+/* Imagen de la derecha en el primer contenedor*/
+.imageRight{
+    width:40vw;
+    height:30vw;
+    margin-top: 4vw;
+  
+
+}
+
+/* Contenedor del texto del primer contenedor*/
+.contenedorText{
+    background-color: #F8EDEB;
+    display: block;
+    width: 100%;
+    height: 87.6%;
+    margin-top: 4vw;
+    border-radius: 0 8vw 8vw 0;
+    
+}
+
+/* Contenedor del texto del segundo contenedor*/
+.contenedorText2{
+    background-color: #FCD5CE;
+    display: block;
+    width: 100%;
+    height: 88.4%;
+    margin-top: 4vw;
+    border-radius: 8vw 0 0 8vw;
+    
+}
+
+/* Contenedor principal de los dos contenedores */
+.contenedorPrincipal{
+    position:relative;
+  
+}
+
+/* Contenedor del borde del primer contenedor*/
+.contenedorBorde{
+    border: 2px solid #FFB5A7;
+    border-radius: 2.5vw;
+    position:absolute;
+
+    width: 100%;
+    height: 87%;
+    margin-top:2.5vw;
+    margin-left:1vw;
+    
+}
+
+/* Contenedor del borde del segundo contenedor*/
+.contenedorBorde2{
+    border: 2px solid #BB8588;
+    border-radius: 2.5vw;
+    position:absolute;
+
+    width: 100%;
+    height: 87%;
+    margin-top:2.5vw;
+    margin-left:1vw;
+    
 }
 
 .textRight{
-    margin-left: 5vw;
-    margin-top: 4vw; 
-}
-.textRight{
-    margin-left: 5vw;
+    margin-left: 2vw;
     margin-top: 0; 
 }
 
@@ -19,49 +80,379 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .contenedorPrincipal{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Propiedades del primer contenedor */
+    .primerContenedor{
+        margin-bottom: 30vw;
+        margin-top: 20vw;
+    }
+
     .imageLeft{
         width:100%;
         height:auto;
         margin-left:0;
+        border-radius: 10vw 10vw 0 0;
     }
+    
     .textRight{
         margin-left: 0;
-        margin-top: 4vw; 
+        margin-top: 0; 
     }
+    
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 0 0 10vw 10vw;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorBorde{
+        display: none;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+
+    /* Propiedades del segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        margin-left:0;
+        border-radius: 0 0 10vw 10vw;
+    }
+
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 10vw 10vw 0 0;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorBorde2{
+        display: none;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    
 } 
+
 @media only screen and (min-width: 600px) {
+   .contenedorPrincipal{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Propiedades del primer contenedor */
+    .primerContenedor{
+        margin-bottom: 30vw;
+        margin-top: 20vw;
+    }
+    
     .imageLeft{
         width:100%;
         height:auto;
         margin-left:0;
+        border-radius: 10vw 10vw 0 0;
     }
+    
     .textRight{
         margin-left: 0;
-        margin-top: 4vw; 
+        margin-top: 0; 
+    }
+    
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 0 0 10vw 10vw;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorBorde{
+        display: none;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+     /* Propiedades del segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        margin-left:0;
+        border-radius: 0 0 10vw 10vw;
+    }
+
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 110%;
+        margin-top: 0;
+        border-radius: 10vw 10vw 0 0;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorBorde2{
+        display: none;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
     }
 } 
 
 @media only screen and (min-width: 768px) {
+    .contenedorPrincipal{
+        padding-left: 0;
+        padding-right: 0;
+    }
+     /* Propiedades del primer contenedor */
+    .primerContenedor{
+        margin-bottom: 30vw;
+        margin-top: 1vw;
+    }
+    
     .imageLeft{
         width:100%;
         height:auto;
         margin-left:0;
+        border-radius: 10vw 10vw 0 0;
     }
+    
     .textRight{
         margin-left: 0;
-        margin-top: 4vw; 
+        margin-top: 0; 
+    }
+    
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 150%;
+        margin-top: 0;
+        border-radius: 0 0 10vw 10vw;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorBorde{
+        display: block;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+     /* Propiedades del segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        margin-left:0;
+        border-radius: 0 0 10vw 10vw;
+    }
+
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 200%;
+        margin-top: 0;
+        border-radius: 10vw 10vw 0 0;
+        padding:0px 3vw 3vw 3vw;
+
+        
+    }
+    .contenedorBorde2{
+        display: block;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
     }
 } 
 
 
 @media only screen and (min-width: 992px) {
-    .imageLeft{
-        width:-moz-available;
+    
+     /* Propiedades del primer contenedor */
+     .imageLeft{
+        width:100%;
         height:auto;
-        margin-left:0;
+       border-radius: 2vw 0 0 2vw;
     }
-    .textRight{
-        margin-left: 0;
-        margin-top: 4vw; 
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 87.6%;
+        margin-top: 4vw;
+        border-radius: 0 8vw 8vw 0;
+        padding: 0 1.5vw 1.5vw 1.5vw;
+        
     }
+
+    .contenedorPrincipal{
+        position:relative;
+    }
+
+    .contenedorBorde{
+        display: block;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    /* Propiedades del segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        border-radius: 0 2vw 2vw 0;
+    }
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 88.4%;
+        margin-top: 4vw;
+        border-radius: 8vw 0 0 8vw;
+        padding: 0 1.5vw 1.5vw 1.5vw;
+    }
+    .contenedorBorde2{
+        border: 2px solid #BB8588;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+
+   
+    
+}
+
+@media only screen and (min-width: 1200px) {
+
+    /* Propiedades del primer contenedor */
+    .primerContenedor{
+        margin-top: 3vw;
+        margin-bottom: 6vw;
+    }
+    .imageLeft{
+        width:100%;
+        height:auto;
+       border-radius: 2vw 0 0 2vw;
+    }
+
+    .contenedorText{
+        background-color: #F8EDEB;
+        display: block;
+        width: 100%;
+        height: 87.6%;
+        margin-top: 4vw;
+        border-radius: 0 8vw 8vw 0;
+        padding: 3.5vw 1.5vw 1.5vw 1.5vw;
+        
+    }
+
+    .contenedorPrincipal{
+        position:relative;
+      
+    }
+    
+    .contenedorBorde{
+        display: block;
+        border: 2px solid #FFB5A7;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    /* Propiedades del segundo contenedor */
+    .imageRight{
+        width:100%;
+        height:auto;
+        border-radius: 0 2vw 2vw 0;
+    }
+    .contenedorText2{
+        background-color: #FCD5CE;
+        display: block;
+        width: 100%;
+        height: 88.4%;
+        margin-top: 4vw;
+        border-radius: 8vw 0 0 8vw;
+        padding: 3.5vw 1.5vw 1.5vw 1.5vw;
+    }
+    .contenedorBorde2{
+        display: block;
+        border: 2px solid #BB8588;
+        border-radius: 2.5vw;
+        position:absolute;
+    
+        width: 100%;
+        height: 87%;
+        margin-top:2.5vw;
+        margin-left:1vw;
+        
+    }
+    
+    
 }

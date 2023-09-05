@@ -5,16 +5,18 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
 import { MatTabsModule } from '@angular/material/tabs';
 import { PanelComponent } from './components/panel/panel.component';
 import { TablaVentasAdministradorComponent } from './components/tabla-ventas-administrador/tabla-ventas-administrador.component';
+import { FormServiciosAdminComponent } from './components/form-servicios-admin/form-servicios-admin.component';
+
 
 
 
 @NgModule({
   declarations: [
 
-  
-    AdministradorComponent,
+        AdministradorComponent,
         PanelComponent,
-        
+        FormServiciosAdminComponent
+
   ],
   imports: [
     CommonModule,

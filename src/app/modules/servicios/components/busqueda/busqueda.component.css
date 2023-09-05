@@ -64,10 +64,9 @@ hr {
     
 }
 
-
 @media only screen and (max-width: 600px) {
     .tamaño-filtros{
-        width: 50vw;
+        width: 44vw;
         margin-top: 1vw;
     }
     .input-icon {
@@ -85,7 +84,7 @@ hr {
 
 @media only screen and (min-width: 600px) {
     .tamaño-filtros{
-        width: 50vw;
+        width: 44vw;
     }
     .input-icon {
         color: #191919;

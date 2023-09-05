@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path:'admin',
     loadChildren:()=>import('./modules/administrador/administrador.module').then(m => m.AdministradorModule)
+  },
+  {
+    path:'carrito',
+    loadChildren:()=>import('./modules/carrito/carrito.module').then(m => m.CarritoModule)
   }
 
 ];

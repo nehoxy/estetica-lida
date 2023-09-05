@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
   declarations: [
     ServiciosComponent,
     CardServicioComponent,
-    ModalSaberMasComponent
+    ModalSaberMasComponent,
     PaginationComponent,
     BusquedaComponent,
   ],

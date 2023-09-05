@@ -1,0 +1,77 @@
+<div class="container mt-5 mb-5">
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Posicion  -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> # </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.position}} </td>
+          </ng-container>
+      
+          <!-- Nombre -->
+          <ng-container matColumnDef="cliente">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold" > Nombre </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.cliente}} </td>
+          </ng-container>
+      
+          <!-- Pago -->
+          <ng-container matColumnDef="pago">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> Pago </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.pago}} </td>
+          </ng-container>
+      
+          <!-- Fecha -->
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> Fecha </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.fecha}} </td>
+          </ng-container>
+          <!-- Metodo de pago -->
+          <ng-container matColumnDef="metodopago">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> Metodo de pago </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.metodopago}} </td>
+          </ng-container>
+          <!--Metodo de envio -->
+          <ng-container matColumnDef="metodoenvio">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> Metodo de envio </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.metodoenvio}} </td>
+          </ng-container>
+          <!--Envio -->
+          <ng-container matColumnDef="envio">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> Envio </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.envio}} </td>
+          </ng-container>
+          <!--Costo del envio -->
+          <ng-container matColumnDef="costoenvio">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> Costo del envio </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.costoenvio}} </td>
+          </ng-container>
+          <!--Monto total -->
+          <ng-container matColumnDef="montoTotal">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold"> Monto </th>
+            <td mat-cell *matCellDef="let cliente"> {{cliente.montoTotal}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="archivar">
+            <th mat-header-cell *matHeaderCellDef class="texto fw-bold">Archivar </th>
+            <td mat-cell *matCellDef="let cliente">
+              <button type="button" class="btn btn btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <rect x="2" y="3" width="20" height="4" rx="2" stroke-width="0" fill="currentColor"></rect>
+                <path d="M19 9c.513 0 .936 .463 .993 1.06l.007 .14v7.2c0 1.917 -1.249 3.484 -2.824 3.594l-.176 .006h-10c-1.598 0 -2.904 -1.499 -2.995 -3.388l-.005 -.212v-7.2c0 -.663 .448 -1.2 1 -1.2h14zm-5 2h-4l-.117 .007a1 1 0 0 0 0 1.986l.117 .007h4l.117 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z" stroke-width="0" fill="currentColor"></path>
+             </svg>
+            </button>
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator class="color-paginator" [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic clientes">
+        </mat-paginator>
+       
+      </div>
+      
+</div>

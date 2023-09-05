@@ -1,0 +1,68 @@
+.cards-servicios{
+    border-radius: 
+}
+.minicard{
+    width: 19.5vw;
+    height: 3vw;
+    padding-top: 0%;
+}
+
+@media only screen and (max-width: 600px) {
+    .cards-servicios{
+        border-radius: 1.2vw;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        
+    }
+    .imagen-1{
+        margin-top: 2.5vw;
+        width: 18vw;
+        height: 18vw;
+    }
+} 
+
+
+@media only screen and (min-width: 600px) {
+    .cards-servicios{
+        border-radius: 1.2vw;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+        
+    }
+    .imagen-1{
+        margin-top: 2.5vw;
+        width: 18vw;
+        height: 18vw;
+    }
+} 
+
+
+@media only screen and (min-width: 768px) {
+    .cards-servicios{
+        border-radius: 1.2vw;
+        opacity: 1;
+        transition: 0.3s;
+        
+    }
+    .imagen-1{
+        margin-top: 2.5vw;
+        width: 18vw;
+        height: 18vw;
+    }
+} 
+
+@media only screen and (min-width: 1200px) {
+    .cards-servicios{
+        border-radius: 1.2vw;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+    }
+    .imagen-1{
+        margin-top: 2.5vw;
+        width: 14vw;
+        height: 14vw;
+    }
+}

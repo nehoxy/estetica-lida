@@ -17,9 +17,11 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth'; //autentifica
 import { AngularFireStorageModule } from '@angular/fire/compat/storage'; //storage (imagenes)
 
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent 
+    
   ],
   imports: [
     BrowserModule,

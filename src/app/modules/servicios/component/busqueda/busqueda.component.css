@@ -1,0 +1,155 @@
+
+h2{
+    font-family: Poppins,sans-serif;
+}
+/* Single-direction drop shadow */
+/* Gradient transparent - color - transparent */
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+.filtros{
+    background-color: #bb8588;
+    color: white;
+    border-radius: 5vw;
+    border-color: #bb8588;
+    font-family: Poppins,sans-serif;
+    
+}
+
+.barra{
+    padding-top: 1.5vw;
+    
+}
+
+.tamaño-filtros{
+    width: 12vw;
+}
+
+.tamaño-text{
+    width: 15vw;
+}
+
+/*
+.tamaño-barra{
+    width: 12vw;
+}*/
+
+.busqueda{
+    border-radius: 5vw;
+    background-color: #f8edeb;
+    border-color: #f8edeb;
+    font-family: Poppins,sans-serif;
+    
+}
+
+
+.input-icon {
+	color: #191919;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 12px;
+    top: 69%; 
+    left: 85%;
+	transform: translateY(-50%);
+}
+
+.input-wrapper {
+	position: relative;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .tamaño-filtros{
+        width: 44vw;
+        margin-top: 1vw;
+    }
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 55%;
+        left: 88%;
+        transform: translateY(-50%);
+    }
+} 
+
+
+@media only screen and (min-width: 600px) {
+    .tamaño-filtros{
+        width: 44vw;
+    }
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 55%;
+        left: 88%;
+        transform: translateY(-50%);
+    }
+} 
+
+
+@media only screen and (min-width: 768px) {  
+    .tamaño-filtros{
+        width: 18vw;
+    }
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 55%;
+        left: 94%;
+        transform: translateY(-50%);
+    }
+
+} 
+@media only screen and (min-width: 1000px) {  
+    .tamaño-filtros{
+        width: 13vw;
+    }
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 60%;
+        left: 87%;
+        transform: translateY(-50%);
+    }
+
+} 
+
+@media only screen and (min-width: 1200px) {    
+    .input-wrapper {
+        position: relative;
+        width: 25vw;
+    }
+    .input-icon {
+        color: #191919;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: 12px;
+        top: 69%; 
+        left: 85%;
+        transform: translateY(-50%);
+    }
+    .tamaño-filtros{
+        width: 12vw;
+    }
+    
+}
+

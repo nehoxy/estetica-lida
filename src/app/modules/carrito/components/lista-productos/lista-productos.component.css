@@ -1,0 +1,31 @@
+.texto{
+    background-color: #FAFAF5;
+    border-top-right-radius: 2vw;
+    border-bottom-right-radius: 2vw;
+    font-family: Poppins,sans-serif;
+}
+.h3{
+    font-family: Poppins,sans-serif;
+}
+.precio{
+    font-family: Poppins,sans-serif;
+    color: green;
+}
+.card{
+    
+    border-radius: 2vw;
+}
+
+.img-fluid{
+    padding-left: 1.7vw;
+    width: 14vw;
+}
+
+.boton{
+    background-color: white;
+    border-radius: 2vw;
+    font-family: Poppins,sans-serif;
+}
+
+
+

@@ -1,0 +1,26 @@
+.lista{
+    font-family: Poppins,sans-serif;
+    border-color: white;
+}
+
+.resumen{
+    border-radius: 2vw;
+}
+
+.boton{
+    background-color: #C8ECCB;
+    border-radius: 2vw;
+    font-family: Poppins,sans-serif;
+}
+
+.precio{
+    background-color: white;
+    color: green;
+    font-family: Poppins,sans-serif;
+}
+
+.total{
+    background-color: white;
+    color: black;
+    font-family: Poppins,sans-serif;
+}

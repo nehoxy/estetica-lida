@@ -7,6 +7,7 @@ import { PanelUserComponent } from './components/panel-user/panel-user.component
 import { MatTabsModule } from '@angular/material/tabs';
 import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
 import { MisComprasComponent } from './components/mis-compras/mis-compras.component';
+import { MisServiciosComponent } from './components/mis-servicios/mis-servicios.component';
 
 
 
@@ -15,7 +16,8 @@ import { MisComprasComponent } from './components/mis-compras/mis-compras.compon
     PerfilComponent,
     PanelUserComponent,
     DatosPersonalesComponent,
-    MisComprasComponent
+    MisComprasComponent,
+    MisServiciosComponent
   ],
   imports: [
     CommonModule,

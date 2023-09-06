@@ -6,6 +6,13 @@ import { ListaProductosComponent } from './components/lista-productos/lista-prod
 import { ResumenPedidoComponent } from './components/resumen-pedido/resumen-pedido.component';
 import { PasosComponent } from './components/pasos/pasos.component';
 import { CarritoComponent } from './pages/carrito/carrito.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatStepperModule } from '@angular/material/stepper';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +23,24 @@ import { CarritoComponent } from './pages/carrito/carrito.component';
   ],
   imports: [
     CommonModule,
-    CarritoRoutingModule
+    CarritoRoutingModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   exports:[
     PasosComponent,
-    CarritoComponent
+    CarritoComponent,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ]
 })
 export class CarritoModule { }
+

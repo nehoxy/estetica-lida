@@ -1,13 +1,39 @@
-.imagen-1{
-    margin-top: 2.5vw;
-    width: 14vw;
-    height: 14vw;
-}
-
-.cards-productos{
+.card-estilo{
+    background-color: #C8ECCB;
     border-radius: 1.2vw;
+    padding-top: 1vw;
+   /* align-items: center;*/
+    text-align: start;
+  
+}
+.card-imagen{
+    width: 80%;
+    height: 80%;
+    border-radius: 0.5vw;
 }
 
+.card-titulo{
+    font-size: 1.3vw;
+    font-family:'Poppins';
+}
+.card-precio{
+    font-size:1.3vw;
+    font-family: 'Poppins';
+    color: #BB8588;
+    text-align: start !important; 
+}
+.card-descripcion{
+    color: #282828;
+    font-family: 'Lora';
+}
+
+.card-boton{
+    background-color: #BB8588;
+    border-color:#BB8588;
+    border-radius: 2vw;
+    font-family: 'Poppins';
+    margin-left:12vw;
+}
 
 @media only screen and (max-width: 600px) {
     .cards-productos{

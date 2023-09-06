@@ -1,29 +1,39 @@
 <mat-stepper #stepper>
-    <mat-step  errorMessage="Name is required.">
+    <mat-step  errorMessage="Complete el medio de pago">
       <form >
-        <ng-template matStepLabel>Fill out your name</ng-template>
-        <mat-form-field>
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-        </mat-form-field>
+        <ng-template matStepLabel>Medio de pago</ng-template>
+        
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group">
+          <mat-radio-button>Efectivo</mat-radio-button>
+          <mat-radio-button>Transferencia bancaria</mat-radio-button>
+          <mat-radio-button>Mercado pago</mat-radio-button>
+        </mat-radio-group>
+        
         <div>
-          <p>Go to a different step to see the error state</p>
-          <button mat-button matStepperNext>Next</button>
+          <p>Elige un metodo de pago</p>
+          <button mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>
-    <mat-step  errorMessage="Address is required.">
+
+
+    <mat-step  errorMessage="Complete los datos">
       <form >
-        <ng-template matStepLabel>Fill out your address</ng-template>
+        <ng-template matStepLabel>Datos del envio</ng-template>
         <mat-form-field>
-          <mat-label>Address</mat-label>
-          <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
-                 required>
+          <mat-label>Direccion</mat-label>
+          <input matInput placeholder="Ej: Paraguay 1050" formControlName="secondCtrl" required>
         </mat-form-field>
+
+        
+
+        
         <div>
-          <p>Go to a different step to see the error state</p>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
+          <p>Complete los datos del envio</p>
+          <button mat-button matStepperPrevious>Atras</button>
+          <button mat-button matStepperNext>Siguiente</button>
         </div>
       </form>
     </mat-step>

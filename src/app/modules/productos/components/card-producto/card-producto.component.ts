@@ -9,16 +9,24 @@ export class CardProductoComponent {
   listaProductos = [
     {
       id:1, 
-      titulo:"Manicuria Rusa",
-      precio:2000,
-      imagen:"../../../../../assets/img-card-servicio/manicuria-rusa.jpg",
-      descripcion:"La manicura rusa se realiza con torno y consigue una limpieza profunda de la uña quitando totalmente la cutícula. Utilizando diferentes fresas o brocas, se retira la cutícula suavemente y se aplica el esmalte lo más cerca posible de ésta."
+      titulo:"Crema para manos",
+      precio:4700,
+      imagen:".../../../../../assets/img-card-producto/crema.png",
+      descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     },
     {
       id:2, 
-      titulo:"Esmaltado Semi",
+      titulo:"Protector solar",
+      precio:4000,
+      imagen:"../../../../../assets/img-card-producto/protector.png",
+      descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    },
+    {
+      id:3, 
+      titulo:"Serum",
       precio:3000,
-      imagen:"../../../../../assets/img-card-servicio/esmaltado-semi-permanente.jpg",
-      descripcion:"La manicura rusa se realiza con torno y consigue una limpieza profunda de la uña quitando totalmente la cutícula. Utilizando diferentes fresas o brocas, se retira la cutícula suavemente y se aplica el esmalte lo más cerca posible de ésta."
-    }]
+      imagen:"../../../../../assets/img-card-producto/serum.png",
+      descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+    }
+  ]
 }

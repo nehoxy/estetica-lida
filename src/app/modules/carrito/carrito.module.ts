@@ -7,7 +7,6 @@ import { ResumenPedidoComponent } from './components/resumen-pedido/resumen-pedi
 import { PasosComponent } from './components/pasos/pasos.component';
 import { CarritoComponent } from './pages/carrito/carrito.component';
 
-
 @NgModule({
   declarations: [
     ListaProductosComponent,
@@ -18,6 +17,10 @@ import { CarritoComponent } from './pages/carrito/carrito.component';
   imports: [
     CommonModule,
     CarritoRoutingModule
+  ],
+  exports:[
+    PasosComponent,
+    CarritoComponent
   ]
 })
 export class CarritoModule { }

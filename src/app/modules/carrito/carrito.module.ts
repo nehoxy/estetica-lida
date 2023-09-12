@@ -13,6 +13,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
+import { MedioDePagoComponent } from './components/medio-de-pago/medio-de-pago.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {MatRadioModule} from '@angular/material/radio';
     ListaProductosComponent,
     ResumenPedidoComponent,
     PasosComponent,
-    CarritoComponent
+    CarritoComponent,
+    MedioDePagoComponent
   ],
   imports: [
     CommonModule,

@@ -1,21 +1,13 @@
-<mat-stepper #stepper>
+<div class="contenedor">
+  <mat-stepper class="prueba" #stepper>
     <mat-step  errorMessage="Complete el medio de pago">
-      <form >
+   
         <ng-template matStepLabel>Medio de pago</ng-template>
-        
-        <mat-radio-group
-          aria-labelledby="example-radio-group-label"
-          class="example-radio-group">
-          <mat-radio-button>Efectivo</mat-radio-button>
-          <mat-radio-button>Transferencia bancaria</mat-radio-button>
-          <mat-radio-button>Mercado pago</mat-radio-button>
-        </mat-radio-group>
-        
         <div>
-          <p>Elige un metodo de pago</p>
+          <app-medio-de-pago></app-medio-de-pago>
           <button mat-button matStepperNext>Siguiente</button>
         </div>
-      </form>
+
     </mat-step>
 
 
@@ -37,6 +29,7 @@
         </div>
       </form>
     </mat-step>
+    
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       <p>You are now done.</p>
@@ -45,6 +38,8 @@
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
-  </mat-stepper>
+</mat-stepper>
+</div>
+
   
   

@@ -17,6 +17,7 @@ export class RegisterComponent {
     nombre:'',
     apellido: '',
     email:'',
+    rol:'',
     contrasena:''
   }
   uid = ''

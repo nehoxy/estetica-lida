@@ -1,0 +1,48 @@
+.color-card{
+    background-color: #F8EDEB;
+}
+h1{
+    font-family: 'Poppins';
+}
+h5{
+    font-family: 'Poppins';
+}
+.tamaño-card{
+    width: 18rem;
+}
+@media only screen and (max-width: 600px) {
+    .color-card{
+        margin-top: 3rem;
+    }
+    .tamaño-card{
+        width: 16rem;
+    }
+} 
+
+
+@media only screen and (min-width: 600px) {
+    .color-card{
+        margin-top: 3rem;
+    }
+    .tamaño-card{
+        width: 16rem;
+    }
+    
+} 
+
+
+@media only screen and (min-width: 768px) {  
+    
+
+} 
+@media only screen and (min-width: 1000px) {  
+    
+
+} 
+
+@media only screen and (min-width: 1200px) {    
+    .tamaño-card{
+        width: 18rem;
+    }
+    
+}

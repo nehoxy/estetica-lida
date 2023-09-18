@@ -1,70 +1,148 @@
-.imagen-1{
-    margin-top: 2.5vw;
-    width: 14vw;
-    height: 14vw;
+.card-estilo{
+    background-color: #C8ECCB;
+    border-radius: 1.2rem;
+    padding-top: 1rem;
+   /* align-items: center;*/
+    text-align: start;
+    margin: 0 auto;
+  
+}
+.card-imagen{
+    width: 80%;
+    height: 80%;
+    border-radius: 0.5rem;
 }
 
-.cards-productos{
-    border-radius: 1.2vw;
+.card-titulo{
+    font-size: 1.3rem;
+    font-family:'Poppins';
+}
+.card-precio{
+    font-size:1.3rem;
+    font-family: 'Poppins';
+    color: #BB8588;
+    text-align: start !important; 
+}
+.card-descripcion{
+    color: #282828;
+    font-family: 'Lora';
 }
 
+.card-boton{
+    background-color: #BB8588;
+    border-color:#BB8588;
+    border-radius: 2rem;
+    font-family: 'Poppins';
+    margin-left:12rem;
+}
 
 @media only screen and (max-width: 600px) {
-    .cards-productos{
-        border-radius: 1.2vw;
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
-        
+    .card-estilo{
+        background-color: #C8ECCB;
+        border-radius: 1.2rem;
+        padding-top: 2.5rem;
+       /* align-items: center;*/
+        text-align: start;
+        margin: 0 auto;
+      
     }
-    .imagen-1{
-        margin-top: 2.5vw;
-        width: 18vw;
-        height: 18vw;
+    .card-imagen{
+        width: 80%;
+        height: 80%;
+        border-radius: 0.5rem;
+    }
+    
+    .card-titulo{
+        font-size: 1.3rem;
+        font-family:'Poppins';
+    }
+    .card-precio{
+        font-size:1.3rem;
+        font-family: 'Poppins';
+        color: #BB8588;
+        text-align: start !important; 
+    }
+    .card-descripcion{
+        color: #282828;
+        font-family: 'Lora';
+    }
+    
+    .card-boton{
+        background-color: #BB8588;
+        border-color:#BB8588;
+        border-radius: 2rem;
+        font-family: 'Poppins';
+        margin-left:12rem;
     }
 } 
 
 
 @media only screen and (min-width: 600px) {
     .cards-productos{
-        border-radius: 1.2vw;
+        border-radius: 1.2rem;
         margin: 0 auto; /* Added */
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
         
     }
     .imagen-1{
-        margin-top: 2.5vw;
-        width: 18vw;
-        height: 18vw;
+        margin-top: 2.5rem;
+        width: 18rem;
+        height: 18rem;
     }
 } 
 
 
 @media only screen and (min-width: 768px) {
     .cards-productos{
-        border-radius: 1.2vw;
+        border-radius: 1.2rem;
         opacity: 1;
         transition: 0.3s;
         
     }
     .imagen-1{
-        margin-top: 2.5vw;
-        width: 18vw;
-        height: 18vw;
+        margin-top: 2.5rem;
+        width: 18rem;
+        height: 18rem;
     }
 } 
 
 @media only screen and (min-width: 1200px) {
-    .cards-productos{
-        border-radius: 1.2vw;
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
+    .card-estilo{
+        background-color: #C8ECCB;
+        border-radius: 1.2rem;
+        padding-top: 1rem;
+       /* align-items: center;*/
+        text-align: start;
+        margin: 0 auto;
+      
     }
-    .imagen-1{
-        margin-top: 2.5vw;
-        width: 14vw;
-        height: 14vw;
+    .card-imagen{
+        width: 80%;
+        height: 80%;
+        border-radius: 0.5rem;
+    }
+    
+    .card-titulo{
+        font-size: 1.3rem;
+        font-family:'Poppins';
+    }
+    .card-precio{
+        font-size:1.3rem;
+        font-family: 'Poppins';
+        color: #BB8588;
+        text-align: start !important; 
+    }
+    .card-descripcion{
+        color: #282828;
+        font-family: 'Lora';
+    }
+    
+    .card-boton{
+        background-color: #BB8588;
+        border-color:#BB8588;
+        border-radius: 2rem;
+        font-family: 'Poppins';
+        margin-left:12rem;
     }
 }

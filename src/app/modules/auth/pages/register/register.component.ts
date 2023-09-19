@@ -3,7 +3,8 @@ import { AuthService } from '../../services/auth.service';
 import { Usuario } from 'src/app/models/usuario';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { Router } from '@angular/router';
-
+import { SwalComponent } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -40,7 +41,13 @@ export class RegisterComponent {
 
     const res = await this.servicioAuth.registrar(credenciales.nombre,credenciales.apellido,credenciales.email,credenciales.contrasena)
     .then(res=>{
-      alert("Ha agregado un nuevo usuario con exito");
+      Swal.fire({
+        icon: 'success',
+        iconColor: '#BB8588',
+        confirmButtonColor: '#BB8588',
+        title: 'Se ha registrado correctamente',
+        text: 'Bienvenido '+credenciales.email+'!',
+      })
     })
     .catch(error=> alert("hubo un error al cargar el usuario \n"+error));
     

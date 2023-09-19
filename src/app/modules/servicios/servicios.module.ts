@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -29,14 +30,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    ModalModule.forRoot()
   ],
   exports:[
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    ModalModule
   ]
 })
 export class ServiciosModule { }

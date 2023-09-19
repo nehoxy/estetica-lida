@@ -11,14 +11,8 @@
                     {{servicio.titulo}}
                 </div>
                 <div class="card-text-a">
-                    <a (click)="openModal()">Saber más</a>
-                    <button class="boton-saber-mas" (click)="openModal()">Saber mas</button>
-                    <app-modal-saber-mas [modalId]="servicio.id"></app-modal-saber-mas>
-                  
-                    
-                    <!-- Modal -->
-              
-                
+                    <a (click)="openModal(servicio.titulo,servicio.descripcion)">Saber más</a>
+  
                 </div>
                 <div class="card-text">
                     {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}

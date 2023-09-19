@@ -1,1 +1,12 @@
-<p>modal-saber-mas works! {{modalId}}</p>
+<div class="modal-header">
+    <h4 class="modal-title">{{ titulo }}</h4>
+    <button type="button" class="close" (click)="closeModal()">
+      <span>&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- Display card details here -->
+    <p>{{ descripcion }}</p>
+    <!-- Add any other card details you want to display -->
+  </div>
+  

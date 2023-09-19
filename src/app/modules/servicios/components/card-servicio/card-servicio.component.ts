@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { DialogService } from '../../services/dialog.service';
-
-
+import { Component,TemplateRef } from '@angular/core';
+import { ModalSaberMasComponent } from '../modal-saber-mas/modal-saber-mas.component';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { CardData } from 'src/app/models/card-data';
+import { ModalData } from 'src/app/models/modal-data';
 
 @Component({
   selector: 'app-card-servicio',
@@ -9,15 +10,26 @@ import { DialogService } from '../../services/dialog.service';
   styleUrls: ['./card-servicio.component.css']
 })
 export class CardServicioComponent {
-
-  constructor(private dialogService:DialogService){
+  modalData: ModalData = {
+    titulo: '',
+    descripcion: '',
+  };
+  modalRef?:BsModalRef;
+  constructor( private modalService:BsModalService){
 
   }
 
-  openModal(){
-    this.dialogService.openDialog()
-  }
+  openModal(titulo,descripcion) {
+    this.modalData.titulo = titulo
+    this.modalData.descripcion = descripcion
+
+  this.modalRef = this.modalService.show(ModalSaberMasComponent, {
+    initialState: this.modalData,
+  });
   
+  
+  }
+ 
  listaServicios = [
   {
     id:1, 

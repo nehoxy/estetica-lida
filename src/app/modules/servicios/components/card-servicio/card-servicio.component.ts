@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DialogService } from '../../services/dialog.service';
 
 
 
@@ -9,6 +10,14 @@ import { Component } from '@angular/core';
 })
 export class CardServicioComponent {
 
+  constructor(private dialogService:DialogService){
+
+  }
+
+  openModal(){
+    this.dialogService.openDialog()
+  }
+  
  listaServicios = [
   {
     id:1, 
@@ -25,4 +34,6 @@ export class CardServicioComponent {
     descripcion:"La manicura rusa se realiza con torno y consigue una limpieza profunda de la uña quitando totalmente la cutícula. Utilizando diferentes fresas o brocas, se retira la cutícula suavemente y se aplica el esmalte lo más cerca posible de ésta."
   }
  ]
+
+ 
 }

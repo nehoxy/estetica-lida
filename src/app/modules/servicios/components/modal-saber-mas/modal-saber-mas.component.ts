@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./modal-saber-mas.component.css']
 })
 export class ModalSaberMasComponent {
-  @Input() modalId!:string;
+  @Input() modalId = 0
 }

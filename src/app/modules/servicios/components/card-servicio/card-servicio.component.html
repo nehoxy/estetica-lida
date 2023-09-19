@@ -11,8 +11,9 @@
                     {{servicio.titulo}}
                 </div>
                 <div class="card-text-a">
-                    <a href="" data-bs-toggle="modal" [attr.data-target]="'#modal'+servicio.id">Saber más</a>
-                    <app-modal-saber-mas [modalId]="'modal'+servicio.id"></app-modal-saber-mas>
+                    <a (click)="openModal()">Saber más</a>
+                    <button class="boton-saber-mas" (click)="openModal()">Saber mas</button>
+                    <app-modal-saber-mas [modalId]="servicio.id"></app-modal-saber-mas>
                   
                     
                     <!-- Modal -->

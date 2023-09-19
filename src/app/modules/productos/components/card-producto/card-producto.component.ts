@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-card-producto',
   templateUrl: './card-producto.component.html',
   styleUrls: ['./card-producto.component.css']
 })
 export class CardProductoComponent {
+
   listaProductos = [
     {
       id:1, 
@@ -29,4 +31,9 @@ export class CardProductoComponent {
       descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     }
   ]
+  constructor(){
+    
+  }
+
+ 
 }

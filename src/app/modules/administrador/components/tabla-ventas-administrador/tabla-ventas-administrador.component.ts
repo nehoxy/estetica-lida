@@ -2,17 +2,24 @@ import { Component } from '@angular/core';
 import {AfterViewInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'app-tabla-ventas-administrador',
   templateUrl: './tabla-ventas-administrador.component.html',
   styleUrls: ['./tabla-ventas-administrador.component.css'],
   standalone:true,
-  imports: [MatTableModule, MatPaginatorModule],
+  imports: [MatTableModule, MatPaginatorModule,MatFormFieldModule,MatInputModule],
 })
 
 export class TablaVentasAdministradorComponent implements AfterViewInit {
   displayedColumns: string[] = ['position','cliente', 'pago', 'fecha', 'metodopago','metodoenvio','envio','costoenvio','montoTotal', 'archivar'];
   dataSource = new MatTableDataSource<TablaVentas>(CLIENT_DATA);
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   @ViewChild(MatPaginator) paginator:any = MatPaginator;
 

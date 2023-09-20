@@ -5,7 +5,7 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 5rem;">
           <div class="card-body p-4 p-md-5">
               <h1><img src="../../../../../assets/imgNavbar/logo7.png" alt=""> Registrarse </h1>
-            <form [formGroup]="formRegistro">
+            <form [formGroup]="formRegistro" (ngSubmit)="registrarse()">
                 
               <div class="row">
                 
@@ -13,7 +13,7 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="firstName">Nombre</label>
-                    <input class="form-control form-control-lg" [formControl]="formRegistro.controls.nombre" [(ngModel)]='usuarios.nombre' matInput name="firstName" required type="text" id="firstName" />
+                    <input class="form-control form-control-lg" [formControl]="formRegistro.controls.nombre" matInput name="firstName" required type="text" id="firstName" />
                     <span *ngIf="formRegistro.controls.nombre.errors?.['required'] &&formRegistro.controls.nombre.touched ">
                       Debe completar este campo
                     </span>
@@ -24,8 +24,8 @@
 
                   <div class="form-outline">
                     <label  class="form-label" for="lastName">Apellido</label>
-                    <input formControlName="apellido" [(ngModel)]='usuarios.apellido' matInput name="surname" required type="text" id="lastName" class="form-control form-control-lg" />
-                    <span *ngIf="this.formRegistro.get('apellido')?.errors?.['required']">
+                    <input  [formControl]="formRegistro.controls.apellido" matInput name="surname" required type="text" id="lastName" class="form-control form-control-lg" />
+                    <span *ngIf="formRegistro.controls.apellido.errors?.['required'] &&formRegistro.controls.apellido.touched">
                       Debe completar este campo
                     </span>
                   </div>
@@ -38,13 +38,13 @@
               <div class="row">
                 <div class="mb-4 pb-2">
 
-                  <div class="form-outline needs-validation">
+                  <div class="form-outline">
                     <label class="form-label" for="emailAddress">Email</label>
-                    <input formControlName="email" [(ngModel)]='usuarios.email' matInput name="email" required type="email" id="emailAddress" class="form-control form-control-lg" />
-                    <span *ngIf="this.formRegistro.get('mail')?.errors?.['required']">
-                      (El mail no puede quedar vacío)
+                    <input [formControl]="formRegistro.controls.email" matInput name="email" required type="email" id="emailAddress" class="form-control form-control-lg" />
+                    <span *ngIf="formRegistro.controls.email.errors?.['required'] &&formRegistro.controls.email.touched">
+                      El mail no puede quedar vacío
                     </span>
-                    <span *ngIf="this.formRegistro.get('mail')?.errors?.['email']">
+                    <span *ngIf="formRegistro.controls.email.errors?.['email'] && formRegistro.controls.email.touched">
                       El mail no es valido
                     </span>
                   </div>
@@ -56,8 +56,10 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="emailAddress">Contraseña</label>
-                    <input formControlName="contrasena" [(ngModel)]='usuarios.contrasena' matInput name="pass" required type="password" id="password" class="form-control form-control-lg" />
-                    
+                    <input  [formControl]="formRegistro.controls.contrasena" matInput name="pass" required type="password" id="password" class="form-control form-control-lg" />
+                    <span *ngIf="formRegistro.controls.contrasena.errors?.['required'] &&formRegistro.controls.contrasena.touched">
+                      Debe completar este campo
+                    </span>
                   </div>
                   
 
@@ -67,7 +69,7 @@
                 <div class="mb-4 pb-2">
                   <div class="form-outline">
                     <label class="form-label" for="">Confirmar Contraseña</label>
-                    <input type="password" name="pass2" class="form-control form-control-lg" />
+                    <input  [formControl]="formRegistro.controls.repetirContrasena" type="password" name="pass2" class="form-control form-control-lg" />
                     
                   </div>
                 </div>
@@ -75,7 +77,7 @@
               
 
               <div class="pt-1 mb-4 text-center">
-                <button (click)="registrarse()" class="btn btn-lg btn-block text-uppercase fs-6" type="button">Registrarse</button>
+                <button class="btn btn-lg btn-block text-uppercase fs-6" type="submit">Registrarse</button>
               </div>
               <a href="/login"style="color: #393f81;">¿Ya tienes una cuenta?</a>
 

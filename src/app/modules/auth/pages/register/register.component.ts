@@ -13,6 +13,8 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent {
   hide = true;
+  error:boolean = false;
+  errorMensaje:string = ''
   
   formRegistro = this.fb.group({
     nombre: new FormControl ('',[Validators.required, Validators.minLength(4)]),
@@ -27,7 +29,7 @@ export class RegisterComponent {
     apellido: '',
     email:'',
     rol:'',
-    contrasena:''
+    contrasena:'',
   }
   uid = ''
 
@@ -40,32 +42,45 @@ export class RegisterComponent {
 
 //tomamos nuevos registros y mostramos los resultados
   async registrarse(){
-    const credenciales = {
-      nombre: this.usuarios.nombre,
-      apellido:this.usuarios.apellido,
-      email:this.usuarios.email,
-      contrasena: this.usuarios.contrasena
-    };
-
-    const res = await this.servicioAuth.registrar(credenciales.nombre,credenciales.apellido,credenciales.email,credenciales.contrasena)
-    .then(res=>{
-      Swal.fire({
-        icon: 'success',
-        iconColor: '#BB8588',
-        confirmButtonColor: '#BB8588',
-        title: 'Se ha registrado correctamente',
-        text: 'Bienvenido '+credenciales.email+'!',
-      })
-    })
-    .catch(error=> alert("hubo un error al cargar el usuario \n"+error));
+    const repetirContrasena = this.formRegistro.value.repetirContrasena
+    if(this.usuarios.contrasena !== repetirContrasena){
+      this.error = true,
+      this.errorMensaje = 'Las contraseñas no coinciden'
+    }else {
+      if(this.usuarios.email && this.usuarios.contrasena){
+        try{
+          const credenciales = {
+            nombre: this.usuarios.nombre,
+            apellido:this.usuarios.apellido,
+            email:this.usuarios.email,
+            contrasena: this.usuarios.contrasena
+          };
+      
+          const res = await this.servicioAuth.registrar(credenciales.nombre,credenciales.apellido,credenciales.email,credenciales.contrasena)
+          .then(res=>{
+            Swal.fire({
+              icon: 'success',
+              iconColor: '#BB8588',
+              confirmButtonColor: '#BB8588',
+              title: 'Se ha registrado correctamente',
+              text: 'Bienvenido '+credenciales.email+'!',
+            })
+          })
+          .catch(error=> alert("hubo un error al cargar el usuario \n"+error));
+          
+          const uid = await this.servicioAuth.getUid();
+      
+          this.usuarios.uid = uid;
+      
+          //guarda el nuevo usuario
+          this.guardarUser();
+          this._router.navigate(['home'])
+        }catch(err){
+          console.log(err)
+        }
+        }
+    }
     
-    const uid = await this.servicioAuth.getUid();
-
-    this.usuarios.uid = uid;
-
-    //guarda el nuevo usuario
-    this.guardarUser();
-    this._router.navigate(['home'])
   }
 
   async guardarUser(){

@@ -1,12 +1,27 @@
 .encabezado{
     margin-right: 1rem;
     margin-left: 1rem;
+    padding-left: 0;
     border-color:#BB8588;
+    
 }
 
 .contenido{
-    border-radius: 2rem;
+   background-color: #F8EDEB;
 }
-.modal-content{
-    border-radius: 2rem;
+
+.titulo{
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.descripcion{
+    font-family: 'Lora';
+    font-size: 1rem;
+}
+.boton-close{
+    background-color: #C8ECCB;
+    border-radius:2vw;
+    font-family: 'Poppins';
+    
 }

@@ -95,6 +95,13 @@ a:link{
 
 }
 
+.card-text-precio{
+  font-family: 'Poppins';
+  font-size: 1.1rem;
+  background: #F8EDEB;
+  padding: 10px 15px;
+}
+
 .card-button {
   display: flex;
   justify-content: center;

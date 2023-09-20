@@ -1,7 +1,7 @@
 <div class="container" style="margin-top:50px;margin-bottom:50px;">
     <div class="row">
         <h1 class="titulo fs-3 mb-5">Manicuria</h1>
-        <div class="col-md-3 me-5" *ngFor="let servicio of listaServicios">
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
             <div class="card-sl">
                 <div class="card-image">
                     <img src="{{servicio.imagen}}" />
@@ -14,7 +14,7 @@
                     <a (click)="openModal(servicio.titulo,servicio.descripcion)">Saber más</a>
   
                 </div>
-                <div class="card-text">
+                <div class="card-text-precio">
                     {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
                 </div>
                 <a href="#" class="card-button"> Sacar turno</a>

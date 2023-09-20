@@ -1,0 +1,12 @@
+.encabezado{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    border-color:#BB8588;
+}
+
+.contenido{
+    border-radius: 2rem;
+}
+.modal-content{
+    border-radius: 2rem;
+}

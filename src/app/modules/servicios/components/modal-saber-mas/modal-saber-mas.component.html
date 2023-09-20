@@ -1,12 +1,17 @@
-<div class="modal-header">
-    <h4 class="modal-title">{{ titulo }}</h4>
-    <button type="button" class="close" (click)="closeModal()">
-      <span>&times;</span>
-    </button>
+
+  <div class="modal-content contenido">
+    <div class="modal-header encabezado">
+        <h4 class="modal-title pull-left m-0">{{ titulo }}</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <!-- Display card details here -->
+        <p>{{ descripcion }}</p>
+        <!-- Add any other card details you want to display -->
+    </div>
   </div>
-  <div class="modal-body">
-    <!-- Display card details here -->
-    <p>{{ descripcion }}</p>
-    <!-- Add any other card details you want to display -->
-  </div>
-  
+
+    
+      

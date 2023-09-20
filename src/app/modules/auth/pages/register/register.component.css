@@ -26,3 +26,22 @@
     margin: auto;
     padding: 0px;
 }
+input{
+    background-color: #EBEBEB;
+    font-size: 0.8rem;
+    border-radius: 1rem;
+    font-family: 'Poppins';
+}
+label{
+    font-family: 'Poppins'; 
+}
+img{
+    width: 2rem;
+    height: 2rem;
+}
+h1{
+    font-family: 'Poppins';  
+}
+button{
+    font-family: 'Poppins'; 
+}

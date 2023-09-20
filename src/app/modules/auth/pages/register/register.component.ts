@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { Router } from '@angular/router';
 import { SwalComponent } from '@sweetalert2/ngx-sweetalert2';
+import { Validators,FormBuilder,FormControl } from '@angular/forms';
 import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
@@ -13,6 +14,13 @@ import Swal from 'sweetalert2';
 export class RegisterComponent {
   hide = true;
   
+  formRegistro = this.fb.group({
+    nombre: new FormControl ('',[Validators.required, Validators.minLength(4)]),
+    apellido: new FormControl('',[Validators.required, Validators.minLength(6)]),
+    email: new FormControl('',[Validators.required, Validators.email]),
+    contrasena: new FormControl('',[Validators.required, Validators.minLength(8)]),
+    repetirContrasena: new FormControl('',[Validators.required, Validators.minLength(8)])
+  })
   usuarios:Usuario = {
     uid:'',
     nombre:'',
@@ -26,7 +34,7 @@ export class RegisterComponent {
   //creamos nueva coleccion para usuarios
   coleccionUsuarios : Usuario[] = [];
 
-  constructor(public servicioAuth:AuthService, public servicioFirestore:FirestoreService, public _router:Router){
+  constructor(public servicioAuth:AuthService, public servicioFirestore:FirestoreService, public _router:Router, public fb:FormBuilder){
 
   }
 

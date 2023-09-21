@@ -45,3 +45,16 @@ h1{
 button{
     font-family: 'Poppins'; 
 }
+.buttonIn {
+    display: flex;
+}
+.input-flex{
+    flex:1;
+}
+.password-btn{
+
+    border:0px;
+    background-color: transparent;
+    flex: 2;
+   
+}

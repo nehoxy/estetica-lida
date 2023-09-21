@@ -14,7 +14,7 @@
                   <div class="form-outline">
                     <label class="form-label" for="firstName">Nombre</label>
                     <input [(ngModel)]="usuarios.nombre" class="form-control form-control-lg" [formControl]="formRegistro.controls.nombre" matInput name="firstName" required type="text" id="firstName" />
-                    <span *ngIf="formRegistro.controls.nombre.errors?.['required'] &&formRegistro.controls.nombre.touched ">
+                    <span class="mensaje-error" *ngIf="formRegistro.controls.nombre.errors?.['required'] &&formRegistro.controls.nombre.touched ">
                       Debe completar este campo
                     </span>
                   </div>
@@ -25,7 +25,7 @@
                   <div class="form-outline">
                     <label  class="form-label" for="lastName">Apellido</label>
                     <input  [(ngModel)]="usuarios.apellido"  [formControl]="formRegistro.controls.apellido" matInput name="surname" required type="text" id="lastName" class="form-control form-control-lg" />
-                    <span *ngIf="formRegistro.controls.apellido.errors?.['required'] &&formRegistro.controls.apellido.touched">
+                    <span class="mensaje-error" *ngIf="formRegistro.controls.apellido.errors?.['required'] &&formRegistro.controls.apellido.touched">
                       Debe completar este campo
                     </span>
                   </div>
@@ -41,10 +41,10 @@
                   <div class="form-outline">
                     <label class="form-label" for="emailAddress">Email</label>
                     <input [(ngModel)]="usuarios.email"  [formControl]="formRegistro.controls.email" matInput name="email" required type="email" id="emailAddress" class="form-control form-control-lg" />
-                    <span *ngIf="formRegistro.controls.email.errors?.['required'] &&formRegistro.controls.email.touched">
+                    <span class="mensaje-error" *ngIf="formRegistro.controls.email.errors?.['required'] &&formRegistro.controls.email.touched">
                       El mail no puede quedar vacío
                     </span>
-                    <span *ngIf="formRegistro.controls.email.errors?.['email'] && formRegistro.controls.email.touched">
+                    <span class="mensaje-error" *ngIf="formRegistro.controls.email.errors?.['email'] && formRegistro.controls.email.touched">
                       El mail no es valido
                     </span>
                   </div>
@@ -61,8 +61,11 @@
                       <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                   </div>
-                  <span *ngIf="formRegistro.controls.contrasena.errors?.['required'] &&formRegistro.controls.contrasena.touched">
+                  <span class="mensaje-error" *ngIf="formRegistro.controls.contrasena.errors?.['required'] &&formRegistro.controls.contrasena.touched">
                     Debe completar este campo
+                  </span>
+                  <span class="mensaje-error" *ngIf="formRegistro.controls.contrasena.errors?.['minlength'] &&formRegistro.controls.contrasena.touched">
+                    La contraseña debe tener minimo 8 caracteres
                   </span>
                   
 
@@ -74,6 +77,9 @@
                     <label class="form-label" for="">Confirmar Contraseña</label>
                     <input id="repetirContrasena" [formControl]="formRegistro.controls.repetirContrasena" type="password" name="pass2" class="form-control form-control-lg" />
                   </div>
+                  <span class="mensaje-error" *ngIf="formRegistro.controls.repetirContrasena.errors?.['required'] &&formRegistro.controls.repetirContrasena.touched">
+                    Debe completar este campo
+                  </span>
                 </div>
               </div>
               

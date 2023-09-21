@@ -58,3 +58,8 @@ button{
     flex: 2;
    
 }
+
+.mensaje-error{
+    color:red;
+    font-size: 0.8rem;
+}

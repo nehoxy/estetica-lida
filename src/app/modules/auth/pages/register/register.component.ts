@@ -49,7 +49,16 @@ export class RegisterComponent {
     if(this.usuarios.contrasena !== this.repetirContrasena){
       this.error = true,
       this.errorMensaje = 'Las contraseñas no coinciden'
-      alert(this.errorMensaje)
+      Swal.fire({
+        icon: 'error',
+        confirmButtonColor: '#BB8588',
+        showConfirmButton:false,
+        showCloseButton: true,
+        title: 'Error',
+        text: this.errorMensaje,
+        toast:true,
+        position:'bottom'
+      })
     }else {
       if(this.usuarios.email && this.usuarios.contrasena){
         try{

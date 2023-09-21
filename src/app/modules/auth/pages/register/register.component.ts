@@ -45,7 +45,7 @@ export class RegisterComponent {
 //tomamos nuevos registros y mostramos los resultados
   async registrarse(){
     
-    const {} = this.formRegistro.value
+    this.repetirContrasena = this.formRegistro.value.repetirContrasena
     if(this.usuarios.contrasena !== this.repetirContrasena){
       this.error = true,
       this.errorMensaje = 'Las contraseñas no coinciden'
@@ -91,6 +91,17 @@ export class RegisterComponent {
         }catch(err){
           console.log(err)
         }
+        }else{
+          Swal.fire({
+            icon: 'error',
+            confirmButtonColor: '#BB8588',
+            showConfirmButton:false,
+            showCloseButton: true,
+            title: 'Error',
+            text: 'Hay datos invalidos en el formulario',
+            toast:true,
+            position:'bottom'
+          })
         }
     }
     

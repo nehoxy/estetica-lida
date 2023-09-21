@@ -5,22 +5,37 @@
           <div class="card shadow-2-strong" style="border-radius: 5rem;">
             <div class="card-body p-5 text-center">
               <h1><img src="../../../../../assets/imgNavbar/logo7.png" alt=""> Iniciar sesion </h1>
-                <form>
 
-                    
-    
+                <form [formGroup]="formLogin">
+
     
                     <div class="form-outline mb-4 text-left">
                         <label class="form-label" for="form2Example17">Correo electronico</label>
-                        <input name="email" [(ngModel)]="usuarios.email" type="email" id="form2Example17" class="form-control form-control-lg" />
+                        <input [formControl]="formLogin.controls.email" name="email" [(ngModel)]="usuarios.email" type="email" id="form2Example17" class="form-control form-control-lg" />
+                        <span class="mensaje-error text-start" *ngIf="formLogin.controls.email.errors?.['required'] &&formLogin.controls.email.touched">
+                          El mail no puede quedar vacío
+                        </span>
+                        <span class="mensaje-error" *ngIf="formLogin.controls.email.errors?.['email'] && formLogin.controls.email.touched">
+                          El mail no es valido
+                        </span>
                     </div>
-    
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example27">Constraseña</label>
-                        <input name="contrasena" [(ngModel)]="usuarios.contrasena" type="password" id="form2Example27" class="form-control form-control-lg" />
-                    </div>
+                    
+                    <label class="form-label" for="form2Example27">Contraseña</label>
+                    <div class="form-outline mb-1 buttonIn">
+                        <input class="input-flex" [formControl]="formLogin.controls.contrasena" name="contrasena" [(ngModel)]="usuarios.contrasena" [type]="hidePass ? 'password' : 'text'" id="form2Example27" class="form-control form-control-lg" />
+                        <button class="password-btn" type="button" (click)="hidePass = !hidePass">
+                          <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
 
-                    <p class="mb-3 pb-lg-2" style="color: #393f81;">¿No tenes una cuenta? <a href="/register"
+                    </div>
+                    <span class="mensaje-error" *ngIf="formLogin.controls.contrasena.errors?.['required'] &&formLogin.controls.contrasena.touched">
+                      Debe completar este campo
+                    </span>
+                    <span class="mensaje-error" *ngIf="formLogin.controls.contrasena.errors?.['minlength'] &&formLogin.controls.contrasena.touched">
+                      La contraseña debe tener minimo 8 caracteres
+                    </span>
+
+                    <p class=" mt-5 mb-3 pb-lg-2" style="color: #393f81;">¿No tenes una cuenta? <a href="/register"
                         style="color: #393f81;">Registrate aqui</a></p>
     
                     <div class="pt-1 mb-4 text-center">

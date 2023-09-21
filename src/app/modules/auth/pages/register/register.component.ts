@@ -19,8 +19,8 @@ export class RegisterComponent {
   repetirContrasena:any = ''
   
   formRegistro = this.fb.group({
-    nombre: new FormControl ('',[Validators.required, Validators.minLength(4)]),
-    apellido: new FormControl('',[Validators.required, Validators.minLength(6)]),
+    nombre: new FormControl ('',[Validators.required, Validators.minLength(3)]),
+    apellido: new FormControl('',[Validators.required, Validators.minLength(4)]),
     email: new FormControl('',[Validators.required, Validators.email]),
     contrasena: new FormControl('',[Validators.required, Validators.minLength(8)]),
     repetirContrasena: new FormControl('',[Validators.required, Validators.minLength(8)])
@@ -60,7 +60,7 @@ export class RegisterComponent {
         position:'bottom'
       })
     }else {
-      if(this.usuarios.email && this.usuarios.contrasena){
+      if(this.formRegistro.valid){
         try{
           const credenciales = {
             nombre: this.usuarios.nombre,
@@ -76,10 +76,21 @@ export class RegisterComponent {
               iconColor: '#BB8588',
               confirmButtonColor: '#BB8588',
               title: 'Se ha registrado correctamente',
-              text: 'Bienvenido '+credenciales.email+'!',
+              text: 'Bienvenido/a '+credenciales.email+'!',
             })
           })
-          .catch(error=> alert("hubo un error al cargar el usuario \n"+error));
+          .catch(error=> {
+            Swal.fire({
+              icon: 'error',
+              confirmButtonColor: '#BB8588',
+              showConfirmButton:false,
+              showCloseButton: true,
+              title: 'Error',
+              text: error,
+              toast:true,
+              position:'bottom'
+            })
+          });
           
           const uid = await this.servicioAuth.getUid();
       

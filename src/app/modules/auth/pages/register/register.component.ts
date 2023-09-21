@@ -15,6 +15,7 @@ export class RegisterComponent {
   hide = true;
   error:boolean = false;
   errorMensaje:string = ''
+  repetirContrasena:any = ''
   
   formRegistro = this.fb.group({
     nombre: new FormControl ('',[Validators.required, Validators.minLength(4)]),
@@ -42,10 +43,15 @@ export class RegisterComponent {
 
 //tomamos nuevos registros y mostramos los resultados
   async registrarse(){
-    const repetirContrasena = this.formRegistro.value.repetirContrasena
-    if(this.usuarios.contrasena !== repetirContrasena){
+    
+    this.repetirContrasena = this.formRegistro.value.repetirContrasena
+    this.usuarios.contrasena = this.formRegistro.value.repetirContrasena
+    console.log(this.repetirContrasena)
+    console.log(this.usuarios.contrasena)
+    if(this.usuarios.contrasena !== this.repetirContrasena){
       this.error = true,
       this.errorMensaje = 'Las contraseñas no coinciden'
+      alert(this.errorMensaje)
     }else {
       if(this.usuarios.email && this.usuarios.contrasena){
         try{

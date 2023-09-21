@@ -6,7 +6,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -17,7 +17,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AuthRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    SweetAlert2Module
+    SweetAlert2Module,
+    MatIconModule
   ]
 })
 export class AuthModule { }

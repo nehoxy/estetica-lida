@@ -56,7 +56,10 @@
 
                   <div class="form-outline">
                     <label class="form-label" for="emailAddress">Contraseña</label>
-                    <input [(ngModel)]="usuarios.contrasena"  [formControl]="formRegistro.controls.contrasena" matInput name="pass" required type="password" id="password" class="form-control form-control-lg" />
+                    <input [(ngModel)]="usuarios.contrasena"  [formControl]="formRegistro.controls.contrasena" matInput name="pass" required [type]="hidePass ? 'password' : 'text'" id="password" class="form-control form-control-lg" />
+                    <button type="button" (click)="hidePass = !hidePass">
+                      <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
                     <span *ngIf="formRegistro.controls.contrasena.errors?.['required'] &&formRegistro.controls.contrasena.touched">
                       Debe completar este campo
                     </span>
@@ -70,7 +73,6 @@
                   <div class="form-outline">
                     <label class="form-label" for="">Confirmar Contraseña</label>
                     <input id="repetirContrasena" [formControl]="formRegistro.controls.repetirContrasena" type="password" name="pass2" class="form-control form-control-lg" />
-                    {{formRegistro.controls.repetirContrasena}}
                   </div>
                 </div>
               </div>

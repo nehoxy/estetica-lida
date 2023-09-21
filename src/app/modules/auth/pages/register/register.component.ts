@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent {
   hide = true;
+  hidePass = true;
   error:boolean = false;
   errorMensaje:string = ''
   repetirContrasena:any = ''
@@ -44,10 +45,7 @@ export class RegisterComponent {
 //tomamos nuevos registros y mostramos los resultados
   async registrarse(){
     
-    this.repetirContrasena = this.formRegistro.value.repetirContrasena
-    this.usuarios.contrasena = this.formRegistro.value.repetirContrasena
-    console.log(this.repetirContrasena)
-    console.log(this.usuarios.contrasena)
+    const {} = this.formRegistro.value
     if(this.usuarios.contrasena !== this.repetirContrasena){
       this.error = true,
       this.errorMensaje = 'Las contraseñas no coinciden'
@@ -101,5 +99,6 @@ export class RegisterComponent {
   async ngOnInit(){
     const uid = await this.servicioAuth.getUid();
     console.log(uid)
+    
   }
 }

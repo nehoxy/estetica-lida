@@ -4,15 +4,15 @@
       <form action="#">
         <div class="form-group mt-3">
           <label for="fname" class="control-label ps-2">Nombre</label>
-          <input type="text" class="form-control color-input" id="fname" placeholder="Ingrese nombre del producto">
+          <input type="text" class="form-control color-input" id="fname" placeholder="Ingrese nombre del servicio">
         </div>
         <div class="form-group mt-3">
           <label for="lname" class="control-label ps-2">Precio</label>
-          <input type="number" class="form-control color-input" id="precio" placeholder="Ingrese precio del producto">
+          <input type="number" class="form-control color-input" id="precio" placeholder="Ingrese precio del servicio">
         </div>
         <div class="form-group mt-3">
           <label for="text" class="control-label ps-2">Descripcion</label>
-          <input type="text" class="form-control color-input" id="descripcion" placeholder="Ingrese descripcion del producto">
+          <input type="text" class="form-control color-input" id="descripcion" placeholder="Ingrese descripcion del servicio">
         </div>
         <div class="form-group mt-3">
           <label class="control-label ps-2">Categoria</label>
@@ -35,13 +35,14 @@
             <option class="option" value="1">Ricardina</option>
             <option class="option" value="2">Maria</option>
             <option class="option" value="3">Dana</option>
+            <option class="option" value="4">Veronica</option>
           </select>
         </div>
         <button type="submit" class="btn mt-4 texto">Cargar</button>
       </form>
     </div>
     <div class="col-lg-9">
-      <table datatable [dtOptions]="dtOptions" class="row-border hover texto">
+      <table datatable [dtOptions]="dtOptions" class="row-border hover texto color-tabla">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -55,94 +56,116 @@
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>Foo</td>
-            <td>Bar</td>
-            <td>sd</td>
-            <td>sdf</td>
-            <td>fsd</td>
-            <td>asd</td>
+            <td>Manicuria Rusa</td>
+            <td>$2000</td>
+            <td> <a href="">Ver mas...</a> </td>
+            <td>Manicuria</td>
+            <td>Dana</td>
+            <td><a href="">Ver imagen...</a></td>
+            <td>
+              <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                    <path d="M16 5l3 3"></path>
+                 </svg>
+               </button>
+               <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 7l16 0"></path>
+                    <path d="M10 11l0 6"></path>
+                    <path d="M14 11l0 6"></path>
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                 </svg>
+               </button>
+            </td>
           </tr>
           <tr>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
+            <td>Esmaltado semipermanente</td>
+            <td>$3000</td>
+            <td><a href="">Ver mas...</a></td>
+            <td>Manicuria y pedicuria</td>
+            <td>Veronica</td>
+            <td> <a href="">Ver imagen...</a></td>
+            <td>
+              <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                    <path d="M16 5l3 3"></path>
+                 </svg>
+               </button>
+               <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 7l16 0"></path>
+                    <path d="M10 11l0 6"></path>
+                    <path d="M14 11l0 6"></path>
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                 </svg>
+               </button>
+            </td>
           </tr>
           <tr>
-            <td>3</td>
-            <td>Iamout</td>
-            <td>Ofinspiration</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
+            <td>Limpieza facial</td>
+            <td>$5000</td>
+            <td><a href="">Ver mas...</a></td>
+            <td>Belleza facial</td>
+            <td>Ricardina</td>
+            <td> <a href="">Ver imagen...</a></td>
+            <td>
+              <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                    <path d="M16 5l3 3"></path>
+                 </svg>
+               </button>
+               <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 7l16 0"></path>
+                    <path d="M10 11l0 6"></path>
+                    <path d="M14 11l0 6"></path>
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                 </svg>
+               </button>
+            </td>
           </tr>
           <tr>
-            <td>4</td>
-            <td>Yoda</td>
-            <td>Skywalker</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Patrick</td>
-            <td>Dupont</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Barack</td>
-            <td>Obama</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>François</td>
-            <td>Holland</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Michel</td>
-            <td>Popo</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Chuck</td>
-            <td>Norris</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Simon</td>
-            <td>Robin</td>
-            <td>2</td>
-            <td>Someone</td>
-            <td>Youknow</td>
-            <td>Youknow</td>
+            <td>Masaje corporal</td>
+            <td>$7000</td>
+            <td><a href="">Ver mas...</a></td>
+            <td>Belleza corporal</td>
+            <td>Maria</td>
+            <td> <a href="">Ver imagen...</a></td>
+            <td>
+              <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                    <path d="M16 5l3 3"></path>
+                 </svg>
+               </button>
+               <button type="button" class="btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4 7l16 0"></path>
+                    <path d="M10 11l0 6"></path>
+                    <path d="M14 11l0 6"></path>
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                 </svg>
+               </button>
+            </td>
           </tr>
         </tbody>
       </table>

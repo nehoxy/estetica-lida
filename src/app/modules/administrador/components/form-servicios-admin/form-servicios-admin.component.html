@@ -1,73 +1,171 @@
-<div class="container  mt-3">
-    <div class="row">
-        <div class="col-lg-3">
-            <form  action="#">
-                <div class="form-group mt-3">
-                    <label for="fname" class="control-label ps-2">Nombre</label>
-                    <input type="text" class="form-control color-input" id="fname">
-                </div>
-                <div class="form-group mt-3">
-                    <label for="lname" class="control-label ps-2">Precio</label>
-                    <input type="number" class="form-control color-input" id="lname">
-                </div>
-                <div class="form-group mt-3">
-                    <label for="text" class="control-label ps-2">Descripcion</label>
-                    <input type="text" class="form-control color-input" id="email">
-                </div>
-                <div class="form-group mt-3">
-                    <label class="control-label ps-2">Categoria</label>
-                    <select class="form-select color-input" aria-label="Default select example">
-                        <option class="option" disabled>Categoria</option>
-                        <option class="option"  value="1">Belleza facial</option>
-                        <option class="option"  value="2">Belleza corporal</option>
-                        <option class="option"  value="3">Manicura y pedicura</option>
-                      </select>
-                </div>
-                <div class="form-group mt-3">
-                    <label for="text" class="control-label ps-2">Imagen</label>
-                    <input type="text" class="form-control color-input" id="email">
-                </div>
-                <div class="form-group mt-3">
-                    <label class="control-label ps-2">Profesional</label>
-                    <select class="form-select color-input" aria-label="Default select example">
-                        
-                        <option class="option"  disabled>Profesional</option>
-                        <option class="option"  value="1">Ricardina</option>
-                        <option class="option"  value="2">Maria</option>
-                        <option class="option"  value="3">Dana</option>
-                      </select>
-                </div>
-                <button type="submit" class="btn mt-4">Cargar</button>
-            </form>
+<div class="container-fluid  mt-3">
+  <div class="row">
+    <div class="col-lg-3">
+      <form action="#">
+        <div class="form-group mt-3">
+          <label for="fname" class="control-label ps-2">Nombre</label>
+          <input type="text" class="form-control color-input" id="fname" placeholder="Ingrese nombre del producto">
         </div>
-       <div class="col-lg-9">
-        <table class="table table-bordered">
-            <thead>
-              <tr >
-                <th class="color-tabla" scope="col">Nombre</th>
-                <th class="color-tabla" scope="col">Precio</th>
-                <th class="color-tabla" scope="col">Descripcion</th>
-                <th class="color-tabla" scope="col">Categoria</th>
-                <th class="color-tabla" scope="col">Profecional</th>
-                <th class="color-tabla"  scope="col">Imagen</th>
-                <th class="color-tabla"  scope="col">Accion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="color-tabla" scope="row">Manicuria Rusa</th>
-                <td class="color-tabla" >$2000</td>
-                <td class="color-tabla" ><a href="">Ver mas</a></td>
-                <td class="color-tabla" >...</td>
-                <td class="color-tabla" ><a href="">View Image</a></td>
-                <td class="color-tabla" ></td>
-              </tr>
-              
-            </tbody>
-          </table>
-       </div>
+        <div class="form-group mt-3">
+          <label for="lname" class="control-label ps-2">Precio</label>
+          <input type="number" class="form-control color-input" id="precio" placeholder="Ingrese precio del producto">
+        </div>
+        <div class="form-group mt-3">
+          <label for="text" class="control-label ps-2">Descripcion</label>
+          <input type="text" class="form-control color-input" id="descripcion" placeholder="Ingrese descripcion del producto">
+        </div>
+        <div class="form-group mt-3">
+          <label class="control-label ps-2">Categoria</label>
+          <select class="form-select color-input" aria-label="Default select example">
+            <option class="option" value="-1" disabled selected>Seleccione una opcion</option>
+            <option class="option" value="1">Belleza facial</option>
+            <option class="option" value="2">Belleza corporal</option>
+            <option class="option" value="3">Manicura y pedicura</option>
+          </select>
+        </div>
+        <div class="form-group mt-3">
+          <label for="text" class="control-label ps-2">Imagen</label>
+          <input type="text" class="form-control color-input" id="url" placeholder="Ingrese url de la imagen">
+        </div>
+        <div class="form-group mt-3">
+          <label class="control-label ps-2">Profesional</label>
+          <select class="form-select color-input" aria-label="Default select example">
 
-        
+            <option class="option" value="-1" disabled selected>Seleccione un profesional</option>
+            <option class="option" value="1">Ricardina</option>
+            <option class="option" value="2">Maria</option>
+            <option class="option" value="3">Dana</option>
+          </select>
+        </div>
+        <button type="submit" class="btn mt-4">Cargar</button>
+      </form>
     </div>
-    
+    <div class="col-lg-9">
+      <table datatable [dtOptions]="dtOptions" class="row-border hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th> 
+            <th>Descripcion</th>
+            <th>Categoria</th>
+            <th>Profesional</th>
+            <th>Imagen</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Foo</td>
+            <td>Bar</td>
+            <td>sd</td>
+            <td>sdf</td>
+            <td>fsd</td>
+            <td>asd</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Iamout</td>
+            <td>Ofinspiration</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Yoda</td>
+            <td>Skywalker</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Patrick</td>
+            <td>Dupont</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Barack</td>
+            <td>Obama</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>François</td>
+            <td>Holland</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Michel</td>
+            <td>Popo</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Chuck</td>
+            <td>Norris</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Simon</td>
+            <td>Robin</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Louis</td>
+            <td>Lin</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Zelda</td>
+            <td>Link</td>
+            <td>2</td>
+            <td>Someone</td>
+            <td>Youknow</td>
+            <td>Youknow</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+
 </div>

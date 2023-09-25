@@ -1,15 +1,11 @@
-import { Component } from '@angular/core';
-import {AfterViewInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { Component,AfterViewInit,ViewChild} from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-tabla-ventas-administrador',
   templateUrl: './tabla-ventas-administrador.component.html',
   styleUrls: ['./tabla-ventas-administrador.component.css'],
-  standalone:true,
-  imports: [MatTableModule, MatPaginatorModule,MatFormFieldModule,MatInputModule],
 })
 
 export class TablaVentasAdministradorComponent implements AfterViewInit {

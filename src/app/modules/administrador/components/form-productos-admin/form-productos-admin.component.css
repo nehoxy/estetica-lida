@@ -3,6 +3,7 @@
   }
   .btn-sm{
     border-color: #EBEBEB;
+    border: 0;
   }
   .color-input{
     border-radius: 1vw;

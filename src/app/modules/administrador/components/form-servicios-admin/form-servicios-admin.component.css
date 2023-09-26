@@ -47,3 +47,7 @@
       left: 98%;
       transform: translateY(-50%);
   }
+  .btn-sm{
+    border-color: #EBEBEB;
+    border: 0;
+  }

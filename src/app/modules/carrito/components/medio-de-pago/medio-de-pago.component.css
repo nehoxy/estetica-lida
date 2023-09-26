@@ -4,6 +4,7 @@
 
 .texto{
     font-family: Poppins,sans-serif;
+    
 }
 
 .selector{
@@ -17,14 +18,15 @@
         width: 5rem;
     }
 
+
     .div-imagen{
         display: flex;
         justify-content: center;
     }
 
     .div-selector{
-        display: flex;
-        justify-content: start;
+        
+        margin-bottom: 1rem;
     }
 } 
 
@@ -35,14 +37,15 @@
         width: 5rem;
     }
 
+
     .div-imagen{
         display: flex;
         justify-content: center;
     }
 
     .div-selector{
-        display: flex;
-        justify-content: start;
+       
+        margin-bottom: 1rem;
     }
 } 
 
@@ -58,8 +61,8 @@
         justify-content: center;
     }
     .div-selector{
-        display: flex;
-        justify-content: start;
+        
+        margin-bottom: 1rem;
     }
 } 
 

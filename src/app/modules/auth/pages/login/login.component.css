@@ -47,6 +47,25 @@ img{
 h1{
     font-family: 'Poppins';  
 }
+
+.buttonIn {
+    display: flex;
+}
+.input-flex{
+    flex:1;
+}
+.password-btn{
+
+    border:0px;
+    background-color: transparent;
+    flex: 2;
+   
+}
+
+.mensaje-error{
+    color:red;
+    font-size: 0.8rem;
+}
 /*login responsive */
 @media only screen and (max-width: 600px) {
     .cardslogin{

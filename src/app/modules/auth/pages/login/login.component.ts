@@ -4,6 +4,7 @@ import { Usuario } from 'src/app/models/usuario';
 import { Router } from '@angular/router';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { SwalComponent } from '@sweetalert2/ngx-sweetalert2/public-api';
+import { FormControl,FormBuilder,Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,6 +14,12 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent {
   hide = true;
+  hidePass = true;
+
+  formLogin = this.fb.group({
+    email: new FormControl ('',[Validators.required, Validators.email]),
+    contrasena: new FormControl('',[Validators.required, Validators.minLength(8)])
+  })
 
   usuarios: Usuario = {
     uid:'',
@@ -22,7 +29,7 @@ export class LoginComponent {
     rol:'',
     contrasena:'' }
 
-    constructor(public servicioAuth:AuthService, public firestore:FirestoreService, public router:Router){}
+    constructor(public servicioAuth:AuthService, public firestore:FirestoreService, public router:Router, public fb:FormBuilder){}
 
   async iniciarSesion(){
     const credenciales = {
@@ -36,7 +43,7 @@ export class LoginComponent {
         iconColor: '#BB8588',
         confirmButtonColor: '#BB8588',
         title: 'Iniciaste sesion',
-        text: 'Bienvenido '+credenciales.email+'!',
+        text: 'Bienvenido/a '+credenciales.email+'!',
       })
     }).catch(error =>{
       alert('Hubo un error al iniciar sesion'+error)

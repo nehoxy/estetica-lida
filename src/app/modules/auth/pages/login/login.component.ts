@@ -36,7 +36,8 @@ export class LoginComponent {
       email:this.usuarios.email,
       contrasena:this.usuarios.contrasena
     }
-    const res = await this.servicioAuth.iniciarSesion(credenciales.email,credenciales.contrasena).then( res =>{
+    const res = await this.servicioAuth.iniciarSesion(credenciales.email,credenciales.contrasena)
+    .then( res =>{
   
       Swal.fire({
         icon: 'success',

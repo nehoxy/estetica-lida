@@ -45,8 +45,18 @@ export class LoginComponent {
         title: 'Iniciaste sesion',
         text: 'Bienvenido/a '+credenciales.email+'!',
       })
+      this.router.navigate(['home'])
     }).catch(error =>{
-      alert('Hubo un error al iniciar sesion'+error)
+      Swal.fire({
+        icon: 'error',
+        confirmButtonColor: '#BB8588',
+        showConfirmButton:false,
+        showCloseButton: true,
+        title: 'Error',
+        text: error,
+        toast:true,
+        position:'bottom'
+      })
     })
   }
 

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MedioDePagoComponent } from './components/medio-de-pago/medio-de-pago.component';
+import { DatosDeEnvioComponent } from './components/datos-de-envio/datos-de-envio.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MedioDePagoComponent } from './components/medio-de-pago/medio-de-pago.c
     ResumenPedidoComponent,
     PasosComponent,
     CarritoComponent,
-    MedioDePagoComponent
+    MedioDePagoComponent,
+    DatosDeEnvioComponent
   ],
   imports: [
     CommonModule,

@@ -14,16 +14,8 @@
     <mat-step  errorMessage="Complete los datos">
       <form >
         <ng-template matStepLabel>Datos del envio</ng-template>
-        <mat-form-field>
-          <mat-label>Direccion</mat-label>
-          <input matInput placeholder="Ej: Paraguay 1050" formControlName="secondCtrl" required>
-        </mat-form-field>
-
-        
-
-        
+       <app-datos-de-envio></app-datos-de-envio>
         <div>
-          <p>Complete los datos del envio</p>
           <button mat-button matStepperPrevious>Atras</button>
           <button mat-button matStepperNext>Siguiente</button>
         </div>

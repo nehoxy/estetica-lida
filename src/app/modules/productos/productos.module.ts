@@ -7,6 +7,10 @@ import { CardProductoComponent } from './components/card-producto/card-producto.
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { MatDialogModule } from '@angular/material/dialog';
+
+// Material
+
 
 
 
@@ -22,7 +26,11 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   imports: [
     CommonModule,
     ProductosRoutingModule,
+    MatDialogModule
 
+  ],
+  exports:[
+    MatDialogModule
   ]
 })
 export class ProductosModule { }

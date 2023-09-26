@@ -1,0 +1,27 @@
+.encabezado{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding-left: 0;
+    border-color:#BB8588;
+    
+}
+
+.contenido{
+   background-color: #F8EDEB;
+}
+
+.titulo{
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.descripcion{
+    font-family: 'Lora';
+    font-size: 1rem;
+}
+.boton-close{
+    background-color: #C8ECCB;
+    border-radius:2vw;
+    font-family: 'Poppins';
+    
+}

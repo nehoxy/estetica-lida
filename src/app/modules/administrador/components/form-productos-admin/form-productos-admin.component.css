@@ -1,8 +1,9 @@
 .texto{
     font-family: 'Poppins', sans-serif;
   }
-  .btn{
-    background-color: #C8ECCB;
+  .btn-sm{
+    border-color: #EBEBEB;
+    border: 0;
   }
   .color-input{
     border-radius: 1vw;
@@ -14,6 +15,7 @@
  .color-tabla{
     background-color: #EBEBEB;
  }
- .boton{
-    border: 0vw;
+ .btn1{
+    border-radius: 5vw;
+    background-color: #C8ECCB;
  }

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Producto } from 'src/app/models/producto';
+import { CrudProductosService } from '../../services/crud-productos.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-productos-admin',
@@ -6,9 +9,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-productos-admin.component.css']
 })
 export class FormProductosAdminComponent {
+    coleccionProductos: Producto [] = [];
+    productoSeleccionado!:Producto; // ! -> toma valores vacios
+
+    producto = new FormGroup ({
+        nombre: new FormControl('',Validators.required),
+        precio: new FormControl(0,Validators.required),
+        descripcion: new FormControl('',Validators.required),
+        categoria: new FormControl('',Validators.required),
+        imagen: new FormControl('',Validators.required),
+        alt: new FormControl('',Validators.required),
+        stock: new FormControl(0,Validators.required)
+        
+    })
+
+    constructor(public servicioCrudProductos: CrudProductosService){}
+
+
+
 
   dtOptions:DataTables.Settings={}
- 
   idioma = {
     "processing": "Procesando...",
     "lengthMenu": "Mostrar _MENU_ registros",
@@ -259,5 +279,72 @@ export class FormProductosAdminComponent {
       pagingType: 'full_numbers',
       language: this.idioma
     };
+
+    /* this.servicioCrudProductos.obtenerProducto().subscribe(producto => {
+        this.coleccionProductos = producto
+    }) */
   }
+
+  async agregarProducto(){
+    if (this.producto.valid){
+        let nuevoProducto :Producto = {
+            idProducto: '',
+            nombre: this.producto.value.nombre! ,
+            precio: this.producto.value.precio!,
+            descripcion: this.producto.value.descripcion!,
+            categoria: this.producto.value.categoria!,
+            imagen: this.producto.value.imagen!,
+            alt: this.producto.value.alt!,
+            stock: this.producto.value.stock!
+        }
+
+        await this.servicioCrudProductos.crearProducto(nuevoProducto).
+        then(
+            producto => {
+                alert('Ha agregado un nuevo producto con exito!')
+            })
+            .catch(error => {
+                alert('Hubo un error al cargar el nuevo producto\n'+error)
+            })
+        
+    }
+  }
+
+  mostrarEditar(productoSeleccionado:Producto){
+    this.productoSeleccionado = productoSeleccionado;
+    this.producto.setValue({
+        nombre: productoSeleccionado.nombre,
+        precio: productoSeleccionado.precio,
+        descripcion: productoSeleccionado.descripcion,
+        categoria:productoSeleccionado.categoria,
+        imagen:productoSeleccionado.imagen,
+        alt:productoSeleccionado.alt,
+        stock: productoSeleccionado.stock
+    })
+  }
+
+  editarProducto(){
+    let datos : Producto = {
+        idProducto:this.productoSeleccionado.idProducto,
+        nombre:this.producto.value.nombre!,
+        precio:this.producto.value.precio!,
+        descripcion:this.producto.value.descripcion!,
+        categoria:this.producto.value.categoria!,
+        imagen:this.producto.value.imagen!,
+        alt:this.producto.value.imagen!,
+        stock:this.producto.value.stock!
+    }
+    this.servicioCrudProductos.modificarProducto(this.productoSeleccionado.idProducto, datos)
+    .then(producto =>{
+        alert('El producto se ha modificado con exito')
+    })
+    .catch(error => {
+        alert('No se ha podido modificar el producto \n'+error)
+    })
+  }
+
+  mostrarBorrar(productoSeleccionado:Producto) {
+    
+  }
+
 }

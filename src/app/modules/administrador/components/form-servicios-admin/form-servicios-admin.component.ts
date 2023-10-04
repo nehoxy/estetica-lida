@@ -22,8 +22,8 @@ export class FormServiciosAdminComponent implements OnInit {
     alt: new FormControl('',Validators.required),
     descripcion: new FormControl('',Validators.required),
     precio: new FormControl(0,Validators.required),
-    categoria: new FormControl('',Validators.required),
-    profesional: new FormControl('',Validators.required)
+    categoria: new FormControl('-1',Validators.required),
+    profesional: new FormControl('-1',Validators.required)
   })
 
     idioma = {
@@ -304,6 +304,8 @@ export class FormServiciosAdminComponent implements OnInit {
           .catch(error => {
             alert("Hubo un error al cargar el nuevo Servicio :( \n"+error);
           })
+        }else{
+            alert('error')
         }
       }
     
@@ -362,6 +364,9 @@ export class FormServiciosAdminComponent implements OnInit {
         })
       }
     
+      capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 }
 
 

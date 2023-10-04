@@ -1,44 +1,48 @@
 <div class="container-fluid  mt-3">
   <div class="row">
     <div class="col-lg-3">
-      <form action="#">
+      <form [formGroup]="servicio">
         <div class="form-group mt-3">
           <label for="fname" class="control-label ps-2">Nombre</label>
-          <input type="text" class="form-control color-input" id="fname" placeholder="Ingrese nombre del servicio">
+          <input type="text" class="form-control color-input" id="fname" formControlName="nombre" placeholder="Ingrese nombre del servicio">
         </div>
         <div class="form-group mt-3">
           <label for="lname" class="control-label ps-2">Precio</label>
-          <input type="number" class="form-control color-input" id="precio" placeholder="Ingrese precio del servicio">
+          <input type="number" class="form-control color-input" id="precio" formControlName="precio" placeholder="Ingrese precio del servicio">
         </div>
         <div class="form-group mt-3">
           <label for="text" class="control-label ps-2">Descripcion</label>
-          <input type="text" class="form-control color-input" id="descripcion" placeholder="Ingrese descripcion del servicio">
+          <input type="text" class="form-control color-input" id="descripcion" formControlName="descripcion" placeholder="Ingrese descripcion del servicio">
         </div>
         <div class="form-group mt-3">
           <label class="control-label ps-2">Categoria</label>
-          <select class="form-select color-input" aria-label="Default select example">
+          <select class="form-select color-input" formControlName="categoria" aria-label="Default select example">
             <option class="option" value="-1" disabled selected>Seleccione una opcion</option>
-            <option class="option" value="1">Belleza facial</option>
-            <option class="option" value="2">Belleza corporal</option>
-            <option class="option" value="3">Manicura y pedicura</option>
+            <option class="option" value="bellezafacial">Belleza facial</option>
+            <option class="option" value="bellezacorporal">Belleza corporal</option>
+            <option class="option" value="manicuriaypedicuria">Manicura y pedicura</option>
           </select>
         </div>
         <div class="form-group mt-3">
           <label for="text" class="control-label ps-2">Imagen</label>
-          <input type="text" class="form-control color-input" id="url" placeholder="Ingrese url de la imagen">
+          <input type="text" class="form-control color-input" id="url" formControlName="imagen" placeholder="Ingrese url de la imagen">
+        </div>
+        <div class="form-group mt-3">
+          <label for="text" class="control-label ps-2">Alt</label>
+          <input type="text" class="form-control color-input" id="url" formControlName="alt" placeholder="Ingrese url de la imagen">
         </div>
         <div class="form-group mt-3">
           <label class="control-label ps-2">Profesional</label>
-          <select class="form-select color-input texto" aria-label="Default select example">
+          <select class="form-select color-input texto" formControlName="profesional" aria-label="Default select example">
 
             <option class="option" value="-1" disabled selected>Seleccione un profesional</option>
-            <option class="option" value="1">Ricardina</option>
-            <option class="option" value="2">Maria</option>
-            <option class="option" value="3">Dana</option>
-            <option class="option" value="4">Veronica</option>
+            <option class="option" value="ricardina">Ricardina</option>
+            <option class="option" value="maria">Maria</option>
+            <option class="option" value="dana">Dana</option>
+            <option class="option" value="veronica">Veronica</option>
           </select>
         </div>
-        <button type="submit" class="btn mt-4 texto">Cargar</button>
+        <button type="submit" class="btn mt-4 texto (click)="agregarProducto()">Cargar</button>
       </form>
     </div>
     <div class="col-lg-9">
@@ -55,7 +59,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr  *ngFor="let col of coleccionServicios">
             <td>Manicuria Rusa</td>
             <td>$2000</td>
             <td> <a href="">Ver mas...</a> </td>

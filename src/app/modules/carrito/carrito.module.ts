@@ -15,7 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MedioDePagoComponent } from './components/medio-de-pago/medio-de-pago.component';
 import { DatosDeEnvioComponent } from './components/datos-de-envio/datos-de-envio.component';
-
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { DatosDeEnvioComponent } from './components/datos-de-envio/datos-de-envi
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule
   ],
   exports:[
     PasosComponent,
@@ -46,7 +47,8 @@ import { DatosDeEnvioComponent } from './components/datos-de-envio/datos-de-envi
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule
   ]
 })
 export class CarritoModule { }

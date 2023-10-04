@@ -36,7 +36,8 @@ export class LoginComponent {
       email:this.usuarios.email,
       contrasena:this.usuarios.contrasena
     }
-    const res = await this.servicioAuth.iniciarSesion(credenciales.email,credenciales.contrasena).then( res =>{
+    const res = await this.servicioAuth.iniciarSesion(credenciales.email,credenciales.contrasena)
+    .then( res =>{
   
       Swal.fire({
         icon: 'success',
@@ -45,8 +46,18 @@ export class LoginComponent {
         title: 'Iniciaste sesion',
         text: 'Bienvenido/a '+credenciales.email+'!',
       })
+      this.router.navigate(['home'])
     }).catch(error =>{
-      alert('Hubo un error al iniciar sesion'+error)
+      Swal.fire({
+        icon: 'error',
+        confirmButtonColor: '#BB8588',
+        showConfirmButton:false,
+        showCloseButton: true,
+        title: 'Error',
+        text: error,
+        toast:true,
+        position:'bottom'
+      })
     })
   }
 

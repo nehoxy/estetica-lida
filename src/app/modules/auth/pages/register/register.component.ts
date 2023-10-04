@@ -78,6 +78,7 @@ export class RegisterComponent {
               title: 'Se ha registrado correctamente',
               text: 'Bienvenido/a '+credenciales.email+'!',
             })
+            this._router.navigate(['home'])
           })
           .catch(error=> {
             Swal.fire({
@@ -98,7 +99,7 @@ export class RegisterComponent {
       
           //guarda el nuevo usuario
           this.guardarUser();
-          this._router.navigate(['home'])
+          
         }catch(err){
           console.log(err)
         }

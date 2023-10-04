@@ -12,7 +12,9 @@ import {MatTableModule} from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DataTablesModule } from "angular-datatables";
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarioComponent } from './components/calendario/calendario.component';
 
 
 
@@ -24,6 +26,7 @@ import { DataTablesModule } from "angular-datatables";
         FormServiciosAdminComponent,
         FormProductosAdminComponent,
         TablaVentasAdministradorComponent,
+        CalendarioComponent,
 
   ],
   imports: [
@@ -35,7 +38,11 @@ import { DataTablesModule } from "angular-datatables";
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    DataTablesModule
+    DataTablesModule,
+    CalendarModule.forRoot({
+      provide:DateAdapter,
+      useFactory:adapterFactory,
+    })
   ],
   exports:[
     MatTabsModule,
@@ -43,7 +50,8 @@ import { DataTablesModule } from "angular-datatables";
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    DataTablesModule
+    DataTablesModule,
+    
   ]
 })
 export class AdministradorModule { }

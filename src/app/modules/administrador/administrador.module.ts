@@ -12,6 +12,7 @@ import {MatTableModule} from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DataTablesModule } from "angular-datatables";
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -35,7 +36,9 @@ import { DataTablesModule } from "angular-datatables";
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     MatTabsModule,
@@ -43,7 +46,9 @@ import { DataTablesModule } from "angular-datatables";
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    DataTablesModule
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministradorModule { }

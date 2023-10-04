@@ -11,14 +11,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormProductosAdminComponent {
     coleccionProductos: Producto [] = [];
     productoSeleccionado!:Producto; // ! -> toma valores vacios
+    modalVisibleProducto:boolean = false;
 
     producto = new FormGroup ({
         nombre: new FormControl('',Validators.required),
         precio: new FormControl(0,Validators.required),
         descripcion: new FormControl('',Validators.required),
-        categoria: new FormControl('',Validators.required),
+        categoria: new FormControl('-1',Validators.required),
         imagen: new FormControl('',Validators.required),
-        alt: new FormControl('',Validators.required),
         stock: new FormControl(0,Validators.required)
         
     })
@@ -280,9 +280,9 @@ export class FormProductosAdminComponent {
       language: this.idioma
     };
 
-    /* this.servicioCrudProductos.obtenerProducto().subscribe(producto => {
+    this.servicioCrudProductos.obtenerProducto().subscribe(producto => {
         this.coleccionProductos = producto
-    }) */
+    })
   }
 
   async agregarProducto(){
@@ -294,7 +294,6 @@ export class FormProductosAdminComponent {
             descripcion: this.producto.value.descripcion!,
             categoria: this.producto.value.categoria!,
             imagen: this.producto.value.imagen!,
-            alt: this.producto.value.alt!,
             stock: this.producto.value.stock!
         }
 
@@ -318,7 +317,6 @@ export class FormProductosAdminComponent {
         descripcion: productoSeleccionado.descripcion,
         categoria:productoSeleccionado.categoria,
         imagen:productoSeleccionado.imagen,
-        alt:productoSeleccionado.alt,
         stock: productoSeleccionado.stock
     })
   }
@@ -331,7 +329,6 @@ export class FormProductosAdminComponent {
         descripcion:this.producto.value.descripcion!,
         categoria:this.producto.value.categoria!,
         imagen:this.producto.value.imagen!,
-        alt:this.producto.value.imagen!,
         stock:this.producto.value.stock!
     }
     this.servicioCrudProductos.modificarProducto(this.productoSeleccionado.idProducto, datos)
@@ -343,8 +340,19 @@ export class FormProductosAdminComponent {
     })
   }
 
-  mostrarBorrar(productoSeleccionado:Producto) {
-    
+  mostrarBorrar(productoSeleccionado:Producto) { //boton eliminar para el modal
+    this.modalVisibleProducto = true;
+    this.productoSeleccionado = productoSeleccionado;
   }
+
+  /*borrarProducto(){ //funcion para eliminar producto
+    this.servicioCrudProductos.eliminarProducto(this.productoSeleccionado.idProducto)
+    .then(respuesta => {
+      alert('El producto se elimino correctamente ');
+    })
+    .catch(error => {
+      alert('No se ha podido eliminar el producto\n'+error)
+    })
+  }*/
 
 }

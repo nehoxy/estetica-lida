@@ -1,4 +1,4 @@
-
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import {
   Component,
   ChangeDetectionStrategy,
@@ -60,6 +60,8 @@ const colors: Record<string, EventColor> = {
 
 export class CalendarioComponent {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
+  
+  modalRef?: BsModalRef;
 
   view: CalendarView = CalendarView.Month;
 
@@ -133,7 +135,7 @@ export class CalendarioComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor() {}
+  constructor(private modalService: BsModalService) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -169,7 +171,7 @@ export class CalendarioComponent {
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
-   
+    this.modalRef = this.modalService.show(this.modalContent, {class: 'modal-lg' });
   }
 
   addEvent(): void {

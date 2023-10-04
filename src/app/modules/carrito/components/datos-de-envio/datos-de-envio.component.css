@@ -12,9 +12,17 @@
 }
 
 .boton-confirmar{
-    color: #C8ECCB;
-    width: 4rem;
-    height: 4rem;
+    background-color: #C8ECCB;
+    border-radius: 1rem;
+
+}
+.icon-confirmar{
+    color: white;
+    
+}
+.input-cp{
+    border-radius: 2rem;
+    padding: auto;
 }
 
 

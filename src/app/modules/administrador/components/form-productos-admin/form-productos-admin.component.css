@@ -21,6 +21,6 @@
     background-color: #C8ECCB;
  }
 
- ::ng-deep .modal-backdrop {
-  display: none !important;
+.modal-backdrop {
+  display: none ;
 }

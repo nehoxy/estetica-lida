@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Servicio } from 'src/app/models/servicio';
 import { CrudServiciosService } from '../../services/crud-servicios.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-servicios-admin',
@@ -299,7 +300,13 @@ export class FormServiciosAdminComponent implements OnInit {
           // ENVIAMOS NUESTRO NUEVO Servicio
           await this.crudService.crearServicio(nuevoServicio)
           .then(servicio => {
-            alert("Ha agregado un nuevo Servicio con éxito :)");
+            Swal.fire({
+                icon: 'success',
+                iconColor: '#C8ECCB',
+                confirmButtonColor: '#BB8588',
+                text: '¡Se ha agregado un nuevo servicio con exito!',
+              })
+            this.servicio.reset({categoria:'-1',profesional:'-1',})
           })
           .catch(error => {
             alert("Hubo un error al cargar el nuevo Servicio :( \n"+error);

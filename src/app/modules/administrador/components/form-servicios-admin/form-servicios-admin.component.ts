@@ -1,7 +1,9 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,ViewChild} from '@angular/core';
 import { Servicio } from 'src/app/models/servicio';
 import { CrudServiciosService } from '../../services/crud-servicios.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DataTableDirective } from 'angular-datatables';
+import { Subject } from 'rxjs';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +12,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./form-servicios-admin.component.css']
 })
 export class FormServiciosAdminComponent implements OnInit {
+
   dtOptions: DataTables.Settings = {};
+
   coleccionServicios: Servicio [] = [];
 
   servicioSeleccionado!: Servicio; // ! -> toma valores vacíos
@@ -359,12 +363,39 @@ export class FormServiciosAdminComponent implements OnInit {
       mostrarBorrar(servicioSeleccionado: Servicio){ // botón para el modal
         this.modalVisibleServicio = true; // modal
         this.servicioSeleccionado = servicioSeleccionado;
+    
+          
+          Swal.fire({
+            title: 'Borrar servicio',
+            text: "¿Estas seguro de querer borrar el servicio "+servicioSeleccionado.nombre+"?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Borrar',
+            cancelButtonText: 'No, cancelar',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                this.borrarServicio()
+             
+            } else if (
+              /* Read more about handling dismissals below */
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              
+            }
+          })
       }
     
       borrarServicio(){ // función para eliminar Servicio
         this.crudService.eliminarServicio(this.servicioSeleccionado.idServicio)
         .then(respuesta =>{
-          alert("El Servicio se ha eliminado correctamente.");
+            Swal.fire({
+                icon: 'success',
+                iconColor: '#C8ECCB',
+                confirmButtonColor: '#BB8588',
+                text: '¡Se ha eliminado el servicio con exito!',
+              })
         })
         .catch(error => {
           alert("No se ha podido eliminar el Servicio: \n"+error);
@@ -374,6 +405,8 @@ export class FormServiciosAdminComponent implements OnInit {
       capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
+
+
 }
 
 

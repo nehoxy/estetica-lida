@@ -16,6 +16,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import { MedioDePagoComponent } from './components/medio-de-pago/medio-de-pago.component';
 import { DatosDeEnvioComponent } from './components/datos-de-envio/datos-de-envio.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FinalizarPedidoComponent } from './components/finalizar-pedido/finalizar-pedido.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
     PasosComponent,
     CarritoComponent,
     MedioDePagoComponent,
-    DatosDeEnvioComponent
+    DatosDeEnvioComponent,
+    FinalizarPedidoComponent,
+    
   ],
   imports: [
     CommonModule,

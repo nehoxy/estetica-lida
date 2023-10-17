@@ -1,8 +1,8 @@
 <div class="contenedor">
   <mat-stepper class="prueba" #stepper>
-    <mat-step class="titulos" errorMessage="Complete el medio de pago">
+    <mat-step  errorMessage="Complete el medio de pago">
    
-        <ng-template matStepLabel class="titulos">Medio de pago</ng-template>
+        <ng-template matStepLabel>Medio de pago</ng-template>
         <div>
           <app-medio-de-pago></app-medio-de-pago>
           <button mat-button matStepperNext>Siguiente</button>
@@ -24,10 +24,10 @@
     
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
+      <app-finalizar-pedido></app-finalizar-pedido>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button matStepperPrevious>Atras</button>
+        <button mat-button (click)="stepper.reset()">Reiniciar</button>
       </div>
     </mat-step>
 </mat-stepper>

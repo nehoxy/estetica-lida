@@ -2,9 +2,10 @@
   <mat-stepper class="prueba" #stepper>
     <mat-step  errorMessage="Complete el medio de pago">
    
-        <ng-template matStepLabel>Medio de pago</ng-template>
+        <ng-template matStepLabel>Datos del envio</ng-template>
         <div>
-          <app-medio-de-pago></app-medio-de-pago>
+          <app-datos-de-envio></app-datos-de-envio>
+          
           <button mat-button matStepperNext>Siguiente</button>
         </div>
 
@@ -13,9 +14,10 @@
 
     <mat-step  errorMessage="Complete los datos">
       <form >
-        <ng-template matStepLabel>Datos del envio</ng-template>
-       <app-datos-de-envio></app-datos-de-envio>
+        <ng-template matStepLabel>Medio de pago</ng-template>
+       
         <div>
+          <app-medio-de-pago></app-medio-de-pago>
           <button mat-button matStepperPrevious>Atras</button>
           <button mat-button matStepperNext>Siguiente</button>
         </div>

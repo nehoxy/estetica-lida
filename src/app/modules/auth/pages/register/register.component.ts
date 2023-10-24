@@ -73,7 +73,7 @@ export class RegisterComponent {
           .then(res=>{
             Swal.fire({
               icon: 'success',
-              iconColor: '#BB8588',
+              iconColor: '#C8ECCB',
               confirmButtonColor: '#BB8588',
               title: 'Se ha registrado correctamente',
               text: 'Bienvenido/a '+credenciales.email+'!',

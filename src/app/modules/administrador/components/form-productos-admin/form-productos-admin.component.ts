@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudProductosService } from '../../services/crud-productos.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-form-productos-admin',
@@ -301,6 +302,7 @@ export class FormProductosAdminComponent {
         then(
             producto => {
                 alert('Ha agregado un nuevo producto con exito!')
+                this.producto.reset({categoria:"-1", precio:0})
             })
             .catch(error => {
                 alert('Hubo un error al cargar el nuevo producto\n'+error)
@@ -341,18 +343,44 @@ export class FormProductosAdminComponent {
     })
   }
 
-  mostrarBorrar(productoSeleccionado:Producto) { //boton eliminar para el modal
+  mostrarBorrar(productoSeleccionado:Producto) { //boton eliminar
     this.modalVisibleProducto = true;
     this.productoSeleccionado = productoSeleccionado;
+
+    //modal o alert para eliminar producto
+    Swal.fire({
+        title: 'Borrar producto',
+        text: "¿Estas seguro de querer borrar el producto "+productoSeleccionado.nombre+"?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Borrar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+            this.borrarProducto()
+         
+        } else if (
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          
+        }
+      })
   }
 
   borrarProducto(){ //funcion para eliminar producto
     this.servicioCrudProductos.eliminarProducto(this.productoSeleccionado.idProducto)
     .then(respuesta => {
-      alert('El producto se elimino correctamente ');
+        Swal.fire({
+            icon: 'success',
+            iconColor: '#C8ECCB',
+            confirmButtonColor: '#BB8588',
+            text: '¡Se ha eliminado el producto con exito!',
+          })
     })
     .catch(error => {
-      alert('No se ha podido eliminar el producto\n'+error)
+      alert("No se ha podido eliminar el producto: \n"+error);
     })
   }
 

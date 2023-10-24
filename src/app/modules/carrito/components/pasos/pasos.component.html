@@ -1,12 +1,12 @@
-<div class="contenedor">
+<div class="contenedor texto">
   <mat-stepper class="prueba" #stepper>
     <mat-step  errorMessage="Complete el medio de pago">
    
-        <ng-template matStepLabel>Datos del envio</ng-template>
+        <ng-template matStepLabel class="texto">Datos del envio</ng-template>
         <div>
           <app-datos-de-envio></app-datos-de-envio>
           
-          <button mat-button matStepperNext>Siguiente</button>
+          <button mat-button matStepperNext class="texto">Siguiente</button>
         </div>
 
     </mat-step>
@@ -18,8 +18,8 @@
        
         <div>
           <app-medio-de-pago></app-medio-de-pago>
-          <button mat-button matStepperPrevious>Atras</button>
-          <button mat-button matStepperNext>Siguiente</button>
+          <button mat-button matStepperPrevious class="texto">Atras</button>
+          <button mat-button matStepperNext class="texto">Siguiente</button>
         </div>
       </form>
     </mat-step>
@@ -28,8 +28,9 @@
       <ng-template matStepLabel>Done</ng-template>
       <app-finalizar-pedido></app-finalizar-pedido>
       <div>
-        <button mat-button matStepperPrevious>Atras</button>
-        <button mat-button (click)="stepper.reset()">Reiniciar</button>
+        <button mat-button matStepperPrevious class="texto">Atras</button>
+        <button mat-button (click)="stepper.reset()" class="texto">Reiniciar</button>
+        <button mat-button class="texto">Finalizar compra</button>
       </div>
     </mat-step>
 </mat-stepper>

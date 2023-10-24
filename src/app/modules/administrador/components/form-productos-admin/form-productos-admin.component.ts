@@ -343,6 +343,10 @@ export class FormProductosAdminComponent {
     })
   }
 
+  resetearForm(){
+    this.producto.reset({categoria:"-1", precio:0})
+  }
+
   mostrarBorrar(productoSeleccionado:Producto) { //boton eliminar
     this.modalVisibleProducto = true;
     this.productoSeleccionado = productoSeleccionado;

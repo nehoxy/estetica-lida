@@ -92,26 +92,25 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo producto</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="resetearForm()"></button>
                 </div>
                 <div [formGroup]="producto" class="modal-body">
                     <!-- Recibe los nuevos valores -->
                     <div class="mb-3">
-                        <label class="form-label">Ingrese nombre del producto:</label>
-                        <input type="text" class="form-control" formControlName="nombre" placeholder="{{col.nombre}}">
+                        <label class="form-label texto">Ingrese nombre del producto:</label>
+                        <input type="text" class="form-control color-input texto" formControlName="nombre" placeholder="{{col.nombre}}">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ingrese el precio del producto:</label>
-                        <input type="number" class="form-control" formControlName="precio" placeholder="{{col.precio}}">
+                        <label class="form-label texto">Ingrese el precio del producto:</label>
+                        <input type="number" class="form-control color-input texto" formControlName="precio" placeholder="{{col.precio}}">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ingrese descripción:</label>
-                        <input type="text" class="form-control" formControlName="descripcion" placeholder="{{col.descripcion}}">
+                        <label class="form-label texto">Ingrese descripción:</label>
+                        <input type="text" class="form-control color-input texto" formControlName="descripcion" placeholder="{{col.descripcion}}">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ingrese categoria del producto</label>
-                        <select class="form-control" class="form-select" formControlName="categoria">
+                        <label class="form-label texto">Ingrese categoria del producto</label>
+                        <select class="form-control" class="form-select color-input" formControlName="categoria">
                             <option class="option texto" value="-1" disabled selected>Seleccione una opcion</option>
                             <option class="option texto"  value="Belleza facial">Belleza facial</option>
                             <option class="option texto"  value="Belleza corporal">Belleza corporal</option>
@@ -121,18 +120,18 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ingrese una imagen del producto:</label>
-                        <input type="text" class="form-control" formControlName="imagen" placeholder="{{col.imagen}}">
+                        <label class="form-label texto">Ingrese una imagen del producto:</label>
+                        <input type="text" class="form-control color-input texto" formControlName="imagen" placeholder="{{col.imagen}}">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Ingrese stock disponible:</label>
-                        <input type="number" class="form-control" formControlName="stock" placeholder="{{col.stock}}">
+                        <label class="form-label texto">Ingrese stock disponible:</label>
+                        <input type="number" class="form-control color-input texto" formControlName="stock" placeholder="{{col.stock}}">
                     </div>                      
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" (click)="editarProducto()" data-bs-dismiss="modal ">Guardar cambios</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="resetearForm()">Cerrar</button>
+                    <button type="button" class="btn btn2 texto" (click)="editarProducto()" data-bs-dismiss="modal">Guardar cambios</button>
+                    <button type="button" class="btn btn3 texto" data-bs-dismiss="modal" (click)="resetearForm()">Cerrar</button>
                 </div>
             </div>
         </div>

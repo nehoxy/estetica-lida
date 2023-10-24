@@ -101,7 +101,7 @@
       <div class="modal-content">
           <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">Edite el siguiente producto:</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="resetForm()"></button>
           </div>
           <div [formGroup]="servicio" class="modal-body">
               <!-- Recibe los nuevos valores -->
@@ -148,7 +148,7 @@
           <!-- Corresponde a las ACCIONES -->
           <div class="modal-footer">
               <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" (click)="editarServicio()">Guardar cambios</button>
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" (click)="resetForm()">Cerrar</button>
           </div>
       </div>
   </div>

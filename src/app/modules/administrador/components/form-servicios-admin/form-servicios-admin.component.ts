@@ -359,6 +359,10 @@ export class FormServiciosAdminComponent implements OnInit {
           alert("No se pudo modificar el Servicio :( \n"+error);
         })
       }
+
+      resetForm(){
+        this.servicio.reset({precio:0,categoria:"-1",profesional:"-1"})
+      }
     
       // ELIMINAR Servicio
       mostrarBorrar(servicioSeleccionado: Servicio){ // botón para el modal
@@ -405,7 +409,8 @@ export class FormServiciosAdminComponent implements OnInit {
     
       capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+        }
+    
 
 
 }

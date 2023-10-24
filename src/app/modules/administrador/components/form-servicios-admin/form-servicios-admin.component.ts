@@ -342,6 +342,7 @@ export class FormServiciosAdminComponent implements OnInit {
         this.crudService.modificarServicio(this.servicioSeleccionado.idServicio, datos)
         .then(servicio => {
           alert("El Servicio fue modificado con éxito.");
+          this.servicio.reset({categoria:"-1",profesional:"-1"})
         })
         .catch(error => {
           alert("No se pudo modificar el Servicio :( \n"+error);

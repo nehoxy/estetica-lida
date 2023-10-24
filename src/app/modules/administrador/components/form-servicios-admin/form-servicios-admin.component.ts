@@ -307,7 +307,10 @@ export class FormServiciosAdminComponent implements OnInit {
             Swal.fire({
                 icon: 'success',
                 iconColor: '#C8ECCB',
-                confirmButtonColor: '#BB8588',
+                buttonsStyling:false,
+                customClass:{
+                    confirmButton:'btn btn-sweetalert'
+                },
                 text: '¡Se ha agregado un nuevo servicio con exito!',
               })
             this.servicio.reset({categoria:'-1',profesional:'-1',})
@@ -374,6 +377,11 @@ export class FormServiciosAdminComponent implements OnInit {
             title: 'Borrar servicio',
             text: "¿Estas seguro de querer borrar el servicio "+servicioSeleccionado.nombre+"?",
             icon: 'warning',
+            buttonsStyling: false,
+            customClass:{
+                confirmButton:'btn btn2',
+                cancelButton:'btn btn-danger'
+            },
             showCancelButton: true,
             confirmButtonText: 'Borrar',
             cancelButtonText: 'No, cancelar',
@@ -398,7 +406,10 @@ export class FormServiciosAdminComponent implements OnInit {
             Swal.fire({
                 icon: 'success',
                 iconColor: '#C8ECCB',
-                confirmButtonColor: '#BB8588',
+                buttonsStyling:false,
+                customClass:{
+                    confirmButton:'btn btn-sweetalert'
+                },
                 text: '¡Se ha eliminado el servicio con exito!',
               })
         })

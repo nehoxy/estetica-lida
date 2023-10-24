@@ -99,8 +99,7 @@
 <div class="modal fade" *ngFor="let col of coleccionServicios" id="editarServicio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Edite el siguiente producto:</h1>
+          <div class="modal-header">  
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="resetForm()"></button>
           </div>
           <div [formGroup]="servicio" class="modal-body">
@@ -127,7 +126,7 @@
               </div>
               <div class="mb-3">
                   <label class="form-label texto">Ingrese categoría del servicio:</label>
-                  <select class="form-control color-input" class="form-select " formControlName="categoria" aria-label="Default select example">
+                  <select class="form-control " class="form-select color-input texto" formControlName="categoria" aria-label="Default select example">
                       <option selected>Elija una opción</option>
                       <option value="collares">Collares</option>
                       <option value="juguetes">Juguetes</option>
@@ -136,7 +135,7 @@
               </div>
               <div class="mb-3">
                 <label class="form-label texto">Ingrese el profesional del servicio:</label>
-                <select class="form-control color-input" class="form-select" formControlName="profesional" aria-label="Default select example">
+                <select class="form-control color-input" class="form-select color-input texto" formControlName="profesional" aria-label="Default select example">
                     <option selected>Elija una opción</option>
                     <option value="collares">Collares</option>
                     <option value="juguetes">Juguetes</option>

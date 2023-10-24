@@ -48,18 +48,39 @@
       transform: translateY(-50%);
   }
   .btn-sm{
-    border-color: #EBEBEB;
-    background-color: #EBEBEB;
+    border-color: #EFEFEF;
+    background-color: #EFEFEF;
     border: 0;
     
   }
 
-  .btn2{
-    border-radius: 5vw;
-    background-color: #C8ECCB;
+  ::ng-deep .btn2{
+    border-radius: 5vw !important;
+    background-color: #C8ECCB !important;
+    margin-left: 1rem !important;
+    font-family: 'Poppins' !important;
   }
 
   .btn3{
     border-radius: 5vw;
     background-color: #F8EDEB;
+  }
+
+  .swal2-styled.swal2-confirm {
+    background-color: #C8ECCB;
+  }
+
+  ::ng-deep .btn-danger{
+    border-radius: 5vw !important;
+    font-family: 'Poppins' !important;
+    background-color: rgb(224, 89, 89);
+  }
+
+  ::ng-deep .btn-sweetalert{
+    background-color: #BB8588;
+    border-radius: 5vw;
+    font-family: 'Poppins';
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }

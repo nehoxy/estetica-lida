@@ -355,7 +355,15 @@ export class FormServiciosAdminComponent implements OnInit {
     
         this.crudService.modificarServicio(this.servicioSeleccionado.idServicio, datos)
         .then(servicio => {
-          alert("El Servicio fue modificado con éxito.");
+            Swal.fire({
+                icon: 'success',
+                iconColor: '#C8ECCB',
+                buttonsStyling:false,
+                customClass:{
+                    confirmButton:'btn btn-sweetalert'
+                },
+                text: '¡Se ha modificado el servicio con exito!',
+              })
           this.servicio.reset({categoria:"-1",profesional:"-1"})
         })
         .catch(error => {

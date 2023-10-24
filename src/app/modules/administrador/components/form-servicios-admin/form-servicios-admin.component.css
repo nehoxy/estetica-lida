@@ -84,3 +84,12 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  ::ng-deep .btn-sweetalert:hover{
+    background-color: #8f5c5f;
+    border-radius: 5vw;
+    font-family: 'Poppins';
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }

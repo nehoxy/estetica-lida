@@ -16,12 +16,12 @@
         </div>
         <div class="form-group mt-3">
           <label class="control-label ps-2">Categoria</label>
-          <select class="form-select color-input" formControlName="categoria" aria-label="Default select example">
-            <option class="option" value="-1" disabled selected>Seleccione una opcion</option>
-            <option class="option" value="bellezafacial">Belleza facial</option>
-            <option class="option" value="bellezacorporal">Belleza corporal</option>
-            <option class="option" value="manicuria">Manicura</option>
-            <option class="option" value="pedicuria">Pedicuria</option>
+          <select class="form-select color-input texto" formControlName="categoria" aria-label="Default select example">
+            <option class="option texto" value="-1" disabled selected>Seleccione una opcion</option>
+            <option class="option texto" value="bellezafacial">Belleza facial</option>
+            <option class="option texto" value="bellezacorporal">Belleza corporal</option>
+            <option class="option texto" value="manicuria">Manicura</option>
+            <option class="option texto" value="pedicuria">Pedicuria</option>
           </select>
         </div>
         <div class="form-group mt-3">
@@ -36,11 +36,11 @@
           <label class="control-label ps-2">Profesional</label>
           <select class="form-select color-input texto" formControlName="profesional" aria-label="Default select example">
 
-            <option class="option" value="-1" disabled selected>Seleccione un profesional</option>
-            <option class="option" value="ricardina">Ricardina</option>
-            <option class="option" value="maria">Maria</option>
-            <option class="option" value="dana">Dana</option>
-            <option class="option" value="veronica">Veronica</option>
+            <option class="option texto " value="-1" disabled selected>Seleccione un profesional</option>
+            <option class="option texto" value="ricardina">Ricardina</option>
+            <option class="option texto" value="maria">Maria</option>
+            <option class="option texto" value="dana">Dana</option>
+            <option class="option texto" value="veronica">Veronica</option>
           </select>
         </div>
         <button type="submit" class="btn mt-4 texto" (click)="agregarServicio()">Cargar</button>
@@ -127,19 +127,21 @@
               <div class="mb-3">
                   <label class="form-label texto">Ingrese categoría del servicio:</label>
                   <select class="form-control " class="form-select color-input texto" formControlName="categoria" aria-label="Default select example">
-                      <option selected>Elija una opción</option>
-                      <option value="collares">Collares</option>
-                      <option value="juguetes">Juguetes</option>
-                      <option value="indumentaria">Indumentaria</option>
+                    <option class="option" value="-1" disabled selected>Seleccione una opcion</option>
+                    <option class="option" value="bellezafacial">Belleza facial</option>
+                    <option class="option" value="bellezacorporal">Belleza corporal</option>
+                    <option class="option" value="manicuria">Manicura</option>
+                    <option class="option" value="pedicuria">Pedicuria</option>
                   </select>
               </div>
               <div class="mb-3">
                 <label class="form-label texto">Ingrese el profesional del servicio:</label>
                 <select class="form-control color-input" class="form-select color-input texto" formControlName="profesional" aria-label="Default select example">
-                    <option selected>Elija una opción</option>
-                    <option value="collares">Collares</option>
-                    <option value="juguetes">Juguetes</option>
-                    <option value="indumentaria">Indumentaria</option>
+                  <option class="option" value="-1" disabled selected>Seleccione un profesional</option>
+                  <option class="option" value="ricardina">Ricardina</option>
+                  <option class="option" value="maria">Maria</option>
+                  <option class="option" value="dana">Dana</option>
+                  <option class="option" value="veronica">Veronica</option>
                 </select>
             </div>
           </div>

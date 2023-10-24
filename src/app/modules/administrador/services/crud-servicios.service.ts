@@ -37,7 +37,7 @@ export class CrudServiciosService {
   // función para EDITAR PRODUCTO
   /*Envíamos el id del producto seleccionado y su nueva información*/
   modificarServicio(idServicio: string, nuevaData: Servicio){
-    return this.database.collection('servicio').doc(idServicio).update(nuevaData)
+    return this.database.collection('servicios').doc(idServicio).update(nuevaData)
   }
 
   // función para ELIMINAR PRODUCTO

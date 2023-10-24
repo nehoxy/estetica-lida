@@ -92,7 +92,9 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
+              "src/favicon-lida.ico",
+              "src/assets/favicon-lida.ico",
+              "src/favicon-16x16.png",
               "src/assets"
             ],
             "styles": [

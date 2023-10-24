@@ -321,7 +321,7 @@ export class FormProductosAdminComponent {
     })
   }
 
-  editarProducto(){
+  editarProducto(){ //funcion para editar producto
     let datos : Producto = {
         idProducto:this.productoSeleccionado.idProducto,
         nombre:this.producto.value.nombre!,
@@ -334,7 +334,7 @@ export class FormProductosAdminComponent {
     this.servicioCrudProductos.modificarProducto(this.productoSeleccionado.idProducto, datos)
     .then(producto =>{
         alert('El producto se ha modificado con exito')
-        this.producto.reset({categoria:"-1"})
+        this.producto.reset({categoria:"-1", precio:0})
     })
     .catch(error => {
         alert('No se ha podido modificar el producto \n'+error)

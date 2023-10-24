@@ -37,4 +37,15 @@ export class CrudProductosService {
    modificarProducto(idProducto: string, nuevaData:Producto){
     return this.database.collection('productos').doc(idProducto).update(nuevaData)
     }
+    eliminarProducto(idProducto:string){
+      return new Promise((resolve,reject)=>{
+        try{
+          const resp = this.productosColeccion.doc(idProducto).delete()
+          resolve(resp) //resolve da respuesta a las cosas que salen bien
+        }
+        catch(error){
+          reject(error) //reject da respuesta a las cosas si no salieron bien
+        }
+      })
+    }
 }

@@ -334,6 +334,7 @@ export class FormProductosAdminComponent {
     this.servicioCrudProductos.modificarProducto(this.productoSeleccionado.idProducto, datos)
     .then(producto =>{
         alert('El producto se ha modificado con exito')
+        this.producto.reset({categoria:"-1"})
     })
     .catch(error => {
         alert('No se ha podido modificar el producto \n'+error)
@@ -345,7 +346,7 @@ export class FormProductosAdminComponent {
     this.productoSeleccionado = productoSeleccionado;
   }
 
-  /*borrarProducto(){ //funcion para eliminar producto
+  borrarProducto(){ //funcion para eliminar producto
     this.servicioCrudProductos.eliminarProducto(this.productoSeleccionado.idProducto)
     .then(respuesta => {
       alert('El producto se elimino correctamente ');
@@ -353,6 +354,6 @@ export class FormProductosAdminComponent {
     .catch(error => {
       alert('No se ha podido eliminar el producto\n'+error)
     })
-  }*/
+  }
 
 }

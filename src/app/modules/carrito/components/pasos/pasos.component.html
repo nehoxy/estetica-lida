@@ -1,4 +1,4 @@
-<div class="contenedor texto">
+<div class="contenedor">
   <mat-stepper class="prueba" #stepper>
     <mat-step  errorMessage="Complete el medio de pago">
    
@@ -25,7 +25,7 @@
     </mat-step>
     
     <mat-step>
-      <ng-template matStepLabel>Done</ng-template>
+      <ng-template matStepLabel>Finalizar</ng-template>
       <app-finalizar-pedido></app-finalizar-pedido>
       <div>
         <button mat-button matStepperPrevious class="texto">Atras</button>

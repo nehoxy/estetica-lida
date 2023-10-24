@@ -284,7 +284,7 @@ export class FormProductosAdminComponent {
     this.servicioCrudProductos.obtenerProducto().subscribe(producto => {
         this.coleccionProductos = producto
     })
-  }
+}
 
   async agregarProducto(){
     if (this.producto.valid){
@@ -299,17 +299,24 @@ export class FormProductosAdminComponent {
         }
 
         await this.servicioCrudProductos.crearProducto(nuevoProducto).
-        then(
-            producto => {
-                alert('Ha agregado un nuevo producto con exito!')
-                this.producto.reset({categoria:"-1", precio:0})
-            })
-            .catch(error => {
-                alert('Hubo un error al cargar el nuevo producto\n'+error)
-            })
-        
+        then(producto => 
+            {
+                Swal.fire({
+                    icon: 'success',
+                    iconColor: '#C8ECCB',
+                    confirmButtonColor: '#BB8588',
+                    text: '¡Se ha agregado un nuevo servicio con exito!',
+                  })
+                this.producto.reset({categoria:'-1',precio:0})
+              })
+              .catch(error => {
+                alert("Hubo un error al cargar el nuevo producto:( \n"+error);
+              })
+            }else{
+                alert('error')
+            }
     }
-  }
+  
 
   mostrarEditar(productoSeleccionado:Producto){
     this.productoSeleccionado = productoSeleccionado;
@@ -335,14 +342,19 @@ export class FormProductosAdminComponent {
     }
     this.servicioCrudProductos.modificarProducto(this.productoSeleccionado.idProducto, datos)
     .then(producto =>{
-        alert('El producto se ha modificado con exito')
-        this.producto.reset({categoria:"-1", precio:0})
-    })
-    .catch(error => {
-        alert('No se ha podido modificar el producto \n'+error)
-    })
-  }
+        Swal.fire({
+            icon: 'success',
+            iconColor: '#C8ECCB',
+            confirmButtonColor: '#BB8588',
+            text: '¡Se ha editado el producto con exito!',
+          })
+        this.producto.reset({categoria:'-1',precio:0})
+      })
+      .catch(error => {
+        alert("Hubo un error al cargar el nuevo producto:( \n"+error);
+      })
 
+}
   resetearForm(){
     this.producto.reset({categoria:"-1", precio:0})
   }
@@ -371,7 +383,7 @@ export class FormProductosAdminComponent {
           
         }
       })
-  }
+    }
 
   borrarProducto(){ //funcion para eliminar producto
     this.servicioCrudProductos.eliminarProducto(this.productoSeleccionado.idProducto)
@@ -387,5 +399,4 @@ export class FormProductosAdminComponent {
       alert("No se ha podido eliminar el producto: \n"+error);
     })
   }
-
-}
+  }

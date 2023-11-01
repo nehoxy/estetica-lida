@@ -17,6 +17,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarioComponent } from './components/calendario/calendario.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { FlatpickrDefaults} from 'angularx-flatpickr'
 
 
 
@@ -49,6 +51,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    FlatpickrModule
  
   ],
   exports:[
@@ -61,6 +64,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ModalModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+    FlatpickrModule
+  ],
+  providers: [FlatpickrDefaults],
 })
 export class AdministradorModule { }

@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CustomFilterPipe } from './components/card-servicio/custom-filter';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ModalSaberMasComponent,
     PaginationComponent,
     BusquedaComponent,
+    CustomFilterPipe
   ],
   imports: [
     CommonModule,
@@ -31,7 +34,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     MatIconModule,
@@ -39,7 +44,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
-    ModalModule
+    ModalModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ServiciosModule { }

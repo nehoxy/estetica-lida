@@ -17,6 +17,7 @@ export class CardServicioComponent {
   };
   listaServicios:Servicio[] = []
   modalRef?:BsModalRef;
+  busqueda:string = ''
   constructor( private modalService:BsModalService, private crudService:CrudServiciosService){
 
   }

@@ -4,7 +4,7 @@
             <h2 class=" fs-2 mt-4 ms-3 mb-0">Servicios</h2>
         </div>
         <div class="col-lg-4 col-12 col-sm-12 text-lg-center barra tamaño-barra input-wrapper">
-            <input class="form-control busqueda me-2" type="text" placeholder="Buscar" aria-label="Search">
+            <input [(ngModel)]="busqueda" class="form-control busqueda me-2" type="text" placeholder="Buscar" aria-label="Search">
             <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
             </svg>
@@ -17,12 +17,12 @@
               </select>
         </div>
         <div class="col-lg-2 col-6 col-sm-6 text-lg-end barra tamaño-filtros">
-            <select class="form-select filtros " id="floatingSelect" aria-label="Floating label select example">
+            <select [(ngModel)]="busqueda" class="form-select filtros " id="floatingSelect" aria-label="Floating label select example">
                 <option selected >Categoria</option>
-                <option value="1">Belleza facial</option>
-                <option value="2">Estetica corporal</option>
-                <option value="3">Manicuria</option>
-                <option value="3">Pedicuria</option>
+                <option value="bellezafacial">Belleza facial</option>
+                <option value="esteticacorporal">Estetica corporal</option>
+                <option value="manicuria">Manicuria</option>
+                <option value="pedicuria">Pedicuria</option>
               </select>
         </div>
     </div>
@@ -32,7 +32,7 @@
 <div class="container" style="margin-top:50px;margin-bottom:50px;">
     <div class="row">
         <h1 class="titulo fs-3 mb-5">Manicuria</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
                     <img src="{{servicio.imagen}}" />

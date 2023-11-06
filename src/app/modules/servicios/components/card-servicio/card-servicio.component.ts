@@ -1,8 +1,9 @@
 import { Component,TemplateRef } from '@angular/core';
 import { ModalSaberMasComponent } from '../modal-saber-mas/modal-saber-mas.component';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { CardData } from 'src/app/models/card-data';
 import { ModalData } from 'src/app/models/modal-data';
+import { CrudServiciosService } from 'src/app/modules/administrador/services/crud-servicios.service';
+import { Servicio } from 'src/app/models/servicio';
 
 @Component({
   selector: 'app-card-servicio',
@@ -14,8 +15,9 @@ export class CardServicioComponent {
     titulo: '',
     descripcion: '',
   };
+  listaServicios:Servicio[] = []
   modalRef?:BsModalRef;
-  constructor( private modalService:BsModalService){
+  constructor( private modalService:BsModalService, private crudService:CrudServiciosService){
 
   }
 
@@ -30,7 +32,7 @@ export class CardServicioComponent {
   
   }
  
- listaServicios = [
+ listaServicio = [
   {
     id:1, 
     titulo:"Manicuria Rusa",
@@ -47,5 +49,9 @@ export class CardServicioComponent {
   }
  ]
 
+  ngOnInit():void{
+    this.crudService.obtenerServicio().subscribe(servicio => {
+      this.listaServicios = servicio;
+  })
  
 }

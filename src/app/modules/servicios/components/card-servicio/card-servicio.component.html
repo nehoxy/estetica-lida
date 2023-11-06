@@ -8,10 +8,10 @@
                 </div>
 
                 <div class="card-heading">
-                    {{servicio.titulo}}
+                    {{servicio.nombre}}
                 </div>
                 <div class="card-text-a">
-                    <a (click)="openModal(servicio.titulo,servicio.descripcion)">Saber más</a>
+                    <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
   
                 </div>
                 <div class="card-text-precio">
@@ -21,4 +21,70 @@
               </div>
             </div>
         </div>
-    </div>  
+    <div class="row">
+        <h1 class="titulo fs-3 mb-5">Pedicuria</h1>
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+            <div class="card-sl">
+                <div class="card-image">
+                        <img src="{{servicio.imagen}}" />
+                </div>
+    
+                <div class="card-heading">
+                        {{servicio.nombre}}
+                </div>
+                <div class="card-text-a">
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+      
+                </div>
+                <div class="card-text-precio">
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                </div>
+                <a href="#" class="card-button"> Sacar turno</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="titulo fs-3 mb-5">Belleza Facial</h1>
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+            <div class="card-sl">
+                <div class="card-image">
+                        <img src="{{servicio.imagen}}" />
+                </div>
+    
+                <div class="card-heading">
+                        {{servicio.nombre}}
+                </div>
+                <div class="card-text-a">
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+      
+                </div>
+                <div class="card-text-precio">
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                </div>
+                <a href="#" class="card-button"> Sacar turno</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="titulo fs-3 mb-5">Belleza corporal</h1>
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+            <div class="card-sl">
+                <div class="card-image">
+                        <img src="{{servicio.imagen}}" />
+                </div>
+    
+                <div class="card-heading">
+                        {{servicio.nombre}}
+                </div>
+                <div class="card-text-a">
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+      
+                </div>
+                <div class="card-text-precio">
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                </div>
+                <a href="#" class="card-button"> Sacar turno</a>
+            </div>
+        </div>
+    </div>
+</div>  

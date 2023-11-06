@@ -29,29 +29,12 @@ export class CardServicioComponent {
     initialState: this.modalData,class: 'modal-sm'
   },);
   
-  
   }
  
- listaServicio = [
-  {
-    id:1, 
-    titulo:"Manicuria Rusa",
-    precio:2000,
-    imagen:"../../../../../assets/img-card-servicio/manicuria-rusa.jpg",
-    descripcion:"La manicura rusa se realiza con torno y consigue una limpieza profunda de la uña quitando totalmente la cutícula. Utilizando diferentes fresas o brocas, se retira la cutícula suavemente y se aplica el esmalte lo más cerca posible de ésta."
-  },
-  {
-    id:2, 
-    titulo:"Esmaltado Semi",
-    precio:3000,
-    imagen:"../../../../../assets/img-card-servicio/esmaltado-semi-permanente.jpg",
-    descripcion:"Un esmalte semipermanente es un tipo de manicura que se hace cada 2-3 semanas; a diferencia de los esmaltes clásicos, la manicura semipermanente no requiere que se retire y se vuelva a poner de nuevo con tanta frecuencia, todo es gracias a su durabilidad."
-  }
- ]
 
   ngOnInit():void{
     this.crudService.obtenerServicio().subscribe(servicio => {
       this.listaServicios = servicio;
-  })
+  })}
  
 }

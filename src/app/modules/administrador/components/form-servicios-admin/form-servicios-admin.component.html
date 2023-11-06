@@ -47,9 +47,9 @@
       </form>
     </div>
     <div class="col-lg-9">
-      <table datatable [dtOptions]="dtOptions" class="row-border hover texto color-tabla">
+      <table class="table row-border hover texto color-tabla">
         <thead>
-          <tr>
+          <tr class="table-secondary">
             <th>Nombre</th>
             <th>Precio</th> 
             <th>Descripcion</th>
@@ -60,7 +60,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let col of coleccionServicios">
+          <tr class=" table-secondary " *ngFor="let col of coleccionServicios">
             <td>{{col.nombre}}</td>
             <td>{{col.precio}}</td>
             <td> <a href="">Ver mas...</a> </td>

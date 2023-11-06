@@ -305,7 +305,7 @@ export class FormProductosAdminComponent {
                     icon: 'success',
                     iconColor: '#C8ECCB',
                     confirmButtonColor: '#BB8588',
-                    text: '¡Se ha agregado un nuevo servicio con exito!',
+                    text: '¡Se ha agregado un nuevo producto con exito!',
                   })
                 this.producto.reset({categoria:'-1',precio:0})
               })
@@ -313,7 +313,7 @@ export class FormProductosAdminComponent {
                 alert("Hubo un error al cargar el nuevo producto:( \n"+error);
               })
             }else{
-                alert('error')
+                alert('error') 
             }
     }
   

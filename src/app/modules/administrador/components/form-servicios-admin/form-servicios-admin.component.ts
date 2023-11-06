@@ -13,8 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class FormServiciosAdminComponent implements OnInit {
 
-  dtOptions: DataTables.Settings = {};
-
+ 
   coleccionServicios: Servicio [] = [];
 
   servicioSeleccionado!: Servicio; // ! -> toma valores vacíos
@@ -279,10 +278,7 @@ export class FormServiciosAdminComponent implements OnInit {
     constructor(private crudService:CrudServiciosService){}
 
     ngOnInit(): void {
-        this.dtOptions = {
-        pagingType: 'full_numbers',
-        language: this.idioma
-        };
+       
         this.crudService.obtenerServicio().subscribe(servicio => {
             this.coleccionServicios = servicio;
         })

@@ -16,8 +16,15 @@ export class CardServicioComponent {
     descripcion: '',
   };
   listaServicios:Servicio[] = []
+  manicuria:Servicio[] = []
+  pedicuria:Servicio[] = []
+  belleza:Servicio[] = []
+  estetica:Servicio[] = []
+
   modalRef?:BsModalRef;
   busqueda:string = ''
+  filtro:string = ''
+
   constructor( private modalService:BsModalService, private crudService:CrudServiciosService){
 
   }
@@ -36,6 +43,45 @@ export class CardServicioComponent {
   ngOnInit():void{
     this.crudService.obtenerServicio().subscribe(servicio => {
       this.listaServicios = servicio;
-  })}
- 
+      this.mostrarBelleza()
+      this.mostrarEstetica()
+      this.mostrarManicuria()
+      this.mostrarPedicuria()
+  })
+
+  
+  
+}
+  
+  mostrarManicuria(){
+    this.listaServicios.forEach(servicio =>{
+      if(servicio.categoria === "manicuria"){
+        this.manicuria.push(servicio)
+      }
+    })
+  }
+
+  mostrarPedicuria(){
+    this.listaServicios.forEach(servicio =>{
+      if(servicio.categoria === "pedicuria"){
+        this.pedicuria.push(servicio)
+      }
+    })
+  }
+
+  mostrarBelleza(){
+    this.listaServicios.forEach(servicio =>{
+      if(servicio.categoria === "bellezafacial"){
+        this.belleza.push(servicio)
+      }
+    })
+  }
+
+  mostrarEstetica(){
+    this.listaServicios.forEach(servicio =>{
+      if(servicio.categoria === "esteticacorporal"){
+        this.estetica.push(servicio)
+      }
+    })
+  }
 }

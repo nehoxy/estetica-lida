@@ -17,8 +17,9 @@
               </select>
         </div>
         <div class="col-lg-2 col-6 col-sm-6 text-lg-end barra tamaño-filtros">
-            <select class="form-select filtros " id="floatingSelect" aria-label="Floating label select example">
+            <select [(ngModel)]="filtro" class="form-select filtros " id="floatingSelect" aria-label="Floating label select example">
                 <option disabled selected >Categoria</option>
+                <option value="todos" >Todos</option>
                 <option value="bellezafacial">Belleza facial</option>
                 <option value="esteticacorporal">Estetica corporal</option>
                 <option value="manicuria">Manicuria</option>
@@ -31,30 +32,32 @@
 <hr>
 <div class="container" style="margin-top:50px;margin-bottom:50px;">
     <div class="row">
-        <h1 class="titulo fs-3 mb-5">Manicuria</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios | customFilter:busqueda">
-            <div class="card-sl">
-                <div class="card-image">
-                    <img src="{{servicio.imagen}}" />
-                </div>
 
-                <div class="card-heading">
-                    {{servicio.nombre}}
+            <h1 class="titulo fs-3 mb-5">Manicuria</h1>
+            <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of manicuria | customFilter:busqueda">
+                <div class="card-sl">
+                    <div class="card-image">
+                        <img src="{{servicio.imagen}}" />
+                    </div>
+
+                    <div class="card-heading">
+                        {{servicio.nombre}}
+                    </div>
+                    <div class="card-text-a">
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+    
+                    </div>
+                    <div class="card-text-precio">
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                    </div>
+                    <a href="#" class="card-button"> Sacar turno</a>
                 </div>
-                <div class="card-text-a">
-                    <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
-  
-                </div>
-                <div class="card-text-precio">
-                    {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
-                </div>
-                <a href="#" class="card-button"> Sacar turno</a>
-              </div>
             </div>
-        </div>
+
+    </div>
     <div class="row">
         <h1 class="titulo fs-3 mb-5">Pedicuria</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of pedicuria | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
                         <img src="{{servicio.imagen}}" />
@@ -76,7 +79,7 @@
     </div>
     <div class="row">
         <h1 class="titulo fs-3 mb-5">Belleza Facial</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of belleza | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
                         <img src="{{servicio.imagen}}" />
@@ -97,8 +100,8 @@
         </div>
     </div>
     <div class="row">
-        <h1 class="titulo fs-3 mb-5">Belleza corporal</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+        <h1 class="titulo fs-3 mb-5">Estetica corporal</h1>
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of estetica | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
                         <img src="{{servicio.imagen}}" />

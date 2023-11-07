@@ -15,6 +15,8 @@ export class CardProductoComponent {
   maquillajes:Producto[] = []
   mascarillas:Producto[] = []
   jabones:Producto[] = []
+  busqueda:string = ''
+  filtro:string = ''
 
   productoSeleccionado! :Producto; // '!' toma valores vacios o 'any'
 
@@ -26,6 +28,42 @@ export class CardProductoComponent {
   ngOnInit() :void {
     this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
       this.listaProductos = producto;
+      this.mostrarCremas()
+      this.mostrarMaquillajes()
+      this.mostrarMascarillas()
+      this.mostrarJabones()
+    })
+  }
+
+  mostrarCremas(){
+    this.listaProductos.forEach(producto =>{
+      if(producto.categoria === "manicuria"){
+        this.cremas.push(producto)
+      }
+    })
+  }
+
+  mostrarPedicuria(){
+    this.listaServicios.forEach(servicio =>{
+      if(servicio.categoria === "pedicuria"){
+        this.pedicuria.push(servicio)
+      }
+    })
+  }
+
+  mostrarBelleza(){
+    this.listaServicios.forEach(servicio =>{
+      if(servicio.categoria === "bellezafacial"){
+        this.belleza.push(servicio)
+      }
+    })
+  }
+
+  mostrarEstetica(){
+    this.listaServicios.forEach(servicio =>{
+      if(servicio.categoria === "esteticacorporal"){
+        this.estetica.push(servicio)
+      }
     })
   }
 

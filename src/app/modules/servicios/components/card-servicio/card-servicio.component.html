@@ -1,24 +1,124 @@
+<div class="container-flex m-4 mx-auto">
+    <div class="row mx-auto">
+        <div class="col-lg-4 col-12 col-sm-12  text-lg-start ">
+            <h2 class=" fs-2 mt-4 ms-3 mb-0">Servicios</h2>
+        </div>
+        <div class="col-lg-4 col-12 col-sm-12 text-lg-center barra tamaño-barra input-wrapper">
+            <input [(ngModel)]="busqueda" class="form-control busqueda me-2" type="text" placeholder="Buscar" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="col-lg-2 col-6 col-sm-6 text-lg-end barra align-items-end tamaño-filtros">
+            <select class="form-select filtros" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Precio</option>
+                <option value="1">Mayor precio</option>
+                <option value="2">Menor precio</option>
+              </select>
+        </div>
+        <div class="col-lg-2 col-6 col-sm-6 text-lg-end barra tamaño-filtros">
+            <select [(ngModel)]="filtro" class="form-select filtros " id="floatingSelect" aria-label="Floating label select example">
+                <option disabled selected >Categoria</option>
+                <option value="todos" >Todos</option>
+                <option value="bellezafacial">Belleza facial</option>
+                <option value="esteticacorporal">Estetica corporal</option>
+                <option value="manicuria">Manicuria</option>
+                <option value="pedicuria">Pedicuria</option>
+              </select>
+        </div>
+    </div>
+</div>
+
+<hr>
 <div class="container" style="margin-top:50px;margin-bottom:50px;">
     <div class="row">
-        <h1 class="titulo fs-3 mb-5">Manicuria</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of listaServicios">
+
+            <h1 *ngIf="filtro === 'manicuria' || filtro === 'todos' " class="titulo fs-3 mb-5">Manicuria</h1>
+            <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of manicuria | customFilter:busqueda">
+                <div class="card-sl">
+                    <div class="card-image">
+                        <img src="{{servicio.imagen}}" />
+                    </div>
+
+                    <div class="card-heading">
+                        {{servicio.nombre}}
+                    </div>
+                    <div class="card-text-a">
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+    
+                    </div>
+                    <div class="card-text-precio">
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                    </div>
+                    <a href="#" class="card-button"> Sacar turno</a>
+                </div>
+            </div>
+
+    </div>
+    <div class="row">
+        <h1 *ngIf="filtro === 'pedicuria' || filtro === 'todos' " class="titulo fs-3 mb-5">Pedicuria</h1>
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of pedicuria | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
-                    <img src="{{servicio.imagen}}" />
+                        <img src="{{servicio.imagen}}" />
                 </div>
-
+    
                 <div class="card-heading">
-                    {{servicio.titulo}}
+                        {{servicio.nombre}}
                 </div>
                 <div class="card-text-a">
-                    <a (click)="openModal(servicio.titulo,servicio.descripcion)">Saber más</a>
-  
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+      
                 </div>
                 <div class="card-text-precio">
-                    {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
                 </div>
                 <a href="#" class="card-button"> Sacar turno</a>
-              </div>
             </div>
         </div>
-    </div>  
+    </div>
+    <div class="row">
+        <h1 class="titulo fs-3 mb-5">Belleza Facial</h1>
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of belleza | customFilter:busqueda">
+            <div class="card-sl">
+                <div class="card-image">
+                        <img src="{{servicio.imagen}}" />
+                </div>
+    
+                <div class="card-heading">
+                        {{servicio.nombre}}
+                </div>
+                <div class="card-text-a">
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+      
+                </div>
+                <div class="card-text-precio">
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                </div>
+                <a href="#" class="card-button"> Sacar turno</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="titulo fs-3 mb-5">Estetica corporal</h1>
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of estetica | customFilter:busqueda">
+            <div class="card-sl">
+                <div class="card-image">
+                        <img src="{{servicio.imagen}}" />
+                </div>
+    
+                <div class="card-heading">
+                        {{servicio.nombre}}
+                </div>
+                <div class="card-text-a">
+                        <a (click)="openModal(servicio.nombre,servicio.descripcion)">Saber más</a>
+      
+                </div>
+                <div class="card-text-precio">
+                        {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
+                </div>
+                <a href="#" class="card-button"> Sacar turno</a>
+            </div>
+        </div>
+    </div>
+</div>  

@@ -31,6 +31,7 @@ export class CardProductoComponent {
       this.mostrarCremas()
       this.mostrarMaquillajes()
       this.mostrarMascarillas()
+      this.mostrarJabones()
     })
   }
 
@@ -55,7 +56,13 @@ export class CardProductoComponent {
       }
     })
   }
-
+  mostrarJabones(){
+    this.listaProductos.forEach(producto =>{
+      if(producto.categoria === "jabones"){
+        this.cremas.push(producto)
+      }
+    })
+  }
   
 
  

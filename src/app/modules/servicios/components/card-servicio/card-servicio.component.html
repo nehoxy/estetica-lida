@@ -31,9 +31,9 @@
 
 <hr>
 <div class="container" style="margin-top:50px;margin-bottom:50px;">
-    <div class="row">
+    <div *ngIf="filtro === 'manicuria' || filtro === 'todos'"  class="row">
 
-            <h1 *ngIf="filtro === 'manicuria' || filtro === 'todos' " class="titulo fs-3 mb-5">Manicuria</h1>
+            <h1 class="titulo fs-3 mb-5">Manicuria</h1>
             <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of manicuria | customFilter:busqueda">
                 <div class="card-sl">
                     <div class="card-image">
@@ -55,8 +55,8 @@
             </div>
 
     </div>
-    <div class="row">
-        <h1 *ngIf="filtro === 'pedicuria' || filtro === 'todos' " class="titulo fs-3 mb-5">Pedicuria</h1>
+    <div *ngIf="filtro === 'pedicuria' || filtro === 'todos' " class="row">
+        <h1  class="titulo fs-3 mb-5">Pedicuria</h1>
         <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of pedicuria | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
@@ -77,7 +77,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div *ngIf="filtro === 'bellezafacial' || filtro === 'todos' " class="row">
         <h1 class="titulo fs-3 mb-5">Belleza Facial</h1>
         <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of belleza | customFilter:busqueda">
             <div class="card-sl">
@@ -99,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div *ngIf="filtro === 'esteticacorporal' || filtro === 'todos' " class="row">
         <h1 class="titulo fs-3 mb-5">Estetica corporal</h1>
         <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of estetica | customFilter:busqueda">
             <div class="card-sl">

@@ -12,7 +12,13 @@ import {MatTableModule} from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DataTablesModule } from "angular-datatables";
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarioComponent } from './components/calendario/calendario.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { FlatpickrDefaults} from 'angularx-flatpickr'
 
 
 
@@ -25,6 +31,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
         FormServiciosAdminComponent,
         FormProductosAdminComponent,
         TablaVentasAdministradorComponent,
+        CalendarioComponent,
+       
 
   ],
   imports: [
@@ -37,8 +45,14 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     DataTablesModule,
+    CalendarModule.forRoot({
+      provide:DateAdapter,
+      useFactory:adapterFactory,
+    }),
+    ModalModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlatpickrModule
   ],
   exports:[
     MatTabsModule,
@@ -46,7 +60,12 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    DataTablesModule
-  ]
+    DataTablesModule,
+    ModalModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlatpickrModule
+  ],
+  providers: [FlatpickrDefaults],
 })
 export class AdministradorModule { }

@@ -6,6 +6,12 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { PanelComponent } from './components/panel/panel.component';
 import { TablaVentasAdministradorComponent } from './components/tabla-ventas-administrador/tabla-ventas-administrador.component';
 import { FormServiciosAdminComponent } from './components/form-servicios-admin/form-servicios-admin.component';
+import { FormProductosAdminComponent } from './components/form-productos-admin/form-productos-admin.component';
+import { MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DataTablesModule } from "angular-datatables";
 
 
 
@@ -15,15 +21,29 @@ import { FormServiciosAdminComponent } from './components/form-servicios-admin/f
 
         AdministradorComponent,
         PanelComponent,
-        FormServiciosAdminComponent
+        FormServiciosAdminComponent,
+        FormProductosAdminComponent,
+        TablaVentasAdministradorComponent,
 
   ],
   imports: [
     CommonModule,
     AdministradorRoutingModule,
     MatTabsModule,
-    TablaVentasAdministradorComponent
-   
+    
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    DataTablesModule
+  ],
+  exports:[
+    MatTabsModule,
+   MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    DataTablesModule
   ]
 })
 export class AdministradorModule { }

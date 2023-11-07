@@ -3,5 +3,6 @@ export interface Usuario {
     nombre:string,
     apellido:string,
     email:string,
-    contrasena:string,
+    contrasena:string | any,
+    rol:string
 }

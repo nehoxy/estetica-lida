@@ -1,16 +1,18 @@
-<div class="modal fade" [id]="modalId" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal Title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+
+  <div class="modal-content contenido">
+    <div class="modal-header encabezado">
+        <h4 class="modal-title pull-left m-0 titulo">{{ titulo }}</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p class="descripcion">{{ descripcion }}</p>
+        <div class="pt-1 text-end">
+          <button class="btn btn-lg btn-block fs-6 boton-close" type="button" (click)="bsModalRef.hide()">Cerrar</button>
         </div>
-        <div class="modal-body">
-          <!-- Modal content here -->
-        </div>
-      </div>
     </div>
   </div>
-  
+
+    
+      

@@ -1,0 +1,22 @@
+.texto{
+    font-family: 'Poppins', sans-serif;
+  }
+  .btn-sm{
+    border-color: #EBEBEB;
+    border: 0;
+    background-color: #EBEBEB;
+  }
+  .color-input{
+    border-radius: 1vw;
+    background-color: #EBEBEB;
+  }
+  .label{
+    font-family: 'Poppins', sans-serif;
+  }
+ .color-tabla{
+    background-color: #EBEBEB;
+ }
+ .btn1{
+    border-radius: 5vw;
+    background-color: #C8ECCB;
+ }

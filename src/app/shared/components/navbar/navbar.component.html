@@ -32,7 +32,10 @@
                 <a class="nav-link" routerLink="/admin" routerLinkActive="active">Administrador</a>
               </li>
               <li *ngIf="isLogged" class="nav-item separacionBotones">
-                <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Perfil</a>
+                <a class="nav-link" routerLink="perfil" routerLinkActive="active">Perfil</a>
+              </li>
+              <li *ngIf="isLogged" class="nav-item separacionBotones">
+                <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Cerrar sesión</a>
               </li>
               <li *ngIf="!isLogged" class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Login</a>

@@ -30,42 +30,25 @@ export class CardProductoComponent {
       this.listaProductos = producto;
       this.mostrarCremas()
       this.mostrarMaquillajes()
-      this.mostrarMascarillas()
-      this.mostrarJabones()
     })
   }
 
   mostrarCremas(){
     this.listaProductos.forEach(producto =>{
-      if(producto.categoria === "manicuria"){
+      if(producto.categoria === "cremas"){
+        this.cremas.push(producto)
+      }
+    })
+  }
+  mostrarMaquillajes(){
+    this.listaProductos.forEach(producto =>{
+      if(producto.categoria === "maquillajes"){
         this.cremas.push(producto)
       }
     })
   }
 
-  mostrarPedicuria(){
-    this.listaServicios.forEach(servicio =>{
-      if(servicio.categoria === "pedicuria"){
-        this.pedicuria.push(servicio)
-      }
-    })
-  }
-
-  mostrarBelleza(){
-    this.listaServicios.forEach(servicio =>{
-      if(servicio.categoria === "bellezafacial"){
-        this.belleza.push(servicio)
-      }
-    })
-  }
-
-  mostrarEstetica(){
-    this.listaServicios.forEach(servicio =>{
-      if(servicio.categoria === "esteticacorporal"){
-        this.estetica.push(servicio)
-      }
-    })
-  }
+  
 
  
 }

@@ -38,9 +38,9 @@
             </form>
         </div>
         <div class="col-lg-9">
-            <table datatable  [dtOptions]="dtOptions" class="table table-boredered texto fondo">
+            <table class="table row-border texto fondo">
                 <thead>
-                    <tr>
+                    <tr class="table-secondary">
                       <th class="color-tabla" scope="col">Nombre</th>
                       <th class="color-tabla" scope="col">Precio</th>
                       <th class="color-tabla" scope="col">Descripcion</th>
@@ -51,7 +51,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let producto of coleccionProductos">
+                    <tr *ngFor="let producto of coleccionProductos" class="table-secondary">
                       <td class="color-tabla" scope="row">{{producto.nombre}}</td>
                       <td class="color-tabla" >${{producto.precio}}</td>
                       <td class="color-tabla" >{{producto.descripcion}}</td>

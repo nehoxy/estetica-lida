@@ -1,50 +1,55 @@
 <div class="container-fluid  mt-3">
   <div class="row">
     <div class="col-lg-3">
-      <form action="#">
+      <form [formGroup]="servicio">
         <div class="form-group mt-3">
           <label for="fname" class="control-label ps-2">Nombre</label>
-          <input type="text" class="form-control color-input" id="fname" placeholder="Ingrese nombre del servicio">
+          <input type="text" class="form-control color-input" id="fname" formControlName="nombre" placeholder="Ingrese nombre del servicio">
         </div>
         <div class="form-group mt-3">
           <label for="lname" class="control-label ps-2">Precio</label>
-          <input type="number" class="form-control color-input" id="precio" placeholder="Ingrese precio del servicio">
+          <input type="number" class="form-control color-input" id="precio" formControlName="precio" placeholder="Ingrese precio del servicio">
         </div>
         <div class="form-group mt-3">
           <label for="text" class="control-label ps-2">Descripcion</label>
-          <input type="text" class="form-control color-input" id="descripcion" placeholder="Ingrese descripcion del servicio">
+          <input type="text" class="form-control color-input" id="descripcion" formControlName="descripcion" placeholder="Ingrese descripcion del servicio">
         </div>
         <div class="form-group mt-3">
           <label class="control-label ps-2">Categoria</label>
-          <select class="form-select color-input" aria-label="Default select example">
-            <option class="option" value="-1" disabled selected>Seleccione una opcion</option>
-            <option class="option" value="1">Belleza facial</option>
-            <option class="option" value="2">Belleza corporal</option>
-            <option class="option" value="3">Manicura y pedicura</option>
+          <select class="form-select color-input texto" formControlName="categoria" aria-label="Default select example">
+            <option class="option texto" value="-1" disabled selected>Seleccione una opcion</option>
+            <option class="option texto" value="bellezafacial">Belleza facial</option>
+            <option class="option texto" value="bellezacorporal">Belleza corporal</option>
+            <option class="option texto" value="manicuria">Manicura</option>
+            <option class="option texto" value="pedicuria">Pedicuria</option>
           </select>
         </div>
         <div class="form-group mt-3">
           <label for="text" class="control-label ps-2">Imagen</label>
-          <input type="text" class="form-control color-input" id="url" placeholder="Ingrese url de la imagen">
+          <input type="text" class="form-control color-input" id="url" formControlName="imagen" placeholder="Ingrese url de la imagen">
+        </div>
+        <div class="form-group mt-3">
+          <label for="text" class="control-label ps-2">Alt</label>
+          <input type="text" class="form-control color-input" id="url" formControlName="alt" placeholder="Ingrese url de la imagen">
         </div>
         <div class="form-group mt-3">
           <label class="control-label ps-2">Profesional</label>
-          <select class="form-select color-input texto" aria-label="Default select example">
+          <select class="form-select color-input texto" formControlName="profesional" aria-label="Default select example">
 
-            <option class="option" value="-1" disabled selected>Seleccione un profesional</option>
-            <option class="option" value="1">Ricardina</option>
-            <option class="option" value="2">Maria</option>
-            <option class="option" value="3">Dana</option>
-            <option class="option" value="4">Veronica</option>
+            <option class="option texto " value="-1" disabled selected>Seleccione un profesional</option>
+            <option class="option texto" value="ricardina">Ricardina</option>
+            <option class="option texto" value="maria">Maria</option>
+            <option class="option texto" value="dana">Dana</option>
+            <option class="option texto" value="veronica">Veronica</option>
           </select>
         </div>
-        <button type="submit" class="btn mt-4 texto">Cargar</button>
+        <button type="submit" class="btn mt-4 texto" (click)="agregarServicio()">Cargar</button>
       </form>
     </div>
     <div class="col-lg-9">
-      <table datatable [dtOptions]="dtOptions" class="row-border hover texto color-tabla">
+      <table class="table row-border hover texto color-tabla">
         <thead>
-          <tr>
+          <tr class="table-secondary texto">
             <th>Nombre</th>
             <th>Precio</th> 
             <th>Descripcion</th>
@@ -55,15 +60,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Manicuria Rusa</td>
-            <td>$2000</td>
+          <tr class=" table-secondary " *ngFor="let col of coleccionServicios">
+            <td>{{col.nombre}}</td>
+            <td>{{col.precio}}</td>
             <td> <a href="">Ver mas...</a> </td>
-            <td>Manicuria</td>
-            <td>Dana</td>
-            <td><a href="">Ver imagen...</a></td>
+            <td>{{col.categoria}}</td>
+            <td >{{capitalizeFirstLetter(col.profesional)}}</td>
+            <td><a href="{{col.imagen}}">Ver imagen...</a></td>
             <td>
-              <button type="button" class="btn-sm">
+              <button type="button" class="btn-sm" (click)="mostrarEditar(col)" data-bs-toggle="modal" data-bs-target="#editarServicio">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
@@ -71,91 +76,7 @@
                     <path d="M16 5l3 3"></path>
                  </svg>
                </button>
-               <button type="button" class="btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M4 7l16 0"></path>
-                    <path d="M10 11l0 6"></path>
-                    <path d="M14 11l0 6"></path>
-                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                 </svg>
-               </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Esmaltado semipermanente</td>
-            <td>$3000</td>
-            <td><a href="">Ver mas...</a></td>
-            <td>Manicuria y pedicuria</td>
-            <td>Veronica</td>
-            <td> <a href="">Ver imagen...</a></td>
-            <td>
-              <button type="button" class="btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
-                    <path d="M16 5l3 3"></path>
-                 </svg>
-               </button>
-               <button type="button" class="btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M4 7l16 0"></path>
-                    <path d="M10 11l0 6"></path>
-                    <path d="M14 11l0 6"></path>
-                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                 </svg>
-               </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Limpieza facial</td>
-            <td>$5000</td>
-            <td><a href="">Ver mas...</a></td>
-            <td>Belleza facial</td>
-            <td>Ricardina</td>
-            <td> <a href="">Ver imagen...</a></td>
-            <td>
-              <button type="button" class="btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
-                    <path d="M16 5l3 3"></path>
-                 </svg>
-               </button>
-               <button type="button" class="btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M4 7l16 0"></path>
-                    <path d="M10 11l0 6"></path>
-                    <path d="M14 11l0 6"></path>
-                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                    <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                 </svg>
-               </button>
-            </td>
-          </tr>
-          <tr>
-            <td>Masaje corporal</td>
-            <td>$7000</td>
-            <td><a href="">Ver mas...</a></td>
-            <td>Belleza corporal</td>
-            <td>Maria</td>
-            <td> <a href="">Ver imagen...</a></td>
-            <td>
-              <button type="button" class="btn-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
-                    <path d="M16 5l3 3"></path>
-                 </svg>
-               </button>
-               <button type="button" class="btn-sm">
+               <button type="button" class="btn-sm" (click)="mostrarBorrar(col)">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M4 7l16 0"></path>
@@ -173,4 +94,63 @@
     </div>
   </div>
 
+</div>
+
+<div class="modal fade" *ngFor="let col of coleccionServicios" id="editarServicio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">  
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="resetForm()"></button>
+          </div>
+          <div [formGroup]="servicio" class="modal-body">
+              <!-- Recibe los nuevos valores -->
+              <div class="mb-3">
+                  <label class="form-label texto">Ingrese nombre del producto:</label>
+                  <input type="text" class="form-control color-input " formControlName="nombre" placeholder="{{col.nombre}}">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label texto">Ingrese una imagen del producto:</label>
+                  <input type="text" class="form-control color-input" formControlName="imagen" placeholder="{{col.imagen}}">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label texto">Ingrese un texto alternativo para la imagen:</label>
+                  <input type="text" class="form-control color-input" formControlName="alt" placeholder="{{col.alt}}">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label texto">Ingrese descripción:</label>
+                  <input type="text" class="form-control color-input" formControlName="descripcion" placeholder="{{col.descripcion}}">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label texto">Ingrese precio:</label>
+                  <input type="number" class="form-control color-input" formControlName="precio" placeholder="{{col.precio}}">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label texto">Ingrese categoría del servicio:</label>
+                  <select class="form-control " class="form-select color-input texto" formControlName="categoria" aria-label="Default select example">
+                    <option class="option" value="-1" disabled selected>Seleccione una opcion</option>
+                    <option class="option" value="bellezafacial">Belleza facial</option>
+                    <option class="option" value="bellezacorporal">Belleza corporal</option>
+                    <option class="option" value="manicuria">Manicura</option>
+                    <option class="option" value="pedicuria">Pedicuria</option>
+                  </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label texto">Ingrese el profesional del servicio:</label>
+                <select class="form-control color-input" class="form-select color-input texto" formControlName="profesional" aria-label="Default select example">
+                  <option class="option" value="-1" disabled selected>Seleccione un profesional</option>
+                  <option class="option" value="ricardina">Ricardina</option>
+                  <option class="option" value="maria">Maria</option>
+                  <option class="option" value="dana">Dana</option>
+                  <option class="option" value="veronica">Veronica</option>
+                </select>
+            </div>
+          </div>
+
+          <!-- Corresponde a las ACCIONES -->
+          <div class="modal-footer">
+              <button type="button" class="btn texto btn2" data-bs-dismiss="modal" (click)="editarServicio()">Guardar cambios</button>
+              <button type="button" class="btn texto btn3" data-bs-dismiss="modal" (click)="resetForm()">Cerrar</button>
+          </div>
+      </div>
+  </div>
 </div>

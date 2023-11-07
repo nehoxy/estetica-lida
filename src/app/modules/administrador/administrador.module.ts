@@ -22,6 +22,7 @@ import { FlatpickrDefaults} from 'angularx-flatpickr'
 
 
 
+
 @NgModule({
   declarations: [
 
@@ -52,7 +53,6 @@ import { FlatpickrDefaults} from 'angularx-flatpickr'
     FormsModule,
     ReactiveFormsModule,
     FlatpickrModule
- 
   ],
   exports:[
     MatTabsModule,

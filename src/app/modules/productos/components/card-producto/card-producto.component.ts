@@ -30,6 +30,7 @@ export class CardProductoComponent {
       this.listaProductos = producto;
       this.mostrarCremas()
       this.mostrarMaquillajes()
+      this.mostrarMascarillas()
     })
   }
 
@@ -43,6 +44,13 @@ export class CardProductoComponent {
   mostrarMaquillajes(){
     this.listaProductos.forEach(producto =>{
       if(producto.categoria === "maquillajes"){
+        this.cremas.push(producto)
+      }
+    })
+  }
+  mostrarMascarillas(){
+    this.listaProductos.forEach(producto =>{
+      if(producto.categoria === "mascarillas"){
         this.cremas.push(producto)
       }
     })

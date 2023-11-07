@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   hide = true;
   hidePass = true;
-  isLogged:boolean = false;
+  isLogged:boolean;
   formLogin = this.fb.group({
     email: new FormControl ('',[Validators.required, Validators.email]),
     contrasena: new FormControl('',[Validators.required, Validators.minLength(8)])

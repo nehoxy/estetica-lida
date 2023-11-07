@@ -12,11 +12,16 @@ export class NavbarComponent {
   isLogged:boolean;
 
   constructor(private logged:IsLoggedInService){
-  }
-
-  ngOnInit() {
     this.logged.isLogged$.subscribe((isLogged) => {
       this.isLogged = isLogged;
     });
+  }
+
+  logout() {
+    this.logged.logout();
+    // Realiza cualquier otra acción necesaria al cerrar sesión, como redirigir al usuario.
+  }
+  ngOnInit() {
+    
   }
 }

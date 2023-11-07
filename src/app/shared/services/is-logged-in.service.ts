@@ -6,13 +6,27 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 
 export class IsLoggedInService {
-
-  constructor() { }
-  
   private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  constructor() { 
+    const storedIsLogged = localStorage.getItem('isLogged');
+    if (storedIsLogged) {
+      this.isLoggedSubject.next(storedIsLogged === 'true');
+    }
+  }
+
+
   isLogged$: Observable<boolean> = this.isLoggedSubject.asObservable();
 
   setLoggedStatus(isLogged: boolean) {
     this.isLoggedSubject.next(isLogged);
+    localStorage.setItem('isLogged', isLogged ? 'true' : 'false');
+  }
+
+  logout() {
+    this.setLoggedStatus(false); // Marcar al usuario como desconectado
+    // Limpia cualquier otra información relacionada con la sesión
+    // (por ejemplo, token de autenticación, datos del usuario, etc.).
+    // Puedes agregar más lógica aquí si es necesario.
   }
 }

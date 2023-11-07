@@ -35,7 +35,7 @@
                 <a class="nav-link" routerLink="perfil" routerLinkActive="active">Perfil</a>
               </li>
               <li *ngIf="isLogged" class="nav-item separacionBotones">
-                <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Cerrar sesión</a>
+                <a class="nav-link" (click)="logout()" routerLinkActive="active">Cerrar sesión</a>
               </li>
               <li *ngIf="!isLogged" class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Login</a>

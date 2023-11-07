@@ -8,6 +8,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { ProductosComponent } from './pages/productos/productos.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CustomFilterPipe } from './components/card-producto/custom-filter';
 
 // Material
 
@@ -21,7 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     CardProductoComponent,
     PaginationComponent,
     ProductosComponent,
-
+    CustomFilterPipe
   ],
   imports: [
     CommonModule,

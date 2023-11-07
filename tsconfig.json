@@ -10,6 +10,7 @@
     "noImplicitAny": false,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -31,6 +32,8 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true
+    
   }
 }

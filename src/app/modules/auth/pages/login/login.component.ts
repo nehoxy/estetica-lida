@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FirestoreService } from 'src/app/shared/services/firestore.service';
 import { SwalComponent } from '@sweetalert2/ngx-sweetalert2/public-api';
 import { FormControl,FormBuilder,Validators } from '@angular/forms';
+import { IsLoggedInService } from 'src/app/shared/services/is-logged-in.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,7 +16,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
   hide = true;
   hidePass = true;
-
+  isLogged:boolean = false;
   formLogin = this.fb.group({
     email: new FormControl ('',[Validators.required, Validators.email]),
     contrasena: new FormControl('',[Validators.required, Validators.minLength(8)])
@@ -29,7 +30,7 @@ export class LoginComponent {
     rol:'',
     contrasena:'' }
 
-    constructor(public servicioAuth:AuthService, public firestore:FirestoreService, public router:Router, public fb:FormBuilder){}
+    constructor(public servicioAuth:AuthService, public firestore:FirestoreService, public router:Router, public fb:FormBuilder, public logged:IsLoggedInService){}
 
   async iniciarSesion(){
     const credenciales = {
@@ -47,6 +48,8 @@ export class LoginComponent {
         text: 'Bienvenido/a '+credenciales.email+'!',
       })
       this.router.navigate(['home'])
+      this.logged.setLoggedStatus(true);
+      console.log(this.isLogged)
     }).catch(error =>{
       Swal.fire({
         icon: 'error',

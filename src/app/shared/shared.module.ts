@@ -47,7 +47,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { AppRoutingModule } from '../app-routing.module';
-
+import { AuthModule } from '../modules/auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -101,7 +101,8 @@ import { AppRoutingModule } from '../app-routing.module';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule
   ],
   exports: [
     A11yModule,
@@ -150,6 +151,7 @@ import { AppRoutingModule } from '../app-routing.module';
     ScrollingModule,
     NavbarComponent,
     FooterComponent,
+    AuthModule
    ]
 })
 export class SharedModule { }

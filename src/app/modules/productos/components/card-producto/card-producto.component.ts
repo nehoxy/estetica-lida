@@ -10,6 +10,11 @@ import { CrudProductosService } from 'src/app/modules/administrador/services/cru
 export class CardProductoComponent {
 
   listaProductos : Producto[] = [];
+  
+  cremas:Producto[] = []
+  maquillajes:Producto[] = []
+  mascarillas:Producto[] = []
+  jabones:Producto[] = []
 
   productoSeleccionado! :Producto; // '!' toma valores vacios o 'any'
 

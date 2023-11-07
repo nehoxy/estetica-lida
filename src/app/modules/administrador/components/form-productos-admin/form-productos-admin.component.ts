@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Producto } from 'src/app/models/producto';
+import { CrudProductosService } from '../../services/crud-productos.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-form-productos-admin',
@@ -6,9 +10,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-productos-admin.component.css']
 })
 export class FormProductosAdminComponent {
+    coleccionProductos: Producto [] = [];
+    productoSeleccionado!:Producto; // ! -> toma valores vacios
+    modalVisibleProducto:boolean = false;
+
+    producto = new FormGroup ({
+        nombre: new FormControl('',Validators.required),
+        precio: new FormControl(0,Validators.required),
+        descripcion: new FormControl('',Validators.required),
+        categoria: new FormControl('-1',Validators.required),
+        imagen: new FormControl('',Validators.required),
+        stock: new FormControl(0,Validators.required)
+        
+    })
+
+    constructor(public servicioCrudProductos: CrudProductosService){}
+
+
+
 
   dtOptions:DataTables.Settings={}
- 
   idioma = {
     "processing": "Procesando...",
     "lengthMenu": "Mostrar _MENU_ registros",
@@ -259,5 +280,123 @@ export class FormProductosAdminComponent {
       pagingType: 'full_numbers',
       language: this.idioma
     };
-  }
+
+    this.servicioCrudProductos.obtenerProducto().subscribe(producto => {
+        this.coleccionProductos = producto
+    })
 }
+
+  async agregarProducto(){
+    if (this.producto.valid){
+        let nuevoProducto :Producto = {
+            idProducto: '',
+            nombre: this.producto.value.nombre! ,
+            precio: this.producto.value.precio!,
+            descripcion: this.producto.value.descripcion!,
+            categoria: this.producto.value.categoria!,
+            imagen: this.producto.value.imagen!,
+            stock: this.producto.value.stock!
+        }
+
+        await this.servicioCrudProductos.crearProducto(nuevoProducto).
+        then(producto => 
+            {
+                Swal.fire({
+                    icon: 'success',
+                    iconColor: '#C8ECCB',
+                    confirmButtonColor: '#BB8588',
+                    text: '¡Se ha agregado un nuevo producto con exito!',
+                  })
+                this.producto.reset({categoria:'-1',precio:0})
+              })
+              .catch(error => {
+                alert("Hubo un error al cargar el nuevo producto:( \n"+error);
+              })
+            }else{
+                alert('error') 
+            }
+    }
+  
+
+  mostrarEditar(productoSeleccionado:Producto){
+    this.productoSeleccionado = productoSeleccionado;
+    this.producto.setValue({
+        nombre: productoSeleccionado.nombre,
+        precio: productoSeleccionado.precio,
+        descripcion: productoSeleccionado.descripcion,
+        categoria:productoSeleccionado.categoria,
+        imagen:productoSeleccionado.imagen,
+        stock: productoSeleccionado.stock
+    })
+  }
+
+  editarProducto(){ //funcion para editar producto
+    let datos : Producto = {
+        idProducto:this.productoSeleccionado.idProducto,
+        nombre:this.producto.value.nombre!,
+        precio:this.producto.value.precio!,
+        descripcion:this.producto.value.descripcion!,
+        categoria:this.producto.value.categoria!,
+        imagen:this.producto.value.imagen!,
+        stock:this.producto.value.stock!
+    }
+    this.servicioCrudProductos.modificarProducto(this.productoSeleccionado.idProducto, datos)
+    .then(producto =>{
+        Swal.fire({
+            icon: 'success',
+            iconColor: '#C8ECCB',
+            confirmButtonColor: '#BB8588',
+            text: '¡Se ha editado el producto con exito!',
+          })
+        this.producto.reset({categoria:'-1',precio:0})
+      })
+      .catch(error => {
+        alert("Hubo un error al cargar el nuevo producto:( \n"+error);
+      })
+
+}
+  resetearForm(){
+    this.producto.reset({categoria:"-1", precio:0})
+  }
+
+  mostrarBorrar(productoSeleccionado:Producto) { //boton eliminar
+    this.modalVisibleProducto = true;
+    this.productoSeleccionado = productoSeleccionado;
+
+    //modal o alert para eliminar producto
+    Swal.fire({
+        title: 'Borrar producto',
+        text: "¿Estas seguro de querer borrar el producto "+productoSeleccionado.nombre+"?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Borrar',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+            this.borrarProducto()
+         
+        } else if (
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          
+        }
+      })
+    }
+
+  borrarProducto(){ //funcion para eliminar producto
+    this.servicioCrudProductos.eliminarProducto(this.productoSeleccionado.idProducto)
+    .then(respuesta => {
+        Swal.fire({
+            icon: 'success',
+            iconColor: '#C8ECCB',
+            confirmButtonColor: '#BB8588',
+            text: '¡Se ha eliminado el producto con exito!',
+          })
+    })
+    .catch(error => {
+      alert("No se ha podido eliminar el producto: \n"+error);
+    })
+  }
+  }

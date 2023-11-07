@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { LoginComponent } from 'src/app/modules/auth/pages/login/login.component';
 import { IsLoggedInService } from '../../services/is-logged-in.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-navbar',
@@ -19,6 +20,15 @@ export class NavbarComponent {
 
   logout() {
     this.logged.logout();
+    Swal.fire({
+      icon: 'success',
+      iconColor: '#C8ECCB',
+      buttonsStyling:false,
+      customClass:{
+          confirmButton:'btn btn-sweetalert'
+      },
+      text: '¡Has cerrado sesion con exito!',
+    })
     // Realiza cualquier otra acción necesaria al cerrar sesión, como redirigir al usuario.
   }
   ngOnInit() {

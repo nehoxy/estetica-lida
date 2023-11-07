@@ -2,9 +2,9 @@
     font-family: 'Poppins', sans-serif;
   }
   .btn-sm{
-    border-color: #EBEBEB;
+    border-color: #e2e3e5;
     border: 0;
-    background-color: #EBEBEB;
+    background-color: #e2e3e5;
   }
   .color-input{
     border-radius: 1vw;
@@ -20,3 +20,15 @@
     border-radius: 5vw;
     background-color: #C8ECCB;
  }
+
+.modal-backdrop {
+  display: none ;
+}
+.btn2{
+  border-radius: 5vw;
+  background-color: #C8ECCB;
+}
+.btn3{
+  border-radius: 5vw;
+  background-color: #F8EDEB;
+}

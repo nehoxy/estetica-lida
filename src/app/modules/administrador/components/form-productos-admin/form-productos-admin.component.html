@@ -1,46 +1,46 @@
 <div class="container-fluid mt-2">
     <div class="row">
         <div class="col-lg-3">
-            <form  action="#">
-                <div class="form-group mt-3">
+            <form [formGroup]="producto" >
+                <div class="form-group mt-3"  >
                     <label for="fname" class="control-label ps-2 texto">Nombre</label>
-                    <input type="text" class="form-control color-input" id="nombre" placeholder="Ingrese el nombre del producto">
+                    <input type="text" class="form-control color-input" formControlName="nombre" id="nombre" placeholder="Ingrese el nombre del producto">
                 </div>
                 <div class="form-group mt-3">
                     <label for="lname" class="control-label ps-2 texto">Precio</label>
-                    <input type="number" class="form-control color-input" id="precio" placeholder="Ingrese el precio del producto">
+                    <input type="number" class="form-control color-input" formControlName="precio" id="precio" placeholder="Ingrese el precio del producto">
                 </div>
                 <div class="form-group mt-3">
                     <label for="text" class="control-label ps-2 texto">Descripcion</label>
-                    <input type="text" class="form-control color-input" id="descripcion" placeholder="Ingrese descripcion del producto">
+                    <input type="text" class="form-control color-input" formControlName="descripcion" placeholder="Ingrese descripcion del producto">
                 </div>
                 <div class="form-group mt-3">
                     <label class="control-label ps-2 texto">Categoria</label>
-                    <select class="form-select color-input" aria-label="Default select example">
-                        <option class="option texto" disabled selected>Seleccione una opcion</option>
-                        <option class="option texto"  value="1">Belleza facial</option>
-                        <option class="option texto"  value="2">Belleza corporal</option>
-                        <option class="option texto"  value="3">Manicura y pedicura</option>
-                        <option class="option texto"  value="4">Fragancias</option>
-                        <option class="option texto"  value="5">Accesorios de belleza</option>
+                    <select class="form-select color-input" formControlName="categoria" aria-label="Default select example">
+                        <option class="option texto" value="-1" disabled selected>Seleccione una opcion</option>
+                        <option class="option texto"  value="Belleza facial">Belleza facial</option>
+                        <option class="option texto"  value="Belleza corporal">Belleza corporal</option>
+                        <option class="option texto"  value="Manicura y pedicura">Manicura y pedicura</option>
+                        <option class="option texto"  value="Fragancia">Fragancias</option>
+                        <option class="option texto"  value="Accesorios de belleza">Accesorios de belleza</option>
                       </select>
                 </div>
                 <div class="form-group mt-3">
                     <label for="text" class="control-label ps-2 texto">Imagen</label>
-                    <input type="text" class="form-control color-input" id="" placeholder="Ingrese url de la imagen">
+                    <input type="text" class="form-control color-input" formControlName="imagen" id="" placeholder="Ingrese url de la imagen">
                 </div>
                 <div class="form-group mt-3">
                     <label for="text" class="control-label ps-2 texto">Stock</label>
-                    <input type="number" class="form-control color-input" id="" placeholder="Ingrese stock disponible del producto">
+                    <input type="number" class="form-control color-input" formControlName="stock" id="" placeholder="Ingrese stock disponible del producto">
                 </div>
                 
-                <button type="submit" class="btn mt-4 texto btn1">Cargar</button>
+                <button type="submit" class="btn mt-4 texto btn1" (click)="agregarProducto()">Cargar</button>
             </form>
         </div>
         <div class="col-lg-9">
-            <table datatable  [dtOptions]="dtOptions" class="table table-boredered texto fondo">
+            <table class="table row-border texto fondo">
                 <thead>
-                    <tr >
+                    <tr class="table-secondary">
                       <th class="color-tabla" scope="col">Nombre</th>
                       <th class="color-tabla" scope="col">Precio</th>
                       <th class="color-tabla" scope="col">Descripcion</th>
@@ -51,15 +51,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td class="color-tabla" scope="row">Hydro Cream</td>
-                      <td class="color-tabla" >$3200</td>
-                      <td class="color-tabla" ><a href="">Ver mas</a></td>
-                      <td class="color-tabla" >Cremas</td>
-                      <td class="color-tabla" >70</td>
-                      <td class="color-tabla" ><a href="">View Image</a></td>
+                    <tr *ngFor="let producto of coleccionProductos" class="table-secondary">
+                      <td class="color-tabla" scope="row">{{producto.nombre}}</td>
+                      <td class="color-tabla" >${{producto.precio}}</td>
+                      <td class="color-tabla" >{{producto.descripcion}}</td>
+                      <td class="color-tabla" >{{producto.categoria}}</td>
+                      <td class="color-tabla" >{{producto.stock}}</td>
+                      <td class="color-tabla"> <a href="{{producto.imagen}}" target="_blank">Ver imagen...</a> </td>
                       <td class="color-tabla" >
-                        <button type="button" class="btn-sm">
+                        <button type="button" class="btn-sm" data-bs-toggle="modal" (click)="mostrarEditar(producto)" data-bs-target="#editarProducto">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
@@ -67,7 +67,7 @@
                                 <path d="M16 5l3 3"></path>
                              </svg>
                            </button>
-                           <button type="button" class="btn-sm">
+                           <button type="button" class="btn-sm" (click)="mostrarBorrar(producto)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <path d="M4 7l16 0"></path>
@@ -79,94 +79,61 @@
                            </button>
                       </td>
                     </tr>
-                    <tr>
-                        <td class="color-tabla" scope="row">Crema solar</td>
-                        <td class="color-tabla" >$4000</td>
-                        <td class="color-tabla" ><a href="">Ver mas</a></td>
-                        <td class="color-tabla" >Cremas</td>
-                        <td class="color-tabla" >150</td>
-                        <td class="color-tabla" ><a href="">View Image</a></td>
-                        <td class="color-tabla" >
-                          <button type="button" class="btn-sm">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                  <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                                  <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
-                                  <path d="M16 5l3 3"></path>
-                               </svg>
-                             </button>
-                             <button type="button" class="btn-sm">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                  <path d="M4 7l16 0"></path>
-                                  <path d="M10 11l0 6"></path>
-                                  <path d="M14 11l0 6"></path>
-                                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                               </svg>
-                             </button>
-                        </td> 
-                    </tr>
-                    <tr>
-                        <td class="color-tabla" scope="row">Ciel Nuit</td>
-                        <td class="color-tabla" >$4400</td>
-                        <td class="color-tabla" ><a href="">Ver mas</a></td>
-                        <td class="color-tabla" >Fragancias</td>
-                        <td class="color-tabla" >30</td>
-                        <td class="color-tabla" ><a href="">View Image</a></td>
-                        <td class="color-tabla" >
-                          <button type="button" class="btn-sm">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                  <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                                  <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
-                                  <path d="M16 5l3 3"></path>
-                               </svg>
-                             </button>
-                             <button type="button" class="btn-sm">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                  <path d="M4 7l16 0"></path>
-                                  <path d="M10 11l0 6"></path>
-                                  <path d="M14 11l0 6"></path>
-                                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                               </svg>
-                             </button>
-                        </td> 
-                    </tr>
-                    <tr>
-                        <td class="color-tabla" scope="row">Arqueador de pestañas</td>
-                        <td class="color-tabla" >$2590</td>
-                        <td class="color-tabla" ><a href="">Ver mas</a></td>
-                        <td class="color-tabla" >Accesorios de belleza</td>
-                        <td class="color-tabla" >200</td>
-                        <td class="color-tabla" ><a href="">View Image</a></td>
-                        <td class="color-tabla" >
-                          <button type="button" class="btn-sm">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                  <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                                  <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
-                                  <path d="M16 5l3 3"></path>
-                               </svg>
-                             </button>
-                             <button type="button" class="btn-sm">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                  <path d="M4 7l16 0"></path>
-                                  <path d="M10 11l0 6"></path>
-                                  <path d="M14 11l0 6"></path>
-                                  <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
-                                  <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                               </svg>
-                             </button>
-                        </td> 
-                    </tr>
-                    
                   </tbody>
               </table>
         </div>
     </div>
-    
+
+
 </div>
+
+    <!-- Modal para editar un producto -->
+    <div class="modal fade" *ngFor="let col of coleccionProductos" id="editarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="resetearForm()"></button>
+                </div>
+                <div [formGroup]="producto" class="modal-body">
+                    <!-- Recibe los nuevos valores -->
+                    <div class="mb-3">
+                        <label class="form-label texto">Ingrese nombre del producto:</label>
+                        <input type="text" class="form-control color-input texto" formControlName="nombre" placeholder="{{col.nombre}}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label texto">Ingrese el precio del producto:</label>
+                        <input type="number" class="form-control color-input texto" formControlName="precio" placeholder="{{col.precio}}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label texto">Ingrese descripción:</label>
+                        <input type="text" class="form-control color-input texto" formControlName="descripcion" placeholder="{{col.descripcion}}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label texto">Ingrese categoria del producto</label>
+                        <select class="form-control" class="form-select color-input texto" formControlName="categoria">
+                            <option class="option texto" value="-1" disabled selected>Seleccione una opcion</option>
+                            <option class="option texto"  value="Belleza facial">Belleza facial</option>
+                            <option class="option texto"  value="Belleza corporal">Belleza corporal</option>
+                            <option class="option texto"  value="Manicura y pedicura">Manicura y pedicura</option>
+                            <option class="option texto"  value="Fragancia">Fragancias</option>
+                            <option class="option texto"  value="Accesorios de belleza">Accesorios de belleza</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label texto">Ingrese una imagen del producto:</label>
+                        <input type="text" class="form-control color-input texto" formControlName="imagen" placeholder="{{col.imagen}}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label texto">Ingrese stock disponible:</label>
+                        <input type="number" class="form-control color-input texto" formControlName="stock" placeholder="{{col.stock}}">
+                    </div>                      
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn2 texto" (click)="editarProducto()" data-bs-dismiss="modal">Guardar cambios</button>
+                    <button type="button" class="btn btn3 texto" data-bs-dismiss="modal" (click)="resetearForm()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+

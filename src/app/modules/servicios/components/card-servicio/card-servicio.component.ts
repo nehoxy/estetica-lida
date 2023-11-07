@@ -34,7 +34,7 @@ export class CardServicioComponent {
     this.modalData.descripcion = descripcion
 
   this.modalRef = this.modalService.show(ModalSaberMasComponent, {
-    initialState: this.modalData,class: 'modal-sm'
+    initialState: this.modalData,class: 'modal-sm',backdrop:true
   },);
   
   }

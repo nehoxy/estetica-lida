@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Producto } from 'src/app/models/producto';
+import { CrudProductosService } from 'src/app/modules/administrador/services/crud-productos.service';
 
 @Component({
   selector: 'app-card-producto',
@@ -8,31 +9,19 @@ import { Component } from '@angular/core';
 })
 export class CardProductoComponent {
 
-  listaProductos = [
-    {
-      id:1, 
-      titulo:"Crema para manos",
-      precio:4700,
-      imagen:".../../../../../assets/img-card-producto/crema.png",
-      descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    },
-    {
-      id:2, 
-      titulo:"Protector solar",
-      precio:4000,
-      imagen:"../../../../../assets/img-card-producto/protector.png",
-      descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    },
-    {
-      id:3, 
-      titulo:"Serum",
-      precio:3000,
-      imagen:"../../../../../assets/img-card-producto/serum.png",
-      descripcion:"Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    }
-  ]
-  constructor(){
+  listaProductos : Producto[] = [];
+
+  productoSeleccionado! :Producto; // '!' toma valores vacios o 'any'
+
+  
+  constructor(public servicioProductosCrud:CrudProductosService){
     
+  }
+
+  ngOnInit() :void {
+    this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
+      this.listaProductos = producto;
+    })
   }
 
  

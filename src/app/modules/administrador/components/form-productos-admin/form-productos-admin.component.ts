@@ -14,6 +14,9 @@ export class FormProductosAdminComponent {
     productoSeleccionado!:Producto; // ! -> toma valores vacios
     modalVisibleProducto:boolean = false;
 
+    busqueda:string = ''
+    filtro:string = ''
+
     producto = new FormGroup ({
         nombre: new FormControl('',Validators.required),
         precio: new FormControl(0,Validators.required),

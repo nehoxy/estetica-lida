@@ -37,6 +37,11 @@
             </form>
         </div>
         <div class="col-lg-9">
+            <!--barra de busqueda-->
+            <div class="col-lg-8 col-12 col-sm-12 text-lg-center barra tamaño-barra input-wrapper">
+                <input [(ngModel)]="busqueda" class="form-control busqueda me-2" type="text" placeholder="Buscar" aria-label="Search">
+            </div>
+
             <table class="table row-border texto fondo">
                 <thead>
                     <tr class="table-secondary">
@@ -50,7 +55,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let producto of coleccionProductos" class="table-secondary">
+                    <tr *ngFor="let producto of coleccionProductos | customFilter:busqueda" class="table-secondary">
                       <td class="color-tabla" scope="row">{{producto.nombre}}</td>
                       <td class="color-tabla" >${{producto.precio}}</td>
                       <td class="color-tabla" >{{producto.descripcion}}</td>

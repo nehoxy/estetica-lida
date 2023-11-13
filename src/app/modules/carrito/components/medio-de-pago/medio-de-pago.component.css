@@ -1,17 +1,20 @@
+/*bordes para las imagenes*/
 .imagen{
     border-radius: 20rem;
 }
 
+/*fuente*/
 .texto{
     font-family: Poppins,sans-serif;
     
 }
 
+/*seleccionar el metodo*/
 .selector{
     margin-left: 0.5rem;
 }
 
-
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .imagen{
         border-radius: 20rem;

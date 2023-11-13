@@ -19,6 +19,9 @@ export class FormServiciosAdminComponent implements OnInit {
   servicioSeleccionado!: Servicio; // ! -> toma valores vacíos
 
   modalVisibleServicio: boolean = false;  
+// barra de busqueda
+  busqueda:string = ''
+  filtro:string = ''
 
   servicio = new FormGroup({
     nombre: new FormControl('',Validators.required),

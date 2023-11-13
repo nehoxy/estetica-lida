@@ -1,11 +1,16 @@
+<!--stepper con los pasos para completar el pedido-->
+
 <div class="contenedor">
   <mat-stepper class="prueba" #stepper>
     <mat-step  errorMessage="Complete el medio de pago">
    
+      <!--primer paso: envio-->
         <ng-template matStepLabel class="texto">Datos del envio</ng-template>
         <div>
+          <!--selector para mostrar el componente-->
           <app-datos-de-envio></app-datos-de-envio>
           
+          <!--boton para pasar al siguiente paso-->
           <button mat-button matStepperNext class="texto">Siguiente</button>
         </div>
 
@@ -14,22 +19,28 @@
 
     <mat-step  errorMessage="Complete los datos">
       <form >
+        <!--segundo paso: pago-->
         <ng-template matStepLabel>Medio de pago</ng-template>
-       
         <div>
           <app-medio-de-pago></app-medio-de-pago>
+          <!--volver hacia atras-->
           <button mat-button matStepperPrevious class="texto">Atras</button>
+          <!--avanzar al siguiente paso-->
           <button mat-button matStepperNext class="texto">Siguiente</button>
         </div>
       </form>
     </mat-step>
     
     <mat-step>
+      <!--tercer paso: finalizar y chequear informacion-->
       <ng-template matStepLabel>Finalizar</ng-template>
       <app-finalizar-pedido></app-finalizar-pedido>
       <div>
+        <!--vuelve un paso atras-->
         <button mat-button matStepperPrevious class="texto">Atras</button>
+        <!--vuelve al inicio-->
         <button mat-button (click)="stepper.reset()" class="texto">Reiniciar</button>
+        <!--finaliza pedido (deberia mostrarle al usuario un modal de compra finalizada y al administrador el pedido en su panel)-->
         <button mat-button class="texto">Finalizar compra</button>
       </div>
     </mat-step>

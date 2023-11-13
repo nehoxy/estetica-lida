@@ -1,23 +1,19 @@
-.contenedor{
+/*tamaño del contenedor*/
+.contenedor {
   min-height: 80vh;
 }
-.example-radio-group {
-    display: flex; flex-direction: column;
-    /* display: inline-grid; */ 
-    /* display: grid; */
-    margin: 15px 0;
-  }
 
-  .texto{
-    font-family: Poppins,sans-serif;   
-  }
+
+.texto {
+  font-family: Poppins, sans-serif;
+}
 
 
 ::ng-deep .mat-step-header .mat-step-icon {
-    background-color: rgba(205, 205, 205, 0.822);
-    color: #fff;
+  background-color: rgba(205, 205, 205, 0.822);
+  color: #fff;
 }
 
 ::ng-deep .mat-step-header .mat-step-label.mat-step-label-active {
-  font-family: Poppins,sans-serif;   
+  font-family: Poppins, sans-serif;
 }

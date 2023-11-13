@@ -1,12 +1,15 @@
+/*borde de las imagenes*/
 .imagen{
     border-radius: 20rem;
 }
 
+/*fuente*/
 .texto{
     font-family: Poppins,sans-serif;
     
 }
 
+/*seleccionar card*/
 .selector{
     margin-left: 0.5rem;
 }

@@ -1,0 +1,15 @@
+.page-title {
+    position: absolute;
+    bottom:60px;
+    left: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: left;
+    z-index: 1;
+  }
+
+  @media (max-width: 767px) {
+    .page-title {
+      display: none; /* Oculta el título en dispositivos móviles */
+    }
+  }

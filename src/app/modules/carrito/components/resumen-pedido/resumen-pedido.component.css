@@ -1,12 +1,15 @@
+/*color y fuente de la lista de productos*/
 .lista{
     font-family: Poppins,sans-serif;
     border-color: white;
 }
 
+/*borde de la card*/
 .resumen{
     border-radius: 2vw;
 }
 
+/*color, borde y fuente para el boton de avanzar*/
 .boton{
     background-color: #C8ECCB;
     border-radius: 2vw;
@@ -14,18 +17,21 @@
     margin-top: 1vw;
 }
 
+/*color del precio */
 .precio{
     background-color: white;
     color: green;
     font-family: Poppins,sans-serif;
 }
 
+/*color negro al total para que se diferencie*/
 .total{
     background-color: white;
     color: black;
     font-family: Poppins,sans-serif;
 }
 
+/*fuente*/
 .titulos{
     font-family: Poppins,sans-serif;
 }

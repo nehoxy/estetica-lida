@@ -18,6 +18,7 @@ export class CardProductoComponent {
   busqueda:string = ''
   filtro:string = ''
 
+  
   productoSeleccionado! :Producto; // '!' toma valores vacios o 'any'
 
   
@@ -27,7 +28,13 @@ export class CardProductoComponent {
 
   ngOnInit() :void {
    this.mostrarProducto()
+
+   if(this.filtro=='cremas'){
+    this.mostrarCremas()
+   }else{
+   }
   }
+
   mostrarProducto(){
     this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
       this.listaProductos = producto;
@@ -37,6 +44,7 @@ export class CardProductoComponent {
       this.mostrarJabones()
     })
   }
+
   mostrarCremas(){
     this.listaProductos.forEach(producto =>{
       if(producto.categoria === "cremas"){
@@ -48,21 +56,21 @@ export class CardProductoComponent {
   mostrarMaquillajes(){
     this.listaProductos.forEach(producto =>{
       if(producto.categoria === "maquillajes"){
-        this.cremas.push(producto)
+        this.maquillajes.push(producto)
       }
     })
   }
   mostrarMascarillas(){
     this.listaProductos.forEach(producto =>{
       if(producto.categoria === "mascarillas"){
-        this.cremas.push(producto)
+        this.mascarillas.push(producto)
       }
     })
   }
   mostrarJabones(){
     this.listaProductos.forEach(producto =>{
       if(producto.categoria === "jabones"){
-        this.cremas.push(producto)
+        this.jabones.push(producto)
       }
     })
   }

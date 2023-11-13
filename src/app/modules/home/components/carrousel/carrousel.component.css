@@ -1,11 +1,65 @@
 .page-title {
     position: absolute;
-    bottom:60px;
+    bottom:62px;
     left: 0;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.7);
-    text-align: left;
+    padding-right: 100px;
+    border-radius: 0 10rem 1.3rem 0;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
     z-index: 1;
+  }
+
+  h1{
+    font-family: 'Poppins';
+  }
+
+  .twelve h1 {
+      letter-spacing:1px; 
+      text-transform:uppercase; 
+      width:160px; 
+      text-align:center; 
+      margin:auto; 
+      white-space:nowrap; 
+      padding-bottom:13px;
+  }
+  .twelve h1:before {
+      background-color: #C8ECCB;
+      content: '';
+      display: block;
+      height: 3px;
+      width: 75px;
+      margin-bottom: 20px;
+  }
+  .twelve h1:after {
+      background-color: #C8ECCB;
+      content: '';
+      display: block;
+     position:absolute; right:0; bottom:0;
+      height: 3px;
+      width: 75px;
+      margin-bottom: 0.25em;
+  }
+
+  .twelve h1:before:hover{
+    background-color: #C8ECCB;
+    content: '';
+    display: block;
+   position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+    transition: 1ms;
+  }
+
+  .twelve h1:after:hover{
+    background-color: #C8ECCB;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+    transition: 1ms;
   }
 
   @media (max-width: 767px) {

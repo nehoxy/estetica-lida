@@ -19,6 +19,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { FlatpickrDefaults} from 'angularx-flatpickr'
+import { CustomFilterPipeP } from './components/form-productos-admin/custom-filterp';
 
 
 
@@ -33,6 +34,7 @@ import { FlatpickrDefaults} from 'angularx-flatpickr'
         FormProductosAdminComponent,
         TablaVentasAdministradorComponent,
         CalendarioComponent,
+        CustomFilterPipeP
        
 
   ],

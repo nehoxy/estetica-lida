@@ -23,7 +23,7 @@ export class CardServicioComponent {
 
   modalRef?:BsModalRef;
   busqueda:string = ''
-  filtro:string = ''
+  filtro:string = 'todos'
 
   constructor( private modalService:BsModalService, private crudService:CrudServiciosService){
 

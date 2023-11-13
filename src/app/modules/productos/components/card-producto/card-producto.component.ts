@@ -26,6 +26,9 @@ export class CardProductoComponent {
   }
 
   ngOnInit() :void {
+   this.mostrarProducto()
+  }
+  mostrarProducto(){
     this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
       this.listaProductos = producto;
       this.mostrarCremas()
@@ -34,13 +37,13 @@ export class CardProductoComponent {
       this.mostrarJabones()
     })
   }
-
   mostrarCremas(){
     this.listaProductos.forEach(producto =>{
       if(producto.categoria === "cremas"){
         this.cremas.push(producto)
       }
     })
+    this.mostrarProducto()
   }
   mostrarMaquillajes(){
     this.listaProductos.forEach(producto =>{

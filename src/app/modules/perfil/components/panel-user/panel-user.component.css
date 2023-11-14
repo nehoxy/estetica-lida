@@ -1,3 +1,4 @@
+/*color del stepper*/
 .mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
     --mdc-tab-indicator-active-indicator-color: #BB8588;
     --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);

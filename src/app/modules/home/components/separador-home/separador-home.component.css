@@ -5,8 +5,12 @@
     background-color: #C8ECCB;
     padding-top: 1.5vw;
 }
-
-/*tamaño imagenes*/
+/*tamaño logos de los envios*/
+.logos{
+    width: 4vw;
+    height: 4vw;
+}
+/*tamaño logo de la tarjeta (es mas grande que los otros)*/
 .logoTarjeta{
     width: 3.5vw;
     height: 3.5vw;
@@ -16,6 +20,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .separador{
         height: 72vw !important;

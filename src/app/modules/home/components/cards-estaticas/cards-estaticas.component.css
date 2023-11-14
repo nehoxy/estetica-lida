@@ -7,17 +7,18 @@
     transition: 0.3s;
     
 }
+/*
 h4:after{
     background-color: #C8ECCB;
     content: '';
     display: block;
-    position:absolute; right:26rem; bottom:1rem;
+    position:absolute; right:27.4rem; bottom:1rem;
     height: 3px;
-    width: 75px;
+    width: 52px;
     margin-bottom: 0.1rem;
   
   }
-
+*/
 h4{
     font-family: Poppins;
 }

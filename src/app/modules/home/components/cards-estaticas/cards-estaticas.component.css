@@ -1,3 +1,4 @@
+/*color, tamaño y borde a las cards. tambien se le da la transicion al tocar la card*/
 .cards-estaticas{
     background-color: black;
     width: 14vw;
@@ -7,6 +8,7 @@
     transition: 0.3s;
     
 }
+/*titulos y textos*/
 h4{
     font-family: Poppins;
 }
@@ -17,12 +19,7 @@ p{
     font-family: Lora;
 }
 
-.decoracion {
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
-    
-}
-
+/*tamaños de las imagenes*/
 .imagen-1{
     margin-top: 2.5vw;
     width: 6vw;
@@ -47,6 +44,7 @@ p{
     height: 6vw;
 }
 
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .cards-estaticas{
         background-color: black;
@@ -173,6 +171,8 @@ p{
         margin-bottom: 10px; /* Added */
         padding: 0.5vw 0 0 0.5vw;
     }
+
+    /*el hover hace la transicion*/
     .cards-estaticas:hover {
         width:15vw;
         height: 19vw;

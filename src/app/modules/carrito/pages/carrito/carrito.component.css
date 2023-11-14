@@ -1,13 +1,15 @@
+/*contenedor de los componentes*/
 .contenedor{
     min-height: 120vh;
   
 }
+
+/*titulo*/
 h2{
     font-family: Poppins,sans-serif;
 }
-/* Single-direction drop shadow */
-/* Gradient transparent - color - transparent */
 
+/*linea que divide el titulo de los componentes*/
 hr {
     border: 0;
     height: 1px;

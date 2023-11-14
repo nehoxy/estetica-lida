@@ -11,7 +11,7 @@ h4:after{
     background-color: #C8ECCB;
     content: '';
     display: block;
-    position:absolute; right:25rem; bottom:0;
+    position:absolute; right:26rem; bottom:1rem;
     height: 3px;
     width: 75px;
     margin-bottom: 0.1rem;

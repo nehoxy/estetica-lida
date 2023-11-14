@@ -1,15 +1,14 @@
+/*contenedor del inicio*/
 .contenedor{
     min-height: 100vh;
     
 }
-
+/*titulo fuente y posicion*/
 h2{
     font-family: Poppins,sans-serif;
     text-align: center;
 }
-/* Single-direction drop shadow */
-/* Gradient transparent - color - transparent */
-
+/*linea para separar el titulo de los componentes*/
 hr {
     border: 0;
     height: 1px;

@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable} from 'rxjs';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { map,switchMap } from 'rxjs';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +13,7 @@ import { Router } from '@angular/router';
 export class IsLoggedInService {
   private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(private auth:AuthService, private router:Router) { 
+  constructor(private auth:AuthService, private router:Router, private firestore:AngularFirestore, private authF:AngularFireAuth) { 
     const storedIsLogged = localStorage.getItem('isLogged');
     if (storedIsLogged) {
       this.isLoggedSubject.next(storedIsLogged === 'true');
@@ -24,6 +28,8 @@ export class IsLoggedInService {
     localStorage.setItem('isLogged', isLogged ? 'true' : 'false');
   }
 
+ 
+
   logout() {
     
     this.auth.cerrarSesion()
@@ -34,4 +40,6 @@ export class IsLoggedInService {
     this.router.navigate(['home'])
 
   }
+
+  
 }

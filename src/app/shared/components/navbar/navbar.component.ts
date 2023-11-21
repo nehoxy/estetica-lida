@@ -1,9 +1,10 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { LoginComponent } from 'src/app/modules/auth/pages/login/login.component';
 import { IsLoggedInService } from '../../services/is-logged-in.service';
 import Swal from 'sweetalert2';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { take } from 'rxjs';
+
 
 
 @Component({
@@ -13,8 +14,10 @@ import { take } from 'rxjs';
   providers: [LoginComponent]
 })
 export class NavbarComponent {
+  
+
   isLogged:boolean;
-  administrador:boolean;
+  isAdmin:boolean;
   constructor(private logged:IsLoggedInService, private servicioAuth:AuthService){
     this.logged.isLogged$.subscribe((isLogged) => {
       this.isLogged = isLogged;
@@ -35,32 +38,11 @@ export class NavbarComponent {
     // Realiza cualquier otra acción necesaria al cerrar sesión, como redirigir al usuario.
   }
   ngOnInit() {
-    this.checkUserRole()
+    
+    console.log(this.isAdmin)
+
   }
+ 
 
-  async checkUserRole() {
-    try {
-      const uid = await this.servicioAuth.getUid();
 
-      if (uid) {
-        const userData = await this.servicioAuth.getUserData(uid).pipe(take(1)).toPromise();
-
-        if (userData && userData['rol']) {
-          const userRole = userData['rol'];
-          console.log('User Role:', userRole);
-          if(userRole === 'administrador'){
-            this.administrador = true;
-          }
-          // Ahora puedes realizar acciones basadas en el rol del usuario
-          // Por ejemplo, redirigir a diferentes rutas o mostrar componentes específicos
-        } else {
-          console.log('No se encontró información del usuario o el rol.');
-        }
-      } else {
-        console.log('No se pudo obtener el UID del usuario.');
-      }
-    } catch (error) {
-      console.error('Error al obtener información del usuario:', error);
-    }
-  }
 }

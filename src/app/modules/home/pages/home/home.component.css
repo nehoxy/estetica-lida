@@ -19,10 +19,12 @@ hr {
 @media (max-width: 767px) {
     .titulo-celular {
       display: block; /* Oculta el título en dispositivos móviles */
+      
     }
   }
 
-  @media (min-width: 1200px) {
+
+  @media (min-width: 1000px) {
     .titulo-celular {
       display: none; /* Oculta el título en dispositivos móviles */
     }

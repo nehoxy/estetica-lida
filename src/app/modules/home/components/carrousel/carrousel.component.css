@@ -63,7 +63,7 @@
 
  
 
-  @media (max-width: 767px) {
+  @media (max-width: 1000px) {
     .page-title {
       display: none; /* Oculta el título en dispositivos móviles */
     }

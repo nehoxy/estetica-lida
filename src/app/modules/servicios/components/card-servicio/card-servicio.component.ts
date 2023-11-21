@@ -23,7 +23,7 @@ export class CardServicioComponent {
 
   modalRef?:BsModalRef;
   busqueda:string = ''
-  filtro:string = ''
+  filtro:string = 'todos'
 
   constructor( private modalService:BsModalService, private crudService:CrudServiciosService){
 
@@ -41,6 +41,10 @@ export class CardServicioComponent {
  
 
   ngOnInit():void{
+    this.mostrarServicios()
+}
+  
+  mostrarServicios(){
     this.crudService.obtenerServicio().subscribe(servicio => {
       this.listaServicios = servicio;
       this.mostrarBelleza()
@@ -48,11 +52,7 @@ export class CardServicioComponent {
       this.mostrarManicuria()
       this.mostrarPedicuria()
   })
-
-  
-  
-}
-  
+  }
   mostrarManicuria(){
     this.listaServicios.forEach(servicio =>{
       if(servicio.categoria === "manicuria"){

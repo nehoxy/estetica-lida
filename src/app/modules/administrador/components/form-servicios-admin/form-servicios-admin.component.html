@@ -47,6 +47,10 @@
       </form>
     </div>
     <div class="col-lg-9">
+       <!--barra de busqueda-->
+       <div class="col-lg-10 col-12 col-sm-12 text-lg-center barra tamaño-barra input-wrapper mb-2">
+        <input [(ngModel)]="busqueda" class="form-control busqueda me-2" type="text" placeholder="Buscar" aria-label="Search">
+    </div>
       <table class="table row-border hover texto color-tabla">
         <thead>
           <tr class="table-secondary texto">
@@ -60,13 +64,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr class=" table-secondary " *ngFor="let col of coleccionServicios">
+          <tr class=" table-secondary " *ngFor="let col of coleccionServicios | customFilter:busqueda">
             <td>{{col.nombre}}</td>
             <td>{{col.precio}}</td>
-            <td> <a href="">Ver mas...</a> </td>
+            <td> <a href="" style="color: #BB8588;">Ver mas...</a> </td>
             <td>{{col.categoria}}</td>
             <td >{{capitalizeFirstLetter(col.profesional)}}</td>
-            <td><a href="{{col.imagen}}">Ver imagen...</a></td>
+            <td><a href="{{col.imagen}}" style="color: #BB8588;">Ver imagen...</a></td>
             <td>
               <button type="button" class="btn-sm" (click)="mostrarEditar(col)" data-bs-toggle="modal" data-bs-target="#editarServicio">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

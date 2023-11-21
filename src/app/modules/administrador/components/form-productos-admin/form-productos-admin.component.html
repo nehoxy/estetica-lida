@@ -18,11 +18,10 @@
                     <label class="control-label ps-2 texto">Categoria</label>
                     <select class="form-select color-input" formControlName="categoria" aria-label="Default select example">
                         <option class="option texto" value="-1" disabled selected>Seleccione una opcion</option>
-                        <option class="option texto"  value="Belleza facial">Belleza facial</option>
-                        <option class="option texto"  value="Belleza corporal">Belleza corporal</option>
-                        <option class="option texto"  value="Manicura y pedicura">Manicura y pedicura</option>
-                        <option class="option texto"  value="Fragancia">Fragancias</option>
-                        <option class="option texto"  value="Accesorios de belleza">Accesorios de belleza</option>
+                        <option class="option texto"  value="cremas">Cremas</option>
+                        <option class="option texto"  value="maquillajes">Maquillajes</option>
+                        <option class="option texto"  value="mascarillas">Mascarillas</option>
+                        <option class="option texto"  value="jabones">Jabones</option>
                       </select>
                 </div>
                 <div class="form-group mt-3">
@@ -38,6 +37,11 @@
             </form>
         </div>
         <div class="col-lg-9">
+            <!--barra de busqueda-->
+            <div class="col-lg-10 col-12 col-sm-12 text-lg-center barra tamaño-barra input-wrapper mb-2">
+                <input [(ngModel)]="busqueda" class="form-control busqueda me-2" type="text" placeholder="Buscar" aria-label="Search">
+            </div>
+
             <table class="table row-border texto fondo">
                 <thead>
                     <tr class="table-secondary">
@@ -51,13 +55,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let producto of coleccionProductos" class="table-secondary">
+                    <tr *ngFor="let producto of coleccionProductos | customFilter:busqueda" class="table-secondary">
                       <td class="color-tabla" scope="row">{{producto.nombre}}</td>
                       <td class="color-tabla" >${{producto.precio}}</td>
                       <td class="color-tabla" >{{producto.descripcion}}</td>
                       <td class="color-tabla" >{{producto.categoria}}</td>
                       <td class="color-tabla" >{{producto.stock}}</td>
-                      <td class="color-tabla"> <a href="{{producto.imagen}}" target="_blank">Ver imagen...</a> </td>
+                      <td class="color-tabla"> <a href="{{producto.imagen}}" target="_blank" style="color:#BB8588;" >Ver imagen...</a> </td>
                       <td class="color-tabla" >
                         <button type="button" class="btn-sm" data-bs-toggle="modal" (click)="mostrarEditar(producto)" data-bs-target="#editarProducto">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

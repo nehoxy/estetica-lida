@@ -93,3 +93,10 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  .busqueda{
+    border-radius: 5vw;
+    background-color: #EBEBEB;
+    border-color: #EBEBEB;
+    font-family: Poppins,sans-serif;
+    
+  }

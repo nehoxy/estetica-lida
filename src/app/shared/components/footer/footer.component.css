@@ -50,17 +50,17 @@ p{
     height: 5vw;
 }
 .logo-wpp{
-    width: 1vw;
-    height: 1vw;
+    width: 1.5vw ;
+    height: 1.5vw;
 }
 .logo-correo{
-    width: 0.8vw;
-    height: 0.8vw;
+    width: 1.2vw;
+    height: 1.2vw;
     margin-right: 0.2vw;
 }
 .logo-ubicacion{
-    width: 1vw;
-    height: 1vw;
+    width: 2vw ;
+    height: 2vw ;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -198,24 +198,24 @@ p{
         height: 2.5vw;
     }
     .logo-fb{
-        width: 3vw;
-        height: 3vw;
+        width: 3.5vw;
+        height: 3.5vw;
     }
     .logo{
         width: 5vw;
         height: 5vw;
     }
     .logo-wpp{
-        width: 1vw;
-        height: 1vw;
+        width: 1.5vw;
+        height: 1.5vw;
     }
     .logo-correo{
-        width: 0.8vw;
-        height: 0.8vw;
+        width: 1.2vw;
+        height: 1.2vw;
         margin-right: 0.2vw;
     }
     .logo-ubicacion{
-        width: 1vw;
-        height: 1vw;
+        width: 1.5vw;
+        height: 1.5vw;
     }
 }

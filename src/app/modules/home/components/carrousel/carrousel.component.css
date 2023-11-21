@@ -18,7 +18,7 @@
   position: absolute;
   bottom: -0.4rem;
   left: 0;
-  color: rgb(0, 0, 0);
+  color: rgb(32, 32, 32);
   background-color: white;
   font-size: 24px;
   padding: 20px;
@@ -66,5 +66,9 @@
   @media (max-width: 767px) {
     .page-title {
       display: none; /* Oculta el título en dispositivos móviles */
+    }
+
+    #carouselTitle{
+      display:none;
     }
   }

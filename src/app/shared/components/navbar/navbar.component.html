@@ -31,10 +31,16 @@
               <li class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="/admin" routerLinkActive="active">Administrador</a>
               </li>
-              <li class="nav-item separacionBotones">
+              <li *ngIf="isLogged" class="nav-item separacionBotones">
+                <a class="nav-link" routerLink="perfil" routerLinkActive="active">Perfil</a>
+              </li>
+              <li *ngIf="isLogged" class="nav-item separacionBotones">
+                <a class="nav-link pointer" (click)="logout()" >Cerrar sesión</a>
+              </li>
+              <li *ngIf="!isLogged" class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Login</a>
               </li>
-              <li class="nav-item separacionBotones">
+              <li *ngIf="!isLogged" class="nav-item separacionBotones">
                 <a class="nav-link pe-4" routerLink="auth/register" routerLinkActive="active">Registrarse</a>
               </li>
               <li class="nav-item align-middle p-0 ">

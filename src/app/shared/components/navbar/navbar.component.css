@@ -12,6 +12,9 @@ a{
 
 }
 
+.pointer{
+    cursor:pointer;
+}
 
 .colorNav {
     background-color: rgb(248, 237, 235);
@@ -45,7 +48,15 @@ a{
     height:6rem;
 
 }
-
+::ng-deep .btn-sweetalert{
+    background-color: #BB8588;
+    border-radius: 5vw;
+    font-family: 'Poppins';
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
 @media screen and (max-width: 1000px) {
     .tamañoImagen {
         display: none;

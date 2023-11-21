@@ -10,6 +10,7 @@ export class CrudProductosService {
   private productosColeccion: AngularFirestoreCollection<Producto>
 
   constructor(private database: AngularFirestore) {
+    
     this.productosColeccion = database.collection('productos')
    }
 
@@ -19,7 +20,7 @@ export class CrudProductosService {
       try{
         const id = this.database.createId();
         producto.idProducto = id;
-
+        
         const resultado = await this.productosColeccion.doc(id).set(producto);
         resolve(resultado);
       } catch(error){

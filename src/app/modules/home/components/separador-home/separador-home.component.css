@@ -1,24 +1,28 @@
+/*tamaño y color de la fila donde esta la informacion*/
 .separador {
     width: 100%;
     height: 11vw;
     background-color: #C8ECCB;
     padding-top: 1.5vw;
 }
-.prueba{
-    padding-right: 0;
-}
+
+/*tamaño logos de los envios*/
+
 .logos{
     width: 4vw;
     height: 4vw;
 }
+/*tamaño logo de la tarjeta (es mas grande que los otros)*/
 .logoTarjeta{
     width: 3.5vw;
     height: 3.5vw;
 }
+/*fuente*/
 .texto{
     font-family: 'Poppins', sans-serif;
 }
 
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .separador{
         height: 72vw !important;

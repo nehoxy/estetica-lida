@@ -1,11 +1,12 @@
+/*contenedor del perfil*/
 .contenedor{
     min-height: 100vh;
 }
-
+/*titulo*/
 h2{
     font-family: Poppins,sans-serif;
 }
-
+/*linea que separa el titulo de los componentes*/
 hr {
     border: 0;
     height: 1px;

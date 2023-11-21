@@ -1,23 +1,20 @@
+/*borde de las imagenes*/
 .imagen{
     border-radius: 20rem;
 }
 
+/*fuente*/
 .texto{
     font-family: Poppins,sans-serif;
     
 }
 
-.input-cp{
-    border-radius: 2rem;
-    background-color: #f8edeb;
-    border-color: #f8edeb;
-    font-family: Poppins,sans-serif;
-}
-
+/*seleccionar card*/
 .selector{
     margin-left: 0.5rem;
 }
 
+/*input codigo postal*/
 .boton-confirmar{
     background-color: #C8ECCB;
     border-radius: 1rem;
@@ -32,7 +29,14 @@
     padding: auto;
 }
 
+.input-cp{
+    border-radius: 2rem;
+    background-color: #f8edeb;
+    border-color: #f8edeb;
+    font-family: Poppins,sans-serif;
+}
 
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .imagen{
         border-radius: 20rem;

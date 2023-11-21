@@ -1,6 +1,8 @@
+/*color de la tabla*/
 .color-tabla{
     background-color: #EFEFEF;
 }
+/*fuente de la tabla*/
 td{
     font-family: 'Poppins';
 }

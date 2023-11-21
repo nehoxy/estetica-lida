@@ -1,15 +1,19 @@
+/*color de fondo de las cards*/
 .color-card{
     background-color: #F8EDEB;
 }
+/*fuente de los titulos y textos*/
 h1{
     font-family: 'Poppins';
 }
 h5{
     font-family: 'Poppins';
 }
+/*tamaño de las cards*/
 .tamaño-card{
     width: 18rem;
 }
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .color-card{
         margin-top: 3rem;

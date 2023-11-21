@@ -95,6 +95,7 @@ h4{
     font-family: 'Lora', serif;
 }
 
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .contenedorPrincipal{
         padding-left: 0;

@@ -1,9 +1,10 @@
-
+<!--resumen del pedido donde se ve el los productos agregados, sus precios y el total a pagar-->
 
 <div class="card mb-3 resumen" >
     <div class="card-body">
       <h3 class="card-title titulos">Resumen del pedido</h3>
 
+      <!--lista con productos y precios-->
       <ul class="list-group list-group-flush lista">
         <li class="list-group-item d-flex justify-content-between align-items-center">Crema Dermaglos
             <span class="badge precio rounded-pill">$3.600</span>
@@ -14,11 +15,13 @@
         <li class="list-group-item d-flex justify-content-between align-items-center">Crema Nivea
             <span class="badge precio rounded-pill">$2.600</span>
         </li>
+        <!--total-->
         <li class="list-group-item d-flex justify-content-between align-items-center"><strong>Total: </strong>
             <span class="badge total rounded-pill"><strong>$11.700</strong></span>
         </li>
       </ul>
 
+      <!--boton para ir a completar los pasos para finalizar el pedido-->
       <button type="button" class="btn boton" routerLink="/carrito/pasos">Continuar con el pago</button>
     </div>
 

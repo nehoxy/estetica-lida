@@ -1,3 +1,4 @@
+/*titulos y textos de las cards*/
 .texto{
     background-color: #FAFAF5;
     border-top-right-radius: 2vw;
@@ -7,20 +8,25 @@
 .titulos{
     font-family: Poppins,sans-serif;
 }
+
+/*cambiar color solo al precio*/
 .precio{
     font-family: Poppins,sans-serif;
     color: green;
 }
+
+/*borde para los cards*/
 .card{
-    
     border-radius: 2vw;
 }
 
+/*tamaño imagen*/
 .img-fluid{
     padding-left: 1.7vw;
     width: 14vw;
 }
 
+/*boton de editar producto*/
 .boton{
     background-color: white;
     border-radius: 2vw;

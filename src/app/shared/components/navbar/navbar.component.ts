@@ -22,6 +22,12 @@ export class NavbarComponent {
     this.logged.isLogged$.subscribe((isLogged) => {
       this.isLogged = isLogged;
     });
+
+    this.logged.isAdmin$.subscribe((isAdmin)=>{
+      this.isAdmin = isAdmin
+    })
+
+    
   }
 
   logout() {
@@ -37,6 +43,7 @@ export class NavbarComponent {
     })
     // Realiza cualquier otra acción necesaria al cerrar sesión, como redirigir al usuario.
   }
+
   ngOnInit() {
     
     console.log(this.isAdmin)

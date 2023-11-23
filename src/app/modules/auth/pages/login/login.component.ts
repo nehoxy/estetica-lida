@@ -76,7 +76,7 @@ export class LoginComponent {
         if (userData && userData['rol']) {
           const userRole = userData['rol'];
           console.log('User Role:', userRole);
-
+          this.logged.setAdminStatus(true)
           // Ahora puedes realizar acciones basadas en el rol del usuario
           // Por ejemplo, redirigir a diferentes rutas o mostrar componentes específicos
         } else {

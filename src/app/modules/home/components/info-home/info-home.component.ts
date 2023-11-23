@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component,OnInit } from '@angular/core';
+import AOS from "aos";
 @Component({
   selector: 'app-info-home',
   templateUrl: './info-home.component.html',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class InfoHomeComponent {
 
+    ngOnInit(): void{
+      AOS.init({disable: 'mobile'})
+    }
 }

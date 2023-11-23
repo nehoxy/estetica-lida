@@ -8,7 +8,7 @@ import { CrudProductosService } from 'src/app/modules/administrador/services/cru
   styleUrls: ['./card-producto.component.css']
 })
 export class CardProductoComponent {
-
+  p:number=1
   listaProductos : Producto[] = [];
   
   cremas:Producto[] = []

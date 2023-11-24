@@ -27,7 +27,7 @@
   margin:30vh auto;
   display:block;
   text-align:center;
-  transition: color .2s ease-in-out;
+  transition: color .20s ease-in-out;
   text-transform:uppercase;
   font-weight:900;
 }

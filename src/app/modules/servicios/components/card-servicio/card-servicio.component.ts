@@ -79,7 +79,7 @@ export class CardServicioComponent {
 
   mostrarEstetica(){
     this.listaServicios.forEach(servicio =>{
-      if(servicio.categoria === "esteticacorporal"){
+      if(servicio.categoria === "bellezacorporal"){
         this.estetica.push(servicio)
       }
     })

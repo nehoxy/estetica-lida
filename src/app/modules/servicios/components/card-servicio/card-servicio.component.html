@@ -21,8 +21,8 @@
                 <option value="todos" selected="selected">Todos</option>
                 <option value="bellezafacial">Belleza facial</option>
                 <option value="esteticacorporal">Estetica corporal</option>
-                <option value="manicuria">Manicuria</option>
-                <option value="pedicuria">Pedicuria</option>
+                <option value="manicuria">Manicuría</option>
+                <option value="pedicuria">Pedicuría</option>
               </select>
         </div>
     </div>
@@ -32,7 +32,7 @@
 <div class="container" style="margin-top:50px;margin-bottom:50px;">
     <div *ngIf="filtro === 'manicuria' || filtro === 'todos'"  class="row">
 
-            <h1 class="titulo fs-3 mb-5">Manicuria</h1>
+            <h1 class="titulo fs-3 mb-5">Manicuría</h1>
             <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of manicuria | customFilter:busqueda">
                 <div class="card-sl">
                     <div class="card-image">
@@ -55,7 +55,7 @@
 
     </div>
     <div *ngIf="filtro === 'pedicuria' || filtro === 'todos' " class="row">
-        <h1  class="titulo fs-3 mb-5">Pedicuria</h1>
+        <h1  class="titulo fs-3 mb-5">Pedicuría</h1>
         <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of pedicuria | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">

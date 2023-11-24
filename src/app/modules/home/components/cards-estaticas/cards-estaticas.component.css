@@ -61,8 +61,8 @@ p{
 @media only screen and (max-width: 600px) {
     .cards-estaticas{
         background-color: black;
-        width: 42vw;
-        height: 54vw;
+        width: 57vw;
+        height: 69vw;
         border-radius: 1.2vw;
         opacity: 1;
         transition: 0.3s;

@@ -33,7 +33,7 @@
 <div class="container mt-4 mb-4">
     <div class="row mx-auto justify-content-center align-items-center">
         <div class="col-lg-4 col-12 col-sm-6 mt-4 mb-3" *ngFor="let producto of listaProductos |customFilter:busqueda |customFilter:filtro ">
-            <div class="card card-estilo" style="width: 20rem;">
+            <div class="card card-estilo" style="width: 20rem; height: 29rem;">
                 <img [src]="producto.imagen" class="card-img-top card-imagen mx-auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title card-titulo text-start">{{producto.nombre}}</h5>

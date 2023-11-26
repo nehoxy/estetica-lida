@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
+import { CrudUsuariosService } from '../../services/crud-usuarios.service';
+import { Usuario } from 'src/app/models/usuario';
 
 @Component({
   selector: 'app-datos-personales',
@@ -10,7 +11,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class DatosPersonalesComponent {
   userData: any = {};
-  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore) {}
+  usuarioSeleccionado!:Usuario
+
+  constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore, private crudService:CrudUsuariosService) {}
 
 
   getUserData() {
@@ -26,6 +29,8 @@ export class DatosPersonalesComponent {
       }
     });
   }
+
+ 
 
   ngOnInit() {
     this.afAuth.authState.subscribe(user => {

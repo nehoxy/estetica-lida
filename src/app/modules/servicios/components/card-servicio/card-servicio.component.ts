@@ -92,6 +92,5 @@ export class CardServicioComponent {
         title:'¡Lo sentimos!',
         text: 'Esta función aún no esta disponible.',
       })
-    
   }
 }

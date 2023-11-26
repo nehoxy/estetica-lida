@@ -43,7 +43,7 @@ export class CardProductoComponent {
       icon: 'warning',
       confirmButtonColor: '#BB8588',
       title:'¡Lo sentimos!',
-      text: 'Esta funcion aún no esta disponible.',
+      text: 'Esta función aún no esta disponible.',
     })
   }
   

@@ -38,7 +38,7 @@ export class CardProductoComponent {
 
 
   comprarProducto(){
-    alert('asdadas')
+
     Swal.fire({
       icon: 'warning',
       confirmButtonColor: '#BB8588',

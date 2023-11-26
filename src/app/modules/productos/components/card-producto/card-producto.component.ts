@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudProductosService } from 'src/app/modules/administrador/services/crud-productos.service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-card-producto',
@@ -67,11 +68,22 @@ export class CardProductoComponent {
       }
     })
   }
+  
   mostrarJabones(){
     this.listaProductos.forEach(producto =>{
       if(producto.categoria === "jabones"){
         this.jabones.push(producto)
       }
+    })
+  }
+
+  comprarProducto(){
+    Swal.fire({
+      icon: 'warning',
+      iconColor: '#C8ECCB',
+      confirmButtonColor: '#BB8588',
+      title:'¡Lo sentimos!',
+      text: 'Esta funcion aún no esta disponible.',
     })
   }
   

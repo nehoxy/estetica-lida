@@ -39,7 +39,7 @@
                   <h5 class="card-title card-titulo text-start">{{producto.nombre}}</h5>
                   <p class="card-text text-start fw-light card-descripcion">{{producto.descripcion}}</p>
                   <p class="card-text card-precio text-start">{{producto.precio.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}</p>
-                  <a href="#" class="btn btn-primary card-boton" routerLink="/carrito">Comprar</a>
+                  <button class="btn btn-primary card-boton" (click)="comprarProducto()">Comprar</button>
                 </div>
             </div>
         </div>

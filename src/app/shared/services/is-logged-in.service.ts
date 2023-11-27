@@ -7,23 +7,27 @@ import { Router } from '@angular/router';
 })
 
 export class IsLoggedInService {
+  //crea el sujeto valor booleano para despues subscribirse
   private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private auth:AuthService, private router:Router) { 
+    //crea el valor en el local storage 
     const storedIsLogged = localStorage.getItem('isLogged');
+    //si el usuario esta logeado poner true en el local storage 
     if (storedIsLogged) {
       this.isLoggedSubject.next(storedIsLogged === 'true');
     }
   }
 
-
+//crea un observable
   isLogged$: Observable<boolean> = this.isLoggedSubject.asObservable();
-
+//funcion que se usa cuando el usuario inicia sesion para cambiar el valor a true 
   setLoggedStatus(isLogged: boolean) {
     this.isLoggedSubject.next(isLogged);
     localStorage.setItem('isLogged', isLogged ? 'true' : 'false');
   }
 
+  //funcion para cerrar sesion
   logout() {
     
     this.auth.cerrarSesion()

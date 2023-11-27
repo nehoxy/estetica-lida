@@ -48,7 +48,7 @@
 <div class="container">
     <div class="row">
         <div class="d-flex justify-content-center">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <pagination-controls screenReaderPageLabel="page" class="my-pagination"  nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="p = $event"></pagination-controls>
         </div>
     </div>
 </div>

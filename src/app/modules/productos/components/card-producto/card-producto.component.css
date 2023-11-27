@@ -1,3 +1,35 @@
+/* sets font color for pagination to white */
+.my-pagination::ng-deep .ngx-pagination a {
+    color: rgb(0, 0, 0);
+    }
+    
+    /* sets font color for number color when hovering */
+    .my-pagination::ng-deep .ngx-pagination a:hover {
+    color: rgb(0, 0, 0);
+    }
+    
+    /* sets font color for disabled previous or next words */
+    .my-pagination::ng-deep .ngx-pagination .disabled {
+    color: rgb(0, 0, 0) !important;
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 h2{
     font-family: Poppins,sans-serif;
 }

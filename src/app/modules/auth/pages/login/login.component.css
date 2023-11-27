@@ -2,10 +2,11 @@
     min-height: 100vh;
     background-color: #FCD5CE;
 }
-
+/*fondo*/
 .bg{
     background-color: #FCD5CE;
 }
+/*tamaño , borde y color del card del login*/
 .cardslogin{
     width: 30vw;
     height:40vw;
@@ -16,7 +17,7 @@
     background-color: white;
     
 }
-
+/*modificaciones del logo*/
 .logolida{
     width: 5vw;
     height: 5vw;
@@ -55,6 +56,7 @@ h1{
 .input-flex{
     flex:1;
 }
+/*boton de la contraseña*/
 .password-btn{
 
     border:0px;
@@ -62,11 +64,12 @@ h1{
     flex: 2;
    
 }
-
+/*color para el mensaje de error*/
 .mensaje-error{
     color:red;
     font-size: 0.8rem;
 }
+
 /*login responsive */
 @media only screen and (max-width: 600px) {
     .cardslogin{

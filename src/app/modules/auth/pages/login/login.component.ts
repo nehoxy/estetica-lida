@@ -25,7 +25,7 @@ export class LoginComponent {
     contrasena: new FormControl('',[Validators.required, Validators.minLength(8)])
   })
 
-  //llama a la interfaz
+  //llama a la interfaz con sus respectivos atributos
   usuarios: Usuario = {
     uid:'',
     nombre:'',

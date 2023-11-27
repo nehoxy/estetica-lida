@@ -18,6 +18,8 @@ export class DatosPersonalesComponent {
   provincia!:string
   localidad!:string
 
+  domicilioSeleccionado!:Domicilio
+
   domicilioForm = new FormGroup({
     direccion: new FormControl('',Validators.required),
     codigo_postal: new FormControl('',Validators.required),
@@ -59,6 +61,20 @@ export class DatosPersonalesComponent {
     }
   }
 
+  mostrarEditar(domicilioSeleccionado: Domicilio){
+    this.domicilioSeleccionado = domicilioSeleccionado;
+
+    // "seteamos" o enviamos los nuevos valores
+    // el ID no se vuelve a enviar/ no se modifica
+    this.domicilioForm.setValue({
+      direccion: domicilioSeleccionado.direccion,
+      codigo_postal:  domicilioSeleccionado.codigo_postal,
+      provincia:  domicilioSeleccionado.provincia,
+      localidad:  domicilioSeleccionado.localidad,
+     
+    })
+  }
+
   getDomicilio(){
     this.afAuth.authState.subscribe(user => {
       if (user) {
@@ -69,6 +85,26 @@ export class DatosPersonalesComponent {
         this.firestore.collection(`usuarios/${userId}/domicilio`).doc('casa').valueChanges().subscribe(userDomicilio => {
           this.userDomicilio = userDomicilio
         });
+      }
+    });
+  }
+
+  editarDomicilio(){
+    let datos: Domicilio = {
+      idDomicilio: 'casa',
+      direccion:this.domicilioForm.value.direccion!,
+      codigo_postal:this.domicilioForm.value.codigo_postal!,
+      provincia:this.domicilioForm.value.provincia!,
+      localidad:this.domicilioForm.value.localidad!,
+
+    }
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        // Usuario está autenticado
+        const userId = user.uid;
+  
+        // Obtener datos del usuario desde Firestore
+        this.firestore.collection(`usuarios/${userId}/domicilio`).doc('casa').update(datos)
       }
     });
   }

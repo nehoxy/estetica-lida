@@ -27,6 +27,8 @@
                 </div>
             </div>
             <button class="btn btn-primary btn-verde mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" > Cargar datos</button>
+            <button class="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalEditar" (click)="mostrarEditar(userDomicilio)" > Editar</button>
+
         </div>
     </div>
 </div>
@@ -66,4 +68,41 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="userDomicilio" class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 mb-0" id="exampleModalLabel">Domicilio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="domicilioForm">
+            <div class="mb-3">
+                <label class="form-label texto">Dirección</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.direccion"  placeholder="{{userDomicilio.direccion}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Codigo postal</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.codigo_postal" placeholder="{{userDomicilio.codigo_postal}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Provincia</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.provincia" placeholder="{{userDomicilio.provincia}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Localidad</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.localidad" placeholder="{{userDomicilio.localidad}}">
+            </div>
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-verde" (click)="agregarDomicilio()" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   

@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Domicilio } from 'src/app/models/domicilio';
-
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class CrudPerfilService {
 
-
+  domicilio!:any
+  userId!:string
   constructor(private database:AngularFirestore, private fireAuth:AngularFireAuth) { 
-   
+    this.domicilio = database.collection('usuarios/`${userId}`/domicilio')
   }
   private async obtenerUsuarioId(): Promise<string | null> {
     try {
@@ -19,12 +20,16 @@ export class CrudPerfilService {
       if (user === null) {
         return null;
       } else {
+        this.userId = user.uid
         return user.uid;
       }
     } catch (error) {
       console.error('Error al obtener UID:', error);
       return null;
     }
+  }
+
+  getDomicilio(){
   }
 
   async agregarDomicilio(domicilio:Domicilio) {

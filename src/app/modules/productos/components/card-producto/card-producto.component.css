@@ -1,11 +1,13 @@
 /* sets font color for pagination to white */
 .my-pagination::ng-deep .ngx-pagination a {
     color: rgb(0, 0, 0);
+    font-family: Poppins;
     }
     
     /* sets font color for number color when hovering */
     .my-pagination::ng-deep .ngx-pagination a:hover {
     color: rgb(0, 0, 0);
+    font-family: Poppins;
     }
     
     /* sets font color for disabled previous or next words */

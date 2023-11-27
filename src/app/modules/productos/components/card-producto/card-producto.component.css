@@ -12,6 +12,9 @@
     .my-pagination::ng-deep .ngx-pagination .disabled {
     color: rgb(0, 0, 0) !important;
     }
+    .my-pagination::ng-deep .ngx-pagination .current{
+        background-color: #bb8588;
+    }
     
     
 

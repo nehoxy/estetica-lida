@@ -49,7 +49,7 @@ export class CrudPerfilService {
       // 
      
       // Agrega la publicación a la colección del usuario
-      const resultado = await this.database.collection(rutaColeccion).doc(id).set(domicilio);
+      const resultado = await this.database.collection(rutaColeccion).doc('casa').set(domicilio);
 
   
       return resultado

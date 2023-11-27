@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class DatosPersonalesComponent {
   userData: any = {};
+  userDomicilio:any = {};
   direccion!:string
   codigo_postal!:string
   provincia!:string
@@ -27,7 +28,6 @@ export class DatosPersonalesComponent {
   constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore, private crudService:CrudPerfilService) {}
 
   async agregarDomicilio(){
-    alert('a')
     if (this.domicilioForm.valid){
       let nuevoDomicilio: Domicilio = {
         idDomicilio: '', // único que guardamos vacío; lo creamos en el CRUD
@@ -59,6 +59,20 @@ export class DatosPersonalesComponent {
     }
   }
 
+  getDomicilio(){
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        // Usuario está autenticado
+        const userId = user.uid;
+  
+        // Obtener datos del usuario desde Firestore
+        this.firestore.collection(`usuarios/${userId}/domicilio`).doc('casa').valueChanges().subscribe(userDomicilio => {
+          this.userDomicilio = userDomicilio
+        });
+      }
+    });
+  }
+
 
   
 
@@ -70,22 +84,15 @@ export class DatosPersonalesComponent {
   
         // Obtener datos del usuario desde Firestore
         this.firestore.collection('usuarios').doc(userId).valueChanges().subscribe(userData => {
-          // userData contiene los datos del usuario
+          this.userData = userData;
         });
       }
     });
   }
 
   ngOnInit() {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        const userId = user.uid;
-
-        this.firestore.collection('usuarios').doc(userId).valueChanges().subscribe(userData => {
-          this.userData = userData;
-        });
-      }
-    });
+    this.getDomicilio()
+    this.getUserData()
   }
 }
 

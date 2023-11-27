@@ -17,13 +17,13 @@
         </div>
         <!--card con los datos del domicilio-->
         <div class="col-lg-4 col-12 col-sm-12 col-md-6">
-            <div class="card color-card tamaño-card">
+            <div *ngIf="userDomicilio" class="card color-card tamaño-card">
                 <div class="card-body">
                     <h1 class="card-title">Domicilio</h1>
-                    <h5>Direccion: {{this.direccion}}</h5>
-                    <h5>Codigo postal: {{this.codigo_postal}}</h5>
-                    <h5>Provincia: {{this.provincia}}</h5>
-                    <h5>Localidad: {{this.localidad}}</h5>
+                    <h5>Direccion: {{userDomicilio.direccion}}</h5>
+                    <h5>Codigo postal:  {{userDomicilio.codigo_postal}}</h5>
+                    <h5>Provincia: {{userDomicilio.provincia}}</h5>
+                    <h5>Localidad: {{userDomicilio.localidad}}</h5>
                 </div>
             </div>
             <button class="btn btn-primary btn-verde mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" > Cargar datos</button>

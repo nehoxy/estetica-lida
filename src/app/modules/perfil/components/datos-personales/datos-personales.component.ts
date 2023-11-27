@@ -12,6 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class DatosPersonalesComponent {
   userData: any = {};
+  direccion!:string
+  codigo_postal!:string
+  provincia!:string
+  localidad!:string
 
   domicilioForm = new FormGroup({
     direccion: new FormControl('',Validators.required),
@@ -45,6 +49,7 @@ export class DatosPersonalesComponent {
             },
             text: '¡Se ha agregado su domicilio con exito!',
           })
+
       })
       .catch(error => {
         alert("Hubo un error al cargar el nuevo domicilio :( \n"+error);

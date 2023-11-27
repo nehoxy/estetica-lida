@@ -1,9 +1,9 @@
+/*fondo*/
 .gradient-custom {
-    /* fallback for old browsers */
     background: #FCD5CE;
-    
     }
-    
+
+/*card del registro*/
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
     font-size: 1rem;
     line-height: 2.15;
@@ -18,7 +18,7 @@
     border-radius:2vw;
 }
 
-
+/*cambios en el logo*/
 .logolida{
     width: 5vw;
     height: 5vw;
@@ -51,6 +51,7 @@ button{
 .input-flex{
     flex:1;
 }
+/*boton de la contraseña*/
 .password-btn{
 
     border:0px;
@@ -58,7 +59,7 @@ button{
     flex: 2;
    
 }
-
+/*color del mensaje de error*/
 .mensaje-error{
     color:red;
     font-size: 0.8rem;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-
+import { FormControl,Validators,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-datos-personales',

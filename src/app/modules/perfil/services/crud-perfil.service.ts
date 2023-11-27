@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Domicilio } from 'src/app/models/domicilio';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,7 @@ export class CrudPerfilService {
     }
   }
 
-  async agregarDomicilio() {
+  async agregarDomicilio(domicilio:Domicilio) {
     try {
       const usuarioId = await this.obtenerUsuarioId();
 
@@ -39,15 +40,16 @@ export class CrudPerfilService {
 
       // Genera un ID único para la nueva publicación
       const id = this.database.createId();
-      publicacion.idPublicacion = id;
+      domicilio.idDomicilio = id;
       // 
      
       // Agrega la publicación a la colección del usuario
-      const resultado = await this.database.collection(rutaColeccion).doc(id).set(publicacion);
+      const resultado = await this.database.collection(rutaColeccion).doc(id).set(domicilio);
 
   
       return resultado
     } catch (error) {
       throw error;
     }
+  }
 }

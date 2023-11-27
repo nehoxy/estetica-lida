@@ -26,7 +26,7 @@
                     <h5>Localidad:</h5>
                 </div>
             </div>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" > Cargar datos</button>
+            <button class="btn btn-primary btn-verde mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" > Cargar datos</button>
         </div>
     </div>
 </div>
@@ -35,37 +35,33 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5 mb-0" id="exampleModalLabel">Domicilio</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="">
+          <form [formGroup]="domicilioForm">
             <div class="mb-3">
-                <label class="form-label texto">Ingrese su dirección:</label>
-                <input type="text" class="form-control color-input " formControlName="nombre" placeholder="">
+                <label class="form-label texto">Dirección</label>
+                <input type="text" class="form-control color-input " formControlName="nombre" placeholder="Ingrese su dirección:">
             </div>
             <div class="mb-3">
-                <label class="form-label texto">Ingrese su codigo postal:</label>
-                <input type="text" class="form-control color-input" formControlName="imagen" placeholder="">
+                <label class="form-label texto">Codigo postal</label>
+                <input type="text" class="form-control color-input" formControlName="imagen" placeholder="Ingrese su codigo postal:">
             </div>
             <div class="mb-3">
-                <label class="form-label texto">Ingrese su provincia:</label>
-                <input type="text" class="form-control color-input" formControlName="alt" placeholder="">
+                <label class="form-label texto">Provincia</label>
+                <input type="text" class="form-control color-input" formControlName="alt" placeholder="Ingrese su provincia:">
             </div>
             <div class="mb-3">
-                <label class="form-label texto">Ingrese descripción:</label>
-                <input type="text" class="form-control color-input" formControlName="descripcion" placeholder="">
-            </div>
-            <div class="mb-3">
-                <label class="form-label texto">Ingrese precio:</label>
-                <input type="number" class="form-control color-input" formControlName="precio" placeholder="">
+                <label class="form-label texto">Localidad</label>
+                <input type="text" class="form-control color-input" formControlName="descripcion" placeholder="Ingrese su localidad:">
             </div>
         
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-verde">Save changes</button>
         </div>
       </div>
     </div>

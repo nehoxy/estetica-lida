@@ -1,14 +1,14 @@
-
+/*titulo*/
 h2{
     font-family: Poppins,sans-serif;
 }
-
+/*linea del titulo*/
 hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
-
+/*color, borde y fuente de los botones de filtrado*/
 .filtros{
     background-color: #bb8588;
     color: white;
@@ -31,6 +31,7 @@ hr {
     width: 15vw;
 }
 
+/*borde, color y fuente de la barra de busqueda*/
 .busqueda{
     border-radius: 5vw;
     background-color: #f8edeb;
@@ -39,6 +40,7 @@ hr {
     
 }
 
+/*posicion para poner el icono de busqueda en la barra*/
 .input-icon {
 	color: #191919;
 	position: absolute;
@@ -55,6 +57,7 @@ hr {
     
 }
 
+/*responsive*/
 @media only screen and (max-width: 600px) {
     .tamaño-filtros{
         width: 44vw;

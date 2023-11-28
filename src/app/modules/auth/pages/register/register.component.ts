@@ -18,6 +18,7 @@ export class RegisterComponent {
   errorMensaje:string = ''
   repetirContrasena:any = ''
   
+  //crea un nuevo form: nombre, apellido, email, contraseña y repetir contraseña
   formRegistro = this.fb.group({
     nombre: new FormControl ('',[Validators.required, Validators.minLength(3)]),
     apellido: new FormControl('',[Validators.required, Validators.minLength(4)]),
@@ -25,6 +26,8 @@ export class RegisterComponent {
     contrasena: new FormControl('',[Validators.required, Validators.minLength(8)]),
     repetirContrasena: new FormControl('',[Validators.required, Validators.minLength(8)])
   })
+
+  //llama a la interfaz con sus respectivos atributos
   usuarios:Usuario = {
     uid:'',
     nombre:'',
@@ -38,14 +41,16 @@ export class RegisterComponent {
   //creamos nueva coleccion para usuarios
   coleccionUsuarios : Usuario[] = [];
 
+  //inyectamos los servicios y clases
   constructor(public servicioAuth:AuthService, public servicioFirestore:FirestoreService, public _router:Router, public fb:FormBuilder){
 
   }
 
-//tomamos nuevos registros y mostramos los resultados
+//funcion asincronica para tomar nuevos registros y mostrar los resultados
   async registrarse(){
     
     this.repetirContrasena = this.formRegistro.value.repetirContrasena
+    //if para verificar que las contraseñas sean iguales
     if(this.usuarios.contrasena !== this.repetirContrasena){
       this.error = true,
       this.errorMensaje = 'Las contraseñas no coinciden'
@@ -60,6 +65,7 @@ export class RegisterComponent {
         position:'bottom'
       })
     }else {
+      //si el registro es valido te crea tu credencial
       if(this.formRegistro.valid){
         try{
           const credenciales = {
@@ -69,6 +75,7 @@ export class RegisterComponent {
             contrasena: this.usuarios.contrasena
           };
       
+          //respuesta: llama al servicio auth para registrar al usuario
           const res = await this.servicioAuth.registrar(credenciales.nombre,credenciales.apellido,credenciales.email,credenciales.contrasena)
           .then(res=>{
             Swal.fire({
@@ -78,8 +85,10 @@ export class RegisterComponent {
               title: 'Se ha registrado correctamente, ahora debe iniciar sesión',
               text: 'Bienvenido/a '+credenciales.email+'!',
             })
+            //una vez registrado te lleva al inicio
             this._router.navigate(['login'])
           })
+          //error
           .catch(error=> {
             Swal.fire({
               icon: 'error',
@@ -92,9 +101,9 @@ export class RegisterComponent {
               position:'bottom'
             })
           });
-          
+          //guarda el id
           const uid = await this.servicioAuth.getUid();
-      
+          //toma el id del usuario registrado
           this.usuarios.uid = uid;
       
           //guarda el nuevo usuario
@@ -119,8 +128,12 @@ export class RegisterComponent {
     
   }
 
+  //funcion asincronica para guardar el usuario
   async guardarUser(){
-    this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid, this.usuarios.nombre, this.usuarios.apellido, this.usuarios.email, this.usuarios.contrasena).then(res=>{
+    //llama al servicio firestore tomando las credenciales
+    this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid, this.usuarios.nombre, this.usuarios.apellido, this.usuarios.email, this.usuarios.contrasena)
+    //respuesta: usuarios
+    .then(res=>{
       console.log(this.usuarios)
     })
     .catch(error => {
@@ -128,6 +141,7 @@ export class RegisterComponent {
     })
   }
 
+  //guarda el id
   async ngOnInit(){
     const uid = await this.servicioAuth.getUid();
     console.log(uid)

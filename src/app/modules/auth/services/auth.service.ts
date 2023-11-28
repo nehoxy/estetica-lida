@@ -10,10 +10,12 @@ export class AuthService {
 
   constructor(public auth:AngularFireAuth, public firestore:AngularFirestore) { }
 
+  //funcion de firebase
   iniciarSesion(email:string, contrasena:string){
     return this.auth.signInWithEmailAndPassword(email,contrasena)
     }
 
+  //funcion de firebase
   registrar(nombre:string,apellido:string,email:string,contrasena:string){
     return this.auth.createUserWithEmailAndPassword(email,contrasena)
   }

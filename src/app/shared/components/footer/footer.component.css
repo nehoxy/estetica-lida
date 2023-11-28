@@ -16,15 +16,7 @@ h6{
 p{
     margin: 0;
 }
-/*
-#footer{
-    position: absolute;
-    bottom: 0;
-    width:100%;
-    height:10vw;
-    background-color: #F8EDEB;
-}
-*/
+/*logos redes sociales*/
 .logo-ig{
     width: 3vw;
     height: 3vw;
@@ -37,6 +29,7 @@ p{
     width: 3vw;
     height: 3vw;
 }
+/*posicion y tamaño del footer*/
 .footer {
     position: absolute;
     /*bottom: 0;*/
@@ -49,6 +42,7 @@ p{
     width: 5vw;
     height: 5vw;
 }
+/*logo del numero, mail y ubicacion*/
 .logo-wpp{
     width: 1.5vw ;
     height: 1.5vw;
@@ -63,7 +57,7 @@ p{
     height: 2vw ;
 }
 
-/* Extra small devices (phones, 600px and down) */
+/* responsive*/
 @media only screen and (max-width: 600px) {
     #footer{
         position: absolute;

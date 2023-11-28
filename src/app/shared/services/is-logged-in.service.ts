@@ -11,11 +11,16 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 
 export class IsLoggedInService {
+  //crea el sujeto valor booleano para despues subscribirse
   private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private isAdminSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
+
+
   constructor(private auth:AuthService, private router:Router, private firestore:AngularFirestore, private authF:AngularFireAuth) { 
+
     const storedIsLogged = localStorage.getItem('isLogged');
+    //si el usuario esta logeado poner true en el local storage 
     if (storedIsLogged) {
       this.isLoggedSubject.next(storedIsLogged === 'true');
     }
@@ -26,31 +31,31 @@ export class IsLoggedInService {
     }
   }
 
-
+//creamos los observables a los que despues nos subscribiremos en el componente donde queramos tomar el estado y rol del usuario
   isLogged$: Observable<boolean> = this.isLoggedSubject.asObservable();
-
   isAdmin$: Observable<boolean> = this.isAdminSubject.asObservable();
 
+  //metodo que se usa cuando el usuario inicia sesion para cambiar el valor a true 
   setLoggedStatus(isLogged: boolean) {
     this.isLoggedSubject.next(isLogged);
     localStorage.setItem('isLogged', isLogged ? 'true' : 'false');
   }
 
+  //metodo que se usa cuando el usuario se loggea como administrador para cambiar el valor a true
   setAdminStatus(isAdmin: boolean){
     this.isAdminSubject.next(isAdmin);
     localStorage.setItem('isAdmin', isAdmin ? 'true' : 'false');
   }
 
  
-
+  // metodo para cerrar sesion
   logout() {
     
     this.auth.cerrarSesion()
-    this.setLoggedStatus(false); 
-    this.setAdminStatus(false);// Marcar al usuario como desconectado
+    this.setLoggedStatus(false); // Marca al usuario como desconectado
+    this.setAdminStatus(false);
     // Limpia cualquier otra información relacionada con la sesión
     // (por ejemplo, token de autenticación, datos del usuario, etc.).
-    // Puedes agregar más lógica aquí si es necesario.
     this.router.navigate(['home'])
 
   }

@@ -15,30 +15,29 @@
                     <a class="nav-link separacionBotones" routerLink="/productos" routerLinkActive="active" aria-expanded="false">
                       Productos
                     </a>
-                    <!--
-                    <ul class="dropdown-menu dropdown-menu">
-                      <li><a class="dropdown-item" routerLink="/productos">Cremas</a></li>
-                      <li><a class="dropdown-item" routerLink="/productos">Jabon</a></li>
-                      <li><a class="dropdown-item" routerLink="/productos">Mascarillas</a></li>
-                    </ul>-->
                   </li>
-                  
               
               <li class="nav-item">
                 <a class="nav-link separacionBotonesEspecial" routerLink="/servicios" routerLinkActive="active">Servicios</a>
               </li>
               <a class="navbar-brand separacionBotones imagenPadding" routerLink="/home"><img class="tamañoImagen" src="../../../../assets/imgNavbar/logo7.png" alt=""></a>
+
+               <!-- El ngIf comprueba si usuario es admin, si es asi muestra el administrador-->
               <li *ngIf="isAdmin" class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="/admin" routerLinkActive="active">Administrador</a>
               </li>
+
+              <!-- El ngIf comprueba si usuario esta loggeado, si es asi muestra el perfil y cerrar sesion-->
               <li *ngIf="isLogged" class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="perfil" routerLinkActive="active">Perfil</a>
               </li>
               <li *ngIf="isLogged" class="nav-item separacionBotones">
                 <a class="nav-link pointer" (click)="logout()" >Cerrar sesión</a>
               </li>
+
+              <!-- El ngIf comprueba si el usuario no esta loggeado, si es asi muestra el login y el register-->
               <li *ngIf="!isLogged" class="nav-item separacionBotones">
-                <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Login</a>
+                <a class="nav-link" routerLink="auth/login" routerLinkActive="active">Iniciar sesión</a>
               </li>
               <li *ngIf="!isLogged" class="nav-item separacionBotones">
                 <a class="nav-link pe-4" routerLink="auth/register" routerLinkActive="active">Registrarse</a>

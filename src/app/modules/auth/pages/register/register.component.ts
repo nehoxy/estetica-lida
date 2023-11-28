@@ -86,7 +86,7 @@ export class RegisterComponent {
               text: 'Bienvenido/a '+credenciales.email+'!',
             })
             //una vez registrado te lleva al inicio
-            this._router.navigate(['login'])
+            this._router.navigate(['auth/login'])
           })
           //error
           .catch(error=> {

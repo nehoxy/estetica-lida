@@ -16,7 +16,7 @@ export class IsLoggedInService {
   private isAdminSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
 
-
+  
   constructor(private auth:AuthService, private router:Router, private firestore:AngularFirestore, private authF:AngularFireAuth) { 
 
     const storedIsLogged = localStorage.getItem('isLogged');

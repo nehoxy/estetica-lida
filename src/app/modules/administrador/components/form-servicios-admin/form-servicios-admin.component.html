@@ -55,24 +55,24 @@
       <table class="table row-border hover texto color-tabla">
         <thead>
           <tr class="table-secondary texto">
-            <th>Nombre</th>
-            <th>Precio</th> 
-            <th>Descripcion</th>
-            <th>Categoria</th>
-            <th>Profesional</th>
-            <th>Imagen</th>
-            <th>Accion</th>
+            <th class="color-tabla" scope="col">Nombre</th>
+            <th class="color-tabla" scope="col">Precio</th> 
+            <th class="color-tabla" scope="col">Descripción</th>
+            <th class="color-tabla" scope="col">Categoria</th>
+            <th class="color-tabla" scope="col">Profesional</th>
+            <th class="color-tabla" scope="col">Imagen</th>
+            <th class="color-tabla" scope="col">Acción</th>
           </tr>
         </thead>
         <tbody>
-          <tr class=" table-secondary " *ngFor="let col of coleccionServicios | customFilter:busqueda| paginate: { itemsPerPage: 10, currentPage: p} ">
-            <td>{{col.nombre}}</td>
-            <td>{{col.precio}}</td>
-            <td> <a href="" style="color: #BB8588;">Ver mas...</a> </td>
-            <td>{{col.categoria}}</td>
-            <td >{{capitalizeFirstLetter(col.profesional)}}</td>
-            <td><a href="{{col.imagen}}" style="color: #BB8588;">Ver imagen...</a></td>
-            <td>
+          <tr class=" table-secondary " *ngFor="let col of coleccionServicios | customFilter:busqueda| paginate: { itemsPerPage: 5, currentPage: p} ">
+            <td class="color-tabla">{{col.nombre}}</td>
+            <td class="color-tabla">{{col.precio}}</td>
+            <td class="color-tabla"> <a href="" style="color: #BB8588;">Ver mas...</a> </td>
+            <td class="color-tabla">{{col.categoria}}</td>
+            <td class="color-tabla" >{{capitalizeFirstLetter(col.profesional)}}</td>
+            <td class="color-tabla"><a href="{{col.imagen}}" style="color: #BB8588;">Ver imagen...</a></td>
+            <td class="color-tabla">
               <button type="button" class="btn-sm" (click)="mostrarEditar(col)" data-bs-toggle="modal" data-bs-target="#editarServicio">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

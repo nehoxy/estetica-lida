@@ -10,6 +10,7 @@ export class CrudPerfilService {
 
   domicilio!:any
   userId!:string
+  
   constructor(private database:AngularFirestore, private fireAuth:AngularFireAuth) { 
     this.domicilio = database.collection('usuarios/`${userId}`/domicilio')
   }

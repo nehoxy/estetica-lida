@@ -55,7 +55,8 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let producto of coleccionProductos| paginate: { itemsPerPage: 10, currentPage: p} | customFilter:busqueda" class="table-secondary" >
+                    <!-- Usamos la pipe customFilter para filtrar la tabla segun el input busqueda.-->
+                    <tr *ngFor="let producto of coleccionProductos| paginate: { itemsPerPage: 5, currentPage: p} | customFilter:busqueda" class="table-secondary" >
                       <td class="color-tabla" scope="row">{{producto.nombre}}</td>
                       <td class="color-tabla" >${{producto.precio}}</td>
                       <td class="color-tabla" >{{producto.descripcion}}</td>

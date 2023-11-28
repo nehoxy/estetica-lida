@@ -15,6 +15,7 @@ import { take } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  // variables para el input de contraseña (si se muestra o no)
   hide = true;
   hidePass = true;
   //verifica si el usuario esta logeado o no
@@ -38,8 +39,9 @@ export class LoginComponent {
     //inyectar los servicios y clases
     constructor(public servicioAuth:AuthService, public firestore:FirestoreService, public router:Router, public fb:FormBuilder, public logged:IsLoggedInService){}
 
-  //funcion asincronica para iniciar sesion
-  async iniciarSesion(){
+    //funcion asincronica para iniciar sesion
+    async iniciarSesion(){
+
     //crea la credencial que contiene el email y contraseña 
     const credenciales = {
       email:this.usuarios.email,
@@ -81,11 +83,16 @@ export class LoginComponent {
     })
   }
 
+  // este metodo se encarga de comprobar el rol del usuario y en caso de ser administrador setea la funcion setAdminStatus en true
+  
   async checkUserRole() {
     try {
       const uid = await this.servicioAuth.getUid();
 
       if (uid) {
+        /*
+          La función getUserData(uid) devuelve un observable. La función pipe(take(1)) se utiliza para tomar solo el primer valor. toPromise() convierte ese observable en una promesa. 
+        */
         const userData = await this.servicioAuth.getUserData(uid).pipe(take(1)).toPromise();
 
         if (userData && userData['rol']) {

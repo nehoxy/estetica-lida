@@ -64,7 +64,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr class=" table-secondary " *ngFor="let col of coleccionServicios | customFilter:busqueda| paginate: { itemsPerPage: 4, currentPage: p} ">
+          <tr class=" table-secondary " *ngFor="let col of coleccionServicios | customFilter:busqueda| paginate: { itemsPerPage: 10, currentPage: p} ">
             <td>{{col.nombre}}</td>
             <td>{{col.precio}}</td>
             <td> <a href="" style="color: #BB8588;">Ver mas...</a> </td>

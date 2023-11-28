@@ -6,7 +6,6 @@ import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { CardServicioComponent } from './components/card-servicio/card-servicio.component';
 import { ModalSaberMasComponent } from './components/modal-saber-mas/modal-saber-mas.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
-import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,7 +22,6 @@ import { CustomFilterPipe } from './components/card-servicio/custom-filter';
     CardServicioComponent,
     ModalSaberMasComponent,
     PaginationComponent,
-    BusquedaComponent,
     CustomFilterPipe
   ],
   imports: [

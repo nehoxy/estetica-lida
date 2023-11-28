@@ -76,6 +76,7 @@
             </div>
         </div>
     </div>
+    
     <div *ngIf="filtro === 'bellezafacial' || filtro === 'todos' " class="row">
         <h1 class="titulo fs-3 mb-5">Belleza Facial</h1>
         <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of belleza | customFilter:busqueda">

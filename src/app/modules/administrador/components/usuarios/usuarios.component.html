@@ -6,16 +6,17 @@
 
     <table class="table row-border texto fondo">
         <thead>
-            <tr class="table-secondary">
+            <tr class="table-secondary texto">
               <th class="color-tabla" scope="col">Nombre</th>
-              <th class="color-tabla" scope="col">Apeliido</th>
-              <th class="color-tabla" scope="col">Gmail</th>
+              <th class="color-tabla" scope="col">Apellido</th>
+              <th class="color-tabla" scope="col">Email</th>
               <th class="color-tabla" scope="col">Rol</th>
               <th class="color-tabla" scope="col">Contraseña</th>
+              <th class="color-tabla" scope="col">Acción</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let usuario of coleccionUsuarios | customFilter:busqueda" class="table-secondary">
+            <tr *ngFor="let usuario of coleccionUsuarios | customFilter:busqueda" class="table-secondary texto">
               <td class="color-tabla" scope="row">{{usuario.nombre}}</td>
               <td class="color-tabla" >{{usuario.apellido}}</td>
               <td class="color-tabla" >{{usuario.email}}</td>

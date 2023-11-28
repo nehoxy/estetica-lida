@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
   styleUrls: ['./form-productos-admin.component.css']
 })
 export class FormProductosAdminComponent {
+    p:number=1
     coleccionProductos: Producto [] = [];
     productoSeleccionado!:Producto; // ! -> toma valores vacios
     modalVisibleProducto:boolean = false;

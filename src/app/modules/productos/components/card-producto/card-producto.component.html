@@ -32,16 +32,23 @@
 
 <div class="container mt-4 mb-4">
     <div class="row mx-auto justify-content-center align-items-center">
-        <div class="col-lg-4 col-12 col-sm-6 mt-4 mb-3" *ngFor="let producto of listaProductos |customFilter:busqueda |customFilter:filtro ">
-            <div class="card card-estilo" style="width: 20rem; height: 29rem;">
+        <div class="col-lg-4 col-12 col-sm-6 mt-4 mb-3" *ngFor="let producto of listaProductos |customFilter:busqueda |customFilter:filtro | paginate: { itemsPerPage: 3, currentPage: p}">
+            <div class="card card-estilo" style="width: 20rem;">
                 <img [src]="producto.imagen" class="card-img-top card-imagen mx-auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title card-titulo text-start">{{producto.nombre}}</h5>
                   <p class="card-text text-start fw-light card-descripcion">{{producto.descripcion}}</p>
                   <p class="card-text card-precio text-start">{{producto.precio.toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}</p>
-                  <a href="#" class="btn btn-primary card-boton" routerLink="/carrito">Comprar</a>
+                  <button class="btn btn-primary card-boton" (click)="comprarProducto()">Comprar</button>
                 </div>
             </div>
         </div>
     </div>
-</div> 
+</div>
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <pagination-controls  class="my-pagination"  nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { CrudProductosService } from 'src/app/modules/administrador/services/crud-productos.service';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-card-producto',
@@ -8,13 +9,9 @@ import { CrudProductosService } from 'src/app/modules/administrador/services/cru
   styleUrls: ['./card-producto.component.css']
 })
 export class CardProductoComponent {
-
+  p:number=1
   listaProductos : Producto[] = [];
   
-  cremas:Producto[] = []
-  maquillajes:Producto[] = []
-  mascarillas:Producto[] = []
-  jabones:Producto[] = []
   busqueda:string = ''
   filtro:string = ''
   filtroPrecio:string = ''
@@ -57,5 +54,18 @@ export class CardProductoComponent {
       this.listaProductos = producto;
     })
   }
+
+
+
+  comprarProducto(){
+
+    Swal.fire({
+      icon: 'warning',
+      confirmButtonColor: '#BB8588',
+      title:'¡Lo sentimos!',
+      text: 'Esta función aún no esta disponible.',
+    })
+  }
+  
 
 }

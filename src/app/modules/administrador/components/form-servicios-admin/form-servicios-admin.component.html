@@ -64,7 +64,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr class=" table-secondary " *ngFor="let col of coleccionServicios | customFilter:busqueda">
+          <tr class=" table-secondary " *ngFor="let col of coleccionServicios | customFilter:busqueda| paginate: { itemsPerPage: 10, currentPage: p} ">
             <td>{{col.nombre}}</td>
             <td>{{col.precio}}</td>
             <td> <a href="" style="color: #BB8588;">Ver mas...</a> </td>
@@ -98,6 +98,13 @@
     </div>
   </div>
 
+</div>
+<div class="container">
+  <div class="row">
+      <div class="d-flex justify-content-center">
+          <pagination-controls  class="my-pagination"  nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="p = $event"></pagination-controls>
+      </div>
+  </div>
 </div>
 
 <div class="modal fade" *ngFor="let col of coleccionServicios" id="editarServicio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

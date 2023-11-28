@@ -36,7 +36,8 @@ import { CustomFilterPipe } from './components/card-servicio/custom-filter';
     MatDialogModule,
     ModalModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   exports:[
     MatIconModule,

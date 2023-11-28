@@ -40,7 +40,7 @@
     <div class="row mx-auto justify-content-center align-items-center">
 
         <!--mostrar los detalles de cada producto-->
-        <div class="col-lg-4 col-12 col-sm-6 mt-4 mb-3" *ngFor="let producto of listaProductos |customFilter:busqueda |customFilter:filtro | paginate: { itemsPerPage: 3, currentPage: p}">
+        <div class="col-lg-4 col-12 col-sm-6 mt-4 mb-3" *ngFor="let producto of listaProductos |customFilter:busqueda |customFilter:filtro | paginate: { itemsPerPage: 6, currentPage: p}">
             <div class="card card-estilo" style="width: 20rem;">
                 <img [src]="producto.imagen" class="card-img-top card-imagen mx-auto" alt="...">
                 <div class="card-body">

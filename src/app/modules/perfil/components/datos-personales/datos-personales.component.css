@@ -27,6 +27,11 @@ h5{
     border-color: #C8ECCB;
     color: black;
 }
+.btn-amarillo{
+    border-radius: 5vw;
+    background-color: #ffff80;
+    border-color: #ffff80;
+}
 /*responsive*/
 @media only screen and (max-width: 600px) {
     .color-card{

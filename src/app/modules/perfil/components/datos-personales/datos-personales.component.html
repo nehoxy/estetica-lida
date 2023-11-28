@@ -27,13 +27,9 @@
                 </div>
                 
             </div>
-<<<<<<< HEAD
-            <button class="btn btn-primary mt-2">Cambiar datos</button>
-=======
             <button class="btn btn-primary btn-verde mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" > Cargar datos</button>
-            <button class="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalEditar" (click)="mostrarEditar(userDomicilio)" > Editar</button>
+            <button class="btn btn-warning mt-2 ms-2 btn-amarillo" data-bs-toggle="modal" data-bs-target="#modalEditar" (click)="mostrarEditar(userDomicilio)" > Editar</button>
 
->>>>>>> d0f37b737001b113c607f01f493617fa0c5f1d5a
         </div>
     </div>
 </div>
@@ -104,7 +100,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary btn-verde" (click)="agregarDomicilio()" data-bs-dismiss="modal">Save changes</button>
+          <button type="button" class="btn btn-primary btn-verde" (click)="editarDomicilio()" data-bs-dismiss="modal">Save changes</button>
         </div>
       </div>
     </div>

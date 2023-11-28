@@ -100,7 +100,20 @@ export class DatosPersonalesComponent {
         const userId = user.uid;
   
         // Obtener datos del usuario desde Firestore
-        this.firestore.collection(`usuarios/${userId}/domicilio`).doc('casa').update(datos)
+        this.firestore.collection(`usuarios/${userId}/domicilio`).doc('casa').update(datos).then(domicilio =>{
+          Swal.fire({
+            icon: 'success',
+            iconColor: '#C8ECCB',
+            buttonsStyling:false,
+            customClass:{
+                confirmButton:'btn btn-sweetalert'
+            },
+            text: '¡Se ha editado su domicilio con exito!',
+          })
+        })
+        .catch(err =>{
+          alert("Hubo un error al actualizar el domicilio :( \n"+err);
+        })
       }
     });
   }

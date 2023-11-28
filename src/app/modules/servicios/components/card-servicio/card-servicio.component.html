@@ -49,7 +49,7 @@
                     <div class="card-text-precio">
                         {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
                     </div>
-                    <a href="#" class="card-button"> Sacar turno</a>
+                    <a  class="card-button" (click)="sacarTurno()"> Sacar turno</a>
                 </div>
             </div>
 
@@ -72,10 +72,11 @@
                 <div class="card-text-precio">
                         {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
                 </div>
-                <a href="#" class="card-button"> Sacar turno</a>
+                <a class="card-button" (click)="sacarTurno()"> Sacar turno</a>
             </div>
         </div>
     </div>
+    
     <div *ngIf="filtro === 'bellezafacial' || filtro === 'todos' " class="row">
         <h1 class="titulo fs-3 mb-5">Belleza Facial</h1>
         <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of belleza | customFilter:busqueda">
@@ -94,7 +95,7 @@
                 <div class="card-text-precio">
                         {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
                 </div>
-                <a href="#" class="card-button"> Sacar turno</a>
+                <a class="card-button" (click)="sacarTurno()"> Sacar turno</a>
             </div>
         </div>
     </div>
@@ -116,8 +117,9 @@
                 <div class="card-text-precio">
                         {{(servicio.precio).toLocaleString("es-AR", { style: "currency", currency: "ARS" })}}
                 </div>
-                <a href="#" class="card-button"> Sacar turno</a>
+                <a class="card-button" (click)="sacarTurno()"> Sacar turno</a>
             </div>
         </div>
     </div>
 </div>  
+

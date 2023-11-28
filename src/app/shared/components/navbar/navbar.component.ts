@@ -15,10 +15,13 @@ import { take } from 'rxjs';
 })
 export class NavbarComponent {
   
-
+  // declaro las variables para comprar la sesion
   isLogged:boolean;
   isAdmin:boolean;
-  constructor(private logged:IsLoggedInService, private servicioAuth:AuthService){
+
+  /* inyecto el servicio isLoggedc y me subscribo al observaboe para observar los cambios y saber si el usuario esta registrado y si es admin, es importante subscribirse porque la sesion puede cambiar en cualquier momento.
+  */
+  constructor(private logged:IsLoggedInService){
     this.logged.isLogged$.subscribe((isLogged) => {
       this.isLogged = isLogged;
     });
@@ -29,6 +32,8 @@ export class NavbarComponent {
 
     
   }
+
+  /*este metodo se utiliza en el anchor de la navbar "cerrar sesion", el metodo logout del servicio logged convierte los valores isLogged y isAdmin en false.*/
 
   logout() {
     this.logged.logout();
@@ -46,7 +51,6 @@ export class NavbarComponent {
 
   ngOnInit() {
     
-    console.log(this.isAdmin)
 
   }
  

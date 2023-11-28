@@ -55,7 +55,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let producto of coleccionProductos | customFilter:busqueda" class="table-secondary">
+                    <tr *ngFor="let producto of coleccionProductos| paginate: { itemsPerPage: 10, currentPage: p} | customFilter:busqueda" class="table-secondary" >
                       <td class="color-tabla" scope="row">{{producto.nombre}}</td>
                       <td class="color-tabla" >${{producto.precio}}</td>
                       <td class="color-tabla" >{{producto.descripcion}}</td>
@@ -85,6 +85,14 @@
                     </tr>
                   </tbody>
               </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <pagination-controls  class="my-pagination"  nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="p = $event"></pagination-controls>
+            </div>
         </div>
     </div>
 

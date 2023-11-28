@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./form-servicios-admin.component.css']
 })
 export class FormServiciosAdminComponent implements OnInit {
-
+  p:number=1
  
   coleccionServicios: Servicio [] = [];
 

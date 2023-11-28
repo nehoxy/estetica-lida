@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
   styleUrls: ['./card-producto.component.css']
 })
 export class CardProductoComponent {
-
+  p:number=1
   listaProductos : Producto[] = [];
   
   busqueda:string = ''

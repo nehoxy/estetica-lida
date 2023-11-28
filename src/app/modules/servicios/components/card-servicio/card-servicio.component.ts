@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./card-servicio.component.css']
 })
 export class CardServicioComponent {
+
   modalData: ModalData = {
     titulo: '',
     descripcion: '',

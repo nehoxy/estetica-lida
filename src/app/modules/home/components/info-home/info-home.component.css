@@ -1,3 +1,9 @@
+/*
+*{
+    overflow-x:clip;
+    overflow:hidden;
+}*/
+
 /* Imagen de la izquierda en el primer contenedor*/
 .imageLeft{
     width:40vw;
@@ -96,7 +102,38 @@ h4{
 }
 
 /*responsive*/
+@media screen and (max-width: 480px) {
+    .disable-aos-mobile [data-aos],
+    .disable-aos-mobile[data-aos] {
+   /*CSS transitions*/
+          opacity: 1 !important;
+          -o-transition-property: none !important;
+          -moz-transition-property: none !important;
+          -ms-transition-property: none !important;
+          -webkit-transition-property: none !important;
+          transition-property: none !important;
+          /*CSS transforms*/
+          -o-transform: none !important;
+          -moz-transform: none !important;
+          -ms-transform: none !important;
+          -webkit-transform: none !important;
+          transform: none !important;
+          /*CSS animations*/
+          -webkit-animation: none !important;
+          -moz-animation: none !important;
+          -o-animation: none !important;
+          -ms-animation: none !important;
+          animation: none !important;
+    }
+  }
+
 @media only screen and (max-width: 600px) {
+    .aos-animate {
+        transition-property: none !important;
+        transform: none !important;
+        animation: none !important;
+      }
+
     .contenedorPrincipal{
         padding-left: 0;
         padding-right: 0;

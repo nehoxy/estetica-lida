@@ -53,7 +53,7 @@
 
                   <div class="form-outline">
                     <!--toma el mail-->
-                    <label class="form-label" for="emailAddress">Email</label>
+                    <label class="form-label" for="emailAddress">Correo electrónico</label>
                     <input [(ngModel)]="usuarios.email"  [formControl]="formRegistro.controls.email" matInput name="email" required type="email" id="emailAddress" class="form-control form-control-lg" />
                     <!--controla que complete el camppo-->
                     <span class="mensaje-error" *ngIf="formRegistro.controls.email.errors?.['required'] &&formRegistro.controls.email.touched">

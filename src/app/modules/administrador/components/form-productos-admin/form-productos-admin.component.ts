@@ -10,13 +10,17 @@ import Swal from "sweetalert2";
   styleUrls: ['./form-productos-admin.component.css']
 })
 export class FormProductosAdminComponent {
-    coleccionProductos: Producto [] = [];
-    productoSeleccionado!:Producto; // ! -> toma valores vacios
-    modalVisibleProducto:boolean = false;
 
+    p:number=1
+    //arreglo para coleccion de productos
+    coleccionProductos: Producto [] = [];
+    // ! -> toma valores vacios
+    productoSeleccionado!:Producto; 
+    modalVisibleProducto:boolean = false;
+    //barra de  busqueda
     busqueda:string = ''
     filtro:string = ''
-
+    //nuevo form de productos con sus atributos
     producto = new FormGroup ({
         nombre: new FormControl('',Validators.required),
         precio: new FormControl(0,Validators.required),
@@ -26,7 +30,7 @@ export class FormProductosAdminComponent {
         stock: new FormControl(0,Validators.required)
         
     })
-
+    //inyectamos servicio
     constructor(public servicioCrudProductos: CrudProductosService){}
 
 
@@ -283,16 +287,17 @@ export class FormProductosAdminComponent {
       pagingType: 'full_numbers',
       language: this.idioma
     };
-
+    //se muestran todos los productos al inicio
     this.servicioCrudProductos.obtenerProducto().subscribe(producto => {
         this.coleccionProductos = producto
     })
 }
-
+    //funcion asincronica para agregar productos
   async agregarProducto(){
     if (this.producto.valid){
         let nuevoProducto :Producto = {
             idProducto: '',
+            //'value' toma los valores de cada atributo
             nombre: this.producto.value.nombre! ,
             precio: this.producto.value.precio!,
             descripcion: this.producto.value.descripcion!,
@@ -300,7 +305,7 @@ export class FormProductosAdminComponent {
             imagen: this.producto.value.imagen!,
             stock: this.producto.value.stock!
         }
-
+        //te agrega el nuevo producto
         await this.servicioCrudProductos.crearProducto(nuevoProducto).
         then(producto => 
             {
@@ -310,6 +315,7 @@ export class FormProductosAdminComponent {
                     confirmButtonColor: '#BB8588',
                     text: '¡Se ha agregado un nuevo producto con exito!',
                   })
+                  //se resetean los select
                 this.producto.reset({categoria:'-1',precio:0})
               })
               .catch(error => {
@@ -320,9 +326,10 @@ export class FormProductosAdminComponent {
             }
     }
   
-
+//modal para editar
   mostrarEditar(productoSeleccionado:Producto){
     this.productoSeleccionado = productoSeleccionado;
+    //muestra los datos en input para poder editarlos
     this.producto.setValue({
         nombre: productoSeleccionado.nombre,
         precio: productoSeleccionado.precio,
@@ -332,8 +339,8 @@ export class FormProductosAdminComponent {
         stock: productoSeleccionado.stock
     })
   }
-
-  editarProducto(){ //funcion para editar producto
+  //funcion para editar producto
+  editarProducto(){ 
     let datos : Producto = {
         idProducto:this.productoSeleccionado.idProducto,
         nombre:this.producto.value.nombre!,
@@ -343,6 +350,7 @@ export class FormProductosAdminComponent {
         imagen:this.producto.value.imagen!,
         stock:this.producto.value.stock!
     }
+    //modifica el producto seleccionado
     this.servicioCrudProductos.modificarProducto(this.productoSeleccionado.idProducto, datos)
     .then(producto =>{
         Swal.fire({
@@ -351,6 +359,7 @@ export class FormProductosAdminComponent {
             confirmButtonColor: '#BB8588',
             text: '¡Se ha editado el producto con exito!',
           })
+          //resetea los select
         this.producto.reset({categoria:'-1',precio:0})
       })
       .catch(error => {
@@ -358,15 +367,15 @@ export class FormProductosAdminComponent {
       })
 
 }
+//funcion para resetear el form
   resetearForm(){
     this.producto.reset({categoria:"-1", precio:0})
   }
-
+//modal para eliminar producto
   mostrarBorrar(productoSeleccionado:Producto) { //boton eliminar
     this.modalVisibleProducto = true;
     this.productoSeleccionado = productoSeleccionado;
-
-    //modal o alert para eliminar producto
+    //alert de confirmacion
     Swal.fire({
         title: 'Borrar producto',
         text: "¿Estas seguro de querer borrar el producto "+productoSeleccionado.nombre+"?",
@@ -376,6 +385,7 @@ export class FormProductosAdminComponent {
         cancelButtonText: 'Cancelar',
         reverseButtons: true
       }).then((result) => {
+        //para confirmar la eliminacion del producto
         if (result.isConfirmed) {
 
             this.borrarProducto()
@@ -389,6 +399,7 @@ export class FormProductosAdminComponent {
     }
 
   borrarProducto(){ //funcion para eliminar producto
+    //agarra el ID del producto seleccionado
     this.servicioCrudProductos.eliminarProducto(this.productoSeleccionado.idProducto)
     .then(respuesta => {
         Swal.fire({

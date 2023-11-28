@@ -9,7 +9,7 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CustomFilterPipe } from './components/card-producto/custom-filter';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 // Material
 
 
@@ -28,7 +28,8 @@ import { CustomFilterPipe } from './components/card-producto/custom-filter';
     ProductosRoutingModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
 
   ],
   exports:[

@@ -20,6 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { FlatpickrDefaults} from 'angularx-flatpickr'
 import { CustomFilterPipe } from './pipes/custom-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 
 
@@ -35,7 +37,8 @@ import { CustomFilterPipe } from './pipes/custom-filter';
         FormProductosAdminComponent,
         TablaVentasAdministradorComponent,
         CalendarioComponent,
-        CustomFilterPipe
+        CustomFilterPipe,
+        UsuariosComponent
 
   ],
   imports: [
@@ -55,7 +58,8 @@ import { CustomFilterPipe } from './pipes/custom-filter';
     ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    FlatpickrModule
+    FlatpickrModule,
+    NgxPaginationModule
   ],
   exports:[
     MatTabsModule,

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { FirestoreService } from 'src/app/shared/services/firestore.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(public auth:AngularFireAuth) { }
+  constructor(public auth:AngularFireAuth, public firestore:AngularFirestore) { }
 
   //funcion de firebase
   iniciarSesion(email:string, contrasena:string){
@@ -25,8 +26,13 @@ export class AuthService {
     if(user == null){
       return null;
     }else{
+      console.log('User UID:', user.uid);
       return user.uid
     }
+  }
+
+  getUserData(uid: string) {
+    return this.firestore.collection('usuarios').doc(uid).valueChanges();
   }
 
   cerrarSesion(){

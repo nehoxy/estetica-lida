@@ -1,0 +1,46 @@
+<div class="col-lg-9">
+    <!--barra de busqueda-->
+    <div class="col-lg-10 col-12 col-sm-12 text-lg-center barra tamaño-barra input-wrapper mb-2">
+        <input [(ngModel)]="busqueda" class="form-control busqueda me-2" type="text" placeholder="Buscar" aria-label="Search">
+    </div>
+
+    <table class="table row-border texto fondo">
+        <thead>
+            <tr class="table-secondary texto">
+              <th class="color-tabla" scope="col">Nombre</th>
+              <th class="color-tabla" scope="col">Apellido</th>
+              <th class="color-tabla" scope="col">Email</th>
+              <th class="color-tabla" scope="col">Rol</th>
+              <th class="color-tabla" scope="col">Contraseña</th>
+              <th class="color-tabla" scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of coleccionUsuarios | customFilter:busqueda" class="table-secondary texto">
+              <td class="color-tabla" scope="row">{{usuario.nombre}}</td>
+              <td class="color-tabla" >{{usuario.apellido}}</td>
+              <td class="color-tabla" >{{usuario.email}}</td>
+              <td class="color-tabla">{{usuario.rol}}</td>
+              <td class="color-tabla" >{{usuario.contrasena}}</td>
+              
+              <td class="color-tabla" >
+                   <button type="button" class="btn-sm" (click)="mostrarBorrar(usuario)">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M4 7l16 0"></path>
+                        <path d="M10 11l0 6"></path>
+                        <path d="M14 11l0 6"></path>
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
+                     </svg>
+                   </button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+</div>
+
+
+
+
+

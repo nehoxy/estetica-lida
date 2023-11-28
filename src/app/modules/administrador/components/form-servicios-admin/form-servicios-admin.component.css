@@ -1,3 +1,23 @@
+.my-pagination::ng-deep .ngx-pagination a {
+  color: rgb(0, 0, 0);
+  font-family: Poppins;
+  }
+  
+  /* sets font color for number color when hovering */
+  .my-pagination::ng-deep .ngx-pagination a:hover {
+  color: rgb(0, 0, 0);
+  font-family: Poppins;
+  }
+  
+  /* sets font color for disabled previous or next words */
+  .my-pagination::ng-deep .ngx-pagination .disabled {
+  color: rgb(0, 0, 0) !important;
+  }
+  .my-pagination::ng-deep .ngx-pagination .current{
+      background-color: #bb8588;
+  }
+
+
 .color-input{
     background-color: #EBEBEB;
     border-radius: 5vw;

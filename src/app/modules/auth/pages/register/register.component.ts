@@ -82,11 +82,11 @@ export class RegisterComponent {
               icon: 'success',
               iconColor: '#C8ECCB',
               confirmButtonColor: '#BB8588',
-              title: 'Se ha registrado correctamente',
+              title: 'Se ha registrado correctamente, ahora debe iniciar sesión',
               text: 'Bienvenido/a '+credenciales.email+'!',
             })
-            //una vez registrado te lleva al home
-            this._router.navigate(['home'])
+            //una vez registrado te lleva al inicio
+            this._router.navigate(['login'])
           })
           //error
           .catch(error=> {

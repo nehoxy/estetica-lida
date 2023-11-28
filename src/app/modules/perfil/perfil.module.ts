@@ -8,6 +8,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { DatosPersonalesComponent } from './components/datos-personales/datos-personales.component';
 import { MisComprasComponent } from './components/mis-compras/mis-compras.component';
 import { MisServiciosComponent } from './components/mis-servicios/mis-servicios.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +23,9 @@ import { MisServiciosComponent } from './components/mis-servicios/mis-servicios.
   imports: [
     CommonModule,
     PerfilRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PerfilModule { }

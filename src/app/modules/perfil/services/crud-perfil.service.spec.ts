@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DialogService } from './dialog.service';
+import { CrudPerfilService } from './crud-perfil.service';
 
-describe('DialogService', () => {
-  let service: DialogService;
+describe('CrudPerfilService', () => {
+  let service: CrudPerfilService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DialogService);
+    service = TestBed.inject(CrudPerfilService);
   });
 
   it('should be created', () => {

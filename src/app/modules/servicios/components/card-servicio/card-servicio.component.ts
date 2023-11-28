@@ -16,6 +16,8 @@ export class CardServicioComponent {
     titulo: '',
     descripcion: '',
   };
+
+  // creamos las distintas colecciones para separar los servicios
   listaServicios:Servicio[] = []
   manicuria:Servicio[] = []
   pedicuria:Servicio[] = []
@@ -26,10 +28,13 @@ export class CardServicioComponent {
   busqueda:string = ''
   filtro:string = 'todos'
 
+
   constructor( private modalService:BsModalService, private crudService:CrudServiciosService){
 
   }
-
+  /*
+  este metodo recibe los parametros de la card titulo y descripcion para despues mostrarlo en un modal
+  */
   openModal(titulo,descripcion) {
     this.modalData.titulo = titulo
     this.modalData.descripcion = descripcion
@@ -45,6 +50,7 @@ export class CardServicioComponent {
     this.mostrarServicios()
 }
   
+  // este metodo muestra TODOS los servicios
   mostrarServicios(){
     this.crudService.obtenerServicio().subscribe(servicio => {
       this.listaServicios = servicio;
@@ -54,6 +60,8 @@ export class CardServicioComponent {
       this.mostrarPedicuria()
   })
   }
+
+  // filtramos los servicios de manicuria y los agregamos a la correspondiente coleccion
   mostrarManicuria(){
     this.listaServicios.forEach(servicio =>{
       if(servicio.categoria === "manicuria"){
@@ -62,6 +70,7 @@ export class CardServicioComponent {
     })
   }
 
+  // filtramos los servicios de pedicuria y los agregamos a la correspondiente coleccion
   mostrarPedicuria(){
     this.listaServicios.forEach(servicio =>{
       if(servicio.categoria === "pedicuria"){
@@ -70,6 +79,7 @@ export class CardServicioComponent {
     })
   }
 
+  // filtramos los servicios de belleza facial y los agregamos a la correspondiente coleccion
   mostrarBelleza(){
     this.listaServicios.forEach(servicio =>{
       if(servicio.categoria === "bellezafacial"){
@@ -78,6 +88,7 @@ export class CardServicioComponent {
     })
   }
 
+  // filtramos los servicios de belleza corporal y los agregamos a la correspondiente coleccion
   mostrarEstetica(){
     this.listaServicios.forEach(servicio =>{
       if(servicio.categoria === "bellezacorporal"){

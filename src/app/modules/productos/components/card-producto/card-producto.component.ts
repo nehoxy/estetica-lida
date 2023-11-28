@@ -24,18 +24,11 @@ export class CardProductoComponent {
 
   
   constructor(public servicioProductosCrud:CrudProductosService){
-    this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
-      // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
-      this.listaProductos = producto;});
+    this.mostrarProducto()
   }
 
   ngOnInit() :void {
-   //this.mostrarProducto()
-
-   if(this.filtro=='cremas'){
-    this.mostrarCremas()
-   }else{
-   }
+  
   }
 
   cambiarOrden(event: any) {
@@ -44,61 +37,25 @@ export class CardProductoComponent {
     if (valorSeleccionado === '1') {
       // Ordenar por mayor precio
       this.servicioProductosCrud.obtenerProductoPrecioMayor().subscribe(producto => {
-        // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
         this.listaProductos = producto;
       });
     } else if (valorSeleccionado === '2') {
       // Ordenar por menor precio
       this.servicioProductosCrud.obtenerProductoPrecioMenor().subscribe(producto => {
-        // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
         this.listaProductos = producto;
       });
     } else {
-      // Ordenar por defecto (puedes ajustar esto según tus necesidades)
+      // Ordenar por defecto
       this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
-        // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
         this.listaProductos = producto;
       });
     }
   }
 
   mostrarProducto(){
-
     this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
       this.listaProductos = producto;
     })
   }
 
-  mostrarCremas(){
-    this.listaProductos.forEach(producto =>{
-      if(producto.categoria === "cremas"){
-        this.cremas.push(producto)
-      }
-    })
-    this.mostrarProducto()
-  }
-  mostrarMaquillajes(){
-    this.listaProductos.forEach(producto =>{
-      if(producto.categoria === "maquillajes"){
-        this.maquillajes.push(producto)
-      }
-    })
-  }
-  mostrarMascarillas(){
-    this.listaProductos.forEach(producto =>{
-      if(producto.categoria === "mascarillas"){
-        this.mascarillas.push(producto)
-      }
-    })
-  }
-  mostrarJabones(){
-    this.listaProductos.forEach(producto =>{
-      if(producto.categoria === "jabones"){
-        this.jabones.push(producto)
-      }
-    })
-  }
-  
-
- 
 }

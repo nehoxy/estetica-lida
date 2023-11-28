@@ -35,6 +35,21 @@ export class CrudProductosService {
     // pipe -> tubería por dónde viajan esos nuevos datos
     // map -> recorre esos datos, los lee
    }
+
+   obtenerProductoPrecioMenor() {
+    return this.productosColeccion.snapshotChanges().pipe(
+    map(action => action.map(a => a.payload.doc.data())),
+    map(productos => productos.sort((a, b) => a.precio - b.precio))
+    );
+    } 
+
+    obtenerProductoPrecioMayor() {
+      return this.productosColeccion.snapshotChanges().pipe(
+      map(action => action.map(a => a.payload.doc.data())),
+      map(productos => productos.sort((a, b) => b.precio - a.precio))
+      );
+      } 
+  
    modificarProducto(idProducto: string, nuevaData:Producto){
     return this.database.collection('productos').doc(idProducto).update(nuevaData)
     }

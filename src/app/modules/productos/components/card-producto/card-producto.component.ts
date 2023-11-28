@@ -17,17 +17,20 @@ export class CardProductoComponent {
   jabones:Producto[] = []
   busqueda:string = ''
   filtro:string = ''
+  filtroPrecio:string = ''
 
   
   productoSeleccionado! :Producto; // '!' toma valores vacios o 'any'
 
   
   constructor(public servicioProductosCrud:CrudProductosService){
-    
+    this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
+      // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
+      this.listaProductos = producto;});
   }
 
   ngOnInit() :void {
-   this.mostrarProducto()
+   //this.mostrarProducto()
 
    if(this.filtro=='cremas'){
     this.mostrarCremas()
@@ -35,13 +38,34 @@ export class CardProductoComponent {
    }
   }
 
+  cambiarOrden(event: any) {
+    const valorSeleccionado = event.target.value;
+
+    if (valorSeleccionado === '1') {
+      // Ordenar por mayor precio
+      this.servicioProductosCrud.obtenerProductoPrecioMayor().subscribe(producto => {
+        // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
+        this.listaProductos = producto;
+      });
+    } else if (valorSeleccionado === '2') {
+      // Ordenar por menor precio
+      this.servicioProductosCrud.obtenerProductoPrecioMenor().subscribe(producto => {
+        // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
+        this.listaProductos = producto;
+      });
+    } else {
+      // Ordenar por defecto (puedes ajustar esto según tus necesidades)
+      this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
+        // Manejar los resultados, por ejemplo, asignarlos a una propiedad en tu componente
+        this.listaProductos = producto;
+      });
+    }
+  }
+
   mostrarProducto(){
+
     this.servicioProductosCrud.obtenerProducto().subscribe(producto => {
       this.listaProductos = producto;
-      this.mostrarCremas()
-      this.mostrarMaquillajes()
-      this.mostrarMascarillas()
-      this.mostrarJabones()
     })
   }
 

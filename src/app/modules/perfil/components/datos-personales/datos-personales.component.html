@@ -17,17 +17,97 @@
         </div>
         <!--card con los datos del domicilio-->
         <div class="col-lg-4 col-12 col-sm-12 col-md-6">
-            <div class="card color-card tamaño-card">
+            <div *ngIf="userDomicilio" class="card color-card tamaño-card">
                 <div class="card-body">
                     <h1 class="card-title">Domicilio</h1>
-                    <h5>Direccion:</h5>
-                    <h5>Codigo postal:</h5>
-                    <h5>Provincia:</h5>
-                    <h5>Localidad:</h5>
+                    <h5>Direccion: {{userDomicilio.direccion}}</h5>
+                    <h5>Codigo postal:  {{userDomicilio.codigo_postal}}</h5>
+                    <h5>Provincia: {{userDomicilio.provincia}}</h5>
+                    <h5>Localidad: {{userDomicilio.localidad}}</h5>
                 </div>
                 
             </div>
+<<<<<<< HEAD
             <button class="btn btn-primary mt-2">Cambiar datos</button>
+=======
+            <button class="btn btn-primary btn-verde mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" > Cargar datos</button>
+            <button class="btn btn-warning mt-2" data-bs-toggle="modal" data-bs-target="#modalEditar" (click)="mostrarEditar(userDomicilio)" > Editar</button>
+
+>>>>>>> d0f37b737001b113c607f01f493617fa0c5f1d5a
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 mb-0" id="exampleModalLabel">Domicilio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="domicilioForm">
+            <div class="mb-3">
+                <label class="form-label texto">Dirección</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.direccion"  placeholder="Ingrese su dirección:">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Codigo postal</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.codigo_postal" placeholder="Ingrese su codigo postal:">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Provincia</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.provincia" placeholder="Ingrese su provincia:">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Localidad</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.localidad" placeholder="Ingrese su localidad:">
+            </div>
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-verde" (click)="agregarDomicilio()" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="userDomicilio" class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 mb-0" id="exampleModalLabel">Domicilio</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="domicilioForm">
+            <div class="mb-3">
+                <label class="form-label texto">Dirección</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.direccion"  placeholder="{{userDomicilio.direccion}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Codigo postal</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.codigo_postal" placeholder="{{userDomicilio.codigo_postal}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Provincia</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.provincia" placeholder="{{userDomicilio.provincia}}">
+            </div>
+            <div class="mb-3">
+                <label class="form-label texto">Localidad</label>
+                <input type="text" class="form-control color-input" [formControl]="domicilioForm.controls.localidad" placeholder="{{userDomicilio.localidad}}">
+            </div>
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-verde" (click)="agregarDomicilio()" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

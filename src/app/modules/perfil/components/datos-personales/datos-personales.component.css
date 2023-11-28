@@ -13,6 +13,20 @@ h5{
 .tamaño-card{
     width: 18rem;
 }
+
+.color-input{
+    background-color: #EBEBEB;
+    border-radius: 5vw;
+}
+.control-label{
+    font-family: 'poppins';
+}
+.btn-verde{
+    background-color: #C8ECCB;
+    border-radius: 5vw;
+    border-color: #C8ECCB;
+    color: black;
+}
 /*responsive*/
 @media only screen and (max-width: 600px) {
     .color-card{

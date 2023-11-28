@@ -27,6 +27,9 @@ h5{
     border-color: #C8ECCB;
     color: black;
 }
+.btn-danger{
+    border-radius: 5vw;
+}
 .btn-amarillo{
     border-radius: 5vw;
     background-color: #ffff80;

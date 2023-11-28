@@ -15,7 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomFilterPipe } from './components/card-servicio/custom-filter';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { CustomFilterPipe } from './components/card-servicio/custom-filter';
     MatDialogModule,
     ModalModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   exports:[
     MatIconModule,

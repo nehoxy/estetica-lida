@@ -11,6 +11,7 @@ import { Servicio } from 'src/app/models/servicio';
   styleUrls: ['./card-servicio.component.css']
 })
 export class CardServicioComponent {
+  p:number=1
   modalData: ModalData = {
     titulo: '',
     descripcion: '',

@@ -7,6 +7,7 @@ import { SwalComponent } from '@sweetalert2/ngx-sweetalert2/public-api';
 import { FormControl,FormBuilder,Validators } from '@angular/forms';
 import { IsLoggedInService } from 'src/app/shared/services/is-logged-in.service';
 import Swal from 'sweetalert2';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -48,6 +49,7 @@ export class LoginComponent {
         text: 'Bienvenido/a '+credenciales.email+'!',
       })
       this.router.navigate(['home'])
+      this.checkUserRole()
       this.logged.setLoggedStatus(true);
       console.log(this.isLogged)
     }).catch(error =>{
@@ -64,4 +66,28 @@ export class LoginComponent {
     })
   }
 
+  async checkUserRole() {
+    try {
+      const uid = await this.servicioAuth.getUid();
+
+      if (uid) {
+        const userData = await this.servicioAuth.getUserData(uid).pipe(take(1)).toPromise();
+
+        if (userData && userData['rol']) {
+          const userRole = userData['rol'];
+          console.log('User Role:', userRole);
+          this.logged.setAdminStatus(true)
+          // Ahora puedes realizar acciones basadas en el rol del usuario
+          // Por ejemplo, redirigir a diferentes rutas o mostrar componentes específicos
+        } else {
+          console.log('No se encontró información del usuario o el rol.');
+        }
+      } else {
+        console.log('No se pudo obtener el UID del usuario.');
+      }
+    } catch (error) {
+      console.error('Error al obtener información del usuario:', error);
     }
+  }
+  
+}

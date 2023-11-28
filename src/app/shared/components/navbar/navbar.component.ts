@@ -1,7 +1,11 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { LoginComponent } from 'src/app/modules/auth/pages/login/login.component';
 import { IsLoggedInService } from '../../services/is-logged-in.service';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
+import { take } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +14,20 @@ import Swal from 'sweetalert2';
   providers: [LoginComponent]
 })
 export class NavbarComponent {
-  isLogged:boolean;
+  
 
-  constructor(private logged:IsLoggedInService){
+  isLogged:boolean;
+  isAdmin:boolean;
+  constructor(private logged:IsLoggedInService, private servicioAuth:AuthService){
     this.logged.isLogged$.subscribe((isLogged) => {
       this.isLogged = isLogged;
     });
+
+    this.logged.isAdmin$.subscribe((isAdmin)=>{
+      this.isAdmin = isAdmin
+    })
+
+    
   }
 
   logout() {
@@ -31,7 +43,13 @@ export class NavbarComponent {
     })
     // Realiza cualquier otra acción necesaria al cerrar sesión, como redirigir al usuario.
   }
+
   ngOnInit() {
     
+    console.log(this.isAdmin)
+
   }
+ 
+
+
 }

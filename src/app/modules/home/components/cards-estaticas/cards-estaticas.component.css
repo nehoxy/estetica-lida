@@ -11,16 +11,6 @@
 
 /*titulos y textos*/
 
-h4:after{
-    background-color: #C8ECCB;
-    content: '';
-    display: block;
-    position:absolute; right:27.4rem; bottom:1rem;
-    height: 3px;
-    width: 52px;
-    margin-bottom: 0.1rem;
-  
-  }
 
 h4{
     font-family: Poppins;
@@ -61,8 +51,8 @@ p{
 @media only screen and (max-width: 600px) {
     .cards-estaticas{
         background-color: black;
-        width: 42vw;
-        height: 54vw;
+        width: 57vw;
+        height: 69vw;
         border-radius: 1.2vw;
         opacity: 1;
         transition: 0.3s;

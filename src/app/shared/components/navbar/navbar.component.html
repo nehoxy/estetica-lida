@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg colorNav">
+<nav  class="navbar navbar-expand-lg colorNav">
         <div class="container-fluid centrarnav">
           
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
                 <a class="nav-link separacionBotonesEspecial" routerLink="/servicios" routerLinkActive="active">Servicios</a>
               </li>
               <a class="navbar-brand separacionBotones imagenPadding" routerLink="/home"><img class="tamañoImagen" src="../../../../assets/imgNavbar/logo7.png" alt=""></a>
-              <li class="nav-item separacionBotones">
+              <li *ngIf="isAdmin" class="nav-item separacionBotones">
                 <a class="nav-link" routerLink="/admin" routerLinkActive="active">Administrador</a>
               </li>
               <li *ngIf="isLogged" class="nav-item separacionBotones">

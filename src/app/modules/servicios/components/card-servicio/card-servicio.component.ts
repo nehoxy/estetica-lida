@@ -4,7 +4,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ModalData } from 'src/app/models/modal-data';
 import { CrudServiciosService } from 'src/app/modules/administrador/services/crud-servicios.service';
 import { Servicio } from 'src/app/models/servicio';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-card-servicio',
   templateUrl: './card-servicio.component.html',
@@ -80,9 +80,18 @@ export class CardServicioComponent {
 
   mostrarEstetica(){
     this.listaServicios.forEach(servicio =>{
-      if(servicio.categoria === "esteticacorporal"){
+      if(servicio.categoria === "bellezacorporal"){
         this.estetica.push(servicio)
       }
     })
+  }
+
+  sacarTurno(){
+      Swal.fire({
+        icon: 'warning',
+        confirmButtonColor: '#BB8588',
+        title:'¡Lo sentimos!',
+        text: 'Esta función aún no esta disponible.',
+      })
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './modules/home/pages/home/home.component';
 
 
 const routes: Routes = [
@@ -9,7 +10,9 @@ const routes: Routes = [
   },
   {
     path:'home',
-    loadChildren:()=>import('./modules/home/home.module').then(m => m.HomeModule)
+    loadChildren:()=>import('./modules/home/home.module').then(m => m.HomeModule),
+    
+    
   },
   {
     path:'productos',
@@ -30,6 +33,10 @@ const routes: Routes = [
   {
     path:'carrito',
     loadChildren:()=>import('./modules/carrito/carrito.module').then(m => m.CarritoModule)
+  },
+  {
+    path:'**',
+    component:HomeComponent
   }
 
 ];

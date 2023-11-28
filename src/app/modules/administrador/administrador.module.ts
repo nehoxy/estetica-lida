@@ -21,6 +21,8 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { FlatpickrDefaults} from 'angularx-flatpickr'
 import { CustomFilterPipe } from './pipes/custom-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+
 
 
 
@@ -35,7 +37,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
         FormProductosAdminComponent,
         TablaVentasAdministradorComponent,
         CalendarioComponent,
-        CustomFilterPipe
+        CustomFilterPipe,
+        UsuariosComponent
 
   ],
   imports: [

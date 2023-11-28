@@ -15,10 +15,44 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
+::ng-deep .btn-sweetalert{
+  background-color: #BB8588;
+  border-radius: 5vw;
+  font-family: 'Poppins';
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+::ng-deep .btn-sweetalert:hover{
+  background-color: #9b6a6d;
+  border-radius: 5vw;
+  font-family: 'Poppins';
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 @media (max-width: 767px) {
     .titulo-celular {
       display: block; /* Oculta el título en dispositivos móviles */
       
+    }
+    .btn-sweetalert{
+      background-color: #BB8588;
+      border-radius: 5vw;
+      font-family: 'Poppins';
+      color: white;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .btn-sweetalert:hover{
+      background-color: #9b6a6d;
+      border-radius: 5vw;
+      font-family: 'Poppins';
+      color: white;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 
@@ -26,5 +60,21 @@ hr {
   @media (min-width: 1000px) {
     .titulo-celular {
       display: none; /* Oculta el título en dispositivos móviles */
+    }
+    .btn-sweetalert{
+      background-color: #BB8588;
+      border-radius: 5vw;
+      font-family: 'Poppins';
+      color: white;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .btn-sweetalert:hover{
+      background-color: #9b6a6d;
+      border-radius: 5vw;
+      font-family: 'Poppins';
+      color: white;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }

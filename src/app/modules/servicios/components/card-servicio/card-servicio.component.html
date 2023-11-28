@@ -33,7 +33,7 @@
     <div *ngIf="filtro === 'manicuria' || filtro === 'todos'"  class="row">
 
             <h1 class="titulo fs-3 mb-5">Manicuria</h1>
-            <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of manicuria | customFilter:busqueda | paginate: { itemsPerPage: 3, currentPage: p}">
+            <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of manicuria | customFilter:busqueda">
                 <div class="card-sl">
                     <div class="card-image">
                         <img src="{{servicio.imagen}}" />
@@ -56,7 +56,7 @@
     </div>
     <div *ngIf="filtro === 'pedicuria' || filtro === 'todos' " class="row">
         <h1  class="titulo fs-3 mb-5">Pedicuria</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of pedicuria | customFilter:busqueda | paginate: { itemsPerPage: 3, currentPage: p}">
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of pedicuria | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
                         <img src="{{servicio.imagen}}" />
@@ -78,7 +78,7 @@
     </div>
     <div *ngIf="filtro === 'bellezafacial' || filtro === 'todos' " class="row">
         <h1 class="titulo fs-3 mb-5">Belleza Facial</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of belleza | customFilter:busqueda | paginate: { itemsPerPage: 3, currentPage: p}">
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of belleza | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
                         <img src="{{servicio.imagen}}" />
@@ -100,7 +100,7 @@
     </div>
     <div *ngIf="filtro === 'esteticacorporal' || filtro === 'todos' " class="row">
         <h1 class="titulo fs-3 mb-5">Estetica corporal</h1>
-        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of estetica | customFilter:busqueda | paginate: { itemsPerPage: 3, currentPage: p}">
+        <div class="col-md-3 me-5 mb-5" *ngFor="let servicio of estetica | customFilter:busqueda">
             <div class="card-sl">
                 <div class="card-image">
                         <img src="{{servicio.imagen}}" />
@@ -121,10 +121,4 @@
         </div>
     </div>
 </div>  
-<div class="container">
-    <div class="row">
-        <div class="d-flex justify-content-center">
-            <pagination-controls  class="my-pagination"  nextLabel="Siguiente" previousLabel="Anterior" (pageChange)="p = $event"></pagination-controls>
-        </div>
-    </div>
-</div>
+
